@@ -2,7 +2,7 @@
 class GameChannel < ApplicationCable::Channel
   def subscribed
     stream_from "player_#{uuid}"
-    ActionCable.server.broadcast "player_#{uuid}", {action:'subscribed', uuid: uuid, msg: 'You have been subscribed'}
+    # ActionCable.server.broadcast "player_#{uuid}", {action:'subscribed', uuid: "#{uuid}", msg: 'You have been subscribed'}
     Seek.create(uuid)
   end
 
