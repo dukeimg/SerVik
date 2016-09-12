@@ -6,5 +6,12 @@ module ApplicationCable
       self.uuid = SecureRandom.uuid
       transmit "Your UUID is #{uuid}"
     end
+
+    private
+
+    def receive(websocket_message) #:nodoc:
+      send_async :dispatch_websocket_message, websocket_message
+      puts websocket_message
+    end
   end
 end
