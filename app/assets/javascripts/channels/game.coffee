@@ -11,6 +11,8 @@ App.game = App.cable.subscriptions.create "GameChannel",
         @printMessage("Опонент найден. Игра начата. Вы #{data.msg}.")
       when "subscribed"
         @printMessage("UUID: #{data.uuid}.")
+      when "opponent_disconnected"
+        @printMessage(data.msg)
 
 
   printMessage: (message) ->

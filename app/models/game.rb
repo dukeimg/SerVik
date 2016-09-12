@@ -15,7 +15,7 @@ class Game
     end
   end
 
-  def self.disconnect(uuid)
+  def self.opponent_disconnected(uuid)
     if winner = opponent_for(uuid)
       ActionCable.server.broadcast "player_#{winner}", {action: "opponent_disconnected", msg:'Потеряна связь с игроком'}
     end
