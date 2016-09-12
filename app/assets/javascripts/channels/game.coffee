@@ -7,12 +7,14 @@ App.game = App.cable.subscriptions.create "GameChannel",
 
   received: (data) ->
     switch data.action
-      when "game_start"
-        @printMessage("Опонент найден. Игра начата. Вы #{data.msg}.")
+      when "init"
+        @printMessage("Опонент найден.")
       when "subscribed"
         @printMessage("UUID: #{data.uuid}.")
       when "opponent_disconnected"
         @printMessage(data.msg)
+      when 'waiting_for_code'
+        @printMessage('Жду код')
 
 
   printMessage: (message) ->
