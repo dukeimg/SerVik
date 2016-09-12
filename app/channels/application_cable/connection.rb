@@ -4,7 +4,7 @@ module ApplicationCable
 
     def connect
       self.uuid = SecureRandom.uuid
-      transmit 'Hi'
+      transmit "Your UUID is #{uuid}"
     end
   end
 end
