@@ -10,7 +10,7 @@ App.game = App.cable.subscriptions.create "GameChannel",
       when "subscribed"
         @printMessage("UUID: #{data.uuid}.")
       when "opponent_disconnected"
-        @printMessage(data.msg)
+        @printMessage('Соединение разорвано')
       when 'waiting_for_code'
         @printMessage('Опонент найден. Жду код')
 
