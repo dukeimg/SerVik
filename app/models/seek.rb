@@ -1,7 +1,7 @@
 class Seek
   def self.create(uuid)
     if opponent = REDIS.spop("seeks")
-      Game.start(uuid, opponent)
+      Game.init(uuid, opponent)
     else
       REDIS.sadd("seeks", uuid)
     end

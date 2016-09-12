@@ -9,4 +9,8 @@ class GameChannel < ApplicationCable::Channel
     Seek.remove(uuid)
     Game.opponent_disconnected(uuid)
   end
+
+  def make_turn(data)
+    Game.turn(uuid, data)
+  end
 end
