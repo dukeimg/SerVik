@@ -48,4 +48,3 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'redis', '~> 3.0'
 gem 'haml'
-gem 'facets'

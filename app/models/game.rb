@@ -1,4 +1,3 @@
-require 'facets'
 class Game
   def self.init(uuid1, uuid2)
     @player_1, @player_2 = [uuid1, uuid2].shuffle
