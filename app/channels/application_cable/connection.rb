@@ -7,9 +7,7 @@ module ApplicationCable
       transmit "Your UUID is #{uuid}"
     end
 
-    private
-
-    def receive(websocket_message) #:nodoc:
+    def receive(websocket_message)
       send_async :dispatch_websocket_message, websocket_message
       puts websocket_message
     end
