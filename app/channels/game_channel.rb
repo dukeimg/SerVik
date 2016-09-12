@@ -10,6 +10,10 @@ class GameChannel < ApplicationCable::Channel
     Game.opponent_disconnected(uuid)
   end
 
+  def set_code(data)
+    Game.set_code(uuid, data)
+  end
+
   def make_turn(data)
     Game.turn(uuid, data)
   end

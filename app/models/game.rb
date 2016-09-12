@@ -6,14 +6,13 @@ class Game
     REDIS.set("opponent_for:#{@player_1}", @player_2)
     REDIS.set("opponent_for:#{@player_2}", @player_1)
 
-    ActionCable.server.broadcast "player_#{@player_1}", {action: "set_code"}
-    ActionCable.server.broadcast "player_#{@player_2}", {action: "set_code"}
+    ActionCable.server.broadcast "player_#{@player_1}", {action: "waiting_for_code"}
+    ActionCable.server.broadcast "player_#{@player_2}", {action: "waiting_for_code"}
   end
   
   def self.set_code(uuid, data)
     REDIS.set("code_for:#{uuid}", data['msg'])
-    opponent = opponent_for(uuid)
-    if get_code(opponent)
+    if get_code(opponent_for(uuid))
       start
     end
   end
@@ -52,12 +51,10 @@ class Game
     else
       guess_arr = guess.split('')
       answer_arr = answer.split('')
-      intersection = guess_arr & answer_arr
-      a = intersection.size
-      m = guess_arr.zip(answer_arr).map { |x, y| x == y }
-      b = m.frequency[true]
+      a = (guess_arr & answer_arr).size
+      b = (guess_arr.zip(answer_arr).map { |x, y| x == y }).frequency[true]
       response = "#{a}:#{b}"
-      ActionCable.server.broadcast "player_#{opponent}", {action: "turn", msg: response}
+      ActionCable.server.broadcast "player_#{opponent}", {action: 'turn', msg: response}
     end
     response
   end
