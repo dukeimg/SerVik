@@ -55,7 +55,7 @@ class Game
       response = "#{a}:#{b}"
       ActionCable.server.broadcast "player_#{opponent}", {action: 'turn', msg: response}
     end
-    response
+    response # Для теста
   end
 
   private

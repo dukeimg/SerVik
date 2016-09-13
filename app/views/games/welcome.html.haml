@@ -1,2 +1,14 @@
 %h1 SerVik
+%p
+  %i Примечание: я пока не делал валидацию
 #messages
+%div
+  %p Загадать код
+  %input{:type => 'text', :id => 'code_field'}
+  %input{:type => 'submit', :id => 'code_submit'}
+%div
+  %p Играть (пока не поиграть)
+  %input{:type => 'text', :id => 'guess_field'}
+  %input{:type => 'submit', :id => 'guess_submit'}
+#player_turns
+#opponent_turns

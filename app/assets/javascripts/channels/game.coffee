@@ -13,6 +13,13 @@ App.game = App.cable.subscriptions.create "GameChannel",
         @printMessage('Соединение разорвано')
       when 'waiting_for_code'
         @printMessage('Опонент найден. Жду код')
+      when 'turn'
+        @printMessage(data.msg)
+      when 'game_start'
+        msg = 'Ход противника'
+        if data.is_your_turn
+          msg = 'Ваш ход'
+        @printMessage("Игра началась #{msg}")
 
 
   printMessage: (message) ->
