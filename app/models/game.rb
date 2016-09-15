@@ -53,7 +53,8 @@ class Game
       a = (guess_arr & answer_arr).size
       b = (guess_arr.zip(answer_arr).map { |x, y| x == y }).inject(Hash.new(0)) { |total, e| total[e] += 1 ;total}[true]
       response = "#{a}:#{b}"
-      ActionCable.server.broadcast "player_#{opponent}", {action: 'turn', msg: response, code: guess}
+      ActionCable.server.broadcast "player_#{opponent}", {action: 'turn', code: guess, is_your_turn:1}
+      ActionCable.server.broadcast "player_#{uuid}", {action: 'turn', msg: response, is_your_turn:0}
     end
     response # Для теста
   end
