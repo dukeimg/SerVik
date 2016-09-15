@@ -24,7 +24,7 @@ class Game
   def self.end_game(winner)
     loser = opponent_for(winner)
     ActionCable.server.broadcast "player_#{winner}", {action: "end_game", win:1}
-    ActionCable.server.broadcast "player_#{loser}", {action: "end_game", win:0}
+    ActionCable.server.broadcast "player_#{loser}", {action: "end_game", win:0, opponent_code: get_code(winner)}
   end
 
   def self.forfeit(uuid)
