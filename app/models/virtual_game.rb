@@ -36,8 +36,9 @@ class VirtualGame
       else
         ai_guess = ai_guess.to_s
         t = 4 - ai_guess.size
-        response = '0' * t << ai_guess
-        ActionCable.server.broadcast "player_#{uuid}", {action: 'turn', code: response, is_your_turn:1}
+        code = '0' * t << ai_guess
+        response = self.crypt(ai_guess, answer)
+        ActionCable.server.broadcast "player_#{uuid}", {action: 'turn', code: code, is_your_turn:1, msg: response}
       end
     end
   end
