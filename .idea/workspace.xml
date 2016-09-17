@@ -7,12 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="34787232-a8da-4fc4-b117-f4225586c072" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/javascripts/material.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/stylesheets/material.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/channels/game.coffee" afterPath="$PROJECT_DIR$/app/assets/javascripts/channels/game.coffee" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/virtual_game.rb" afterPath="$PROJECT_DIR$/app/models/virtual_game.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/application.html.haml" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.haml" />
     </list>
     <ignored path="SerVik.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -60,8 +56,8 @@
       <file leaf-file-name="virtual_game.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/models/virtual_game.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="15" column="38" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
+            <state relative-caret-position="144">
+              <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -657,7 +653,7 @@
       <workItem from="1473850907839" duration="1170000" />
       <workItem from="1473853944820" duration="55000" />
       <workItem from="1473947782700" duration="1616000" />
-      <workItem from="1474103482798" duration="21225000" />
+      <workItem from="1474103482798" duration="21392000" />
     </task>
     <task id="LOCAL-00001" summary="First server test">
       <created>1473525695510</created>
@@ -820,7 +816,14 @@
       <option name="project" value="LOCAL" />
       <updated>1474121644149</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Virtual game fixes&#10;">
+      <created>1474126193448</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1474126193448</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -856,7 +859,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50132000" />
+    <option name="totallyTimeSpent" value="50299000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1665" y="24" width="1855" height="1056" extended-state="6" />
@@ -943,7 +946,8 @@
     <MESSAGE value="Virtual Game" />
     <MESSAGE value="Фильтры" />
     <MESSAGE value="Virtual game random g fix&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Virtual game random g fix&#10;" />
+    <MESSAGE value="Virtual game fixes&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Virtual game fixes&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1267,8 +1271,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/virtual_game.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="38" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
+        <state relative-caret-position="144">
+          <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
           <folding />
         </state>
       </provider>

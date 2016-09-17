@@ -6,10 +6,10 @@ class VirtualGame
   def self.set_code(uuid, data)
     REDIS.set("code_for:#{uuid}", data['msg'])
     REDIS.set("virtual_opponent_code_for:#{uuid}", Random.rand(1000..9999).to_s)
-    self.start
+    self.start(uuid)
   end
 
-  def self.start
+  def self.start(uuid)
     ActionCable.server.broadcast "player_#{uuid}", {action: "game_start", is_your_turn:1}
   end
 
@@ -36,7 +36,7 @@ class VirtualGame
       else
         ai_guess = ai_guess.to_s
         t = 4 - ai_guess.size
-        ActionCable.server.broadcast "player_#{opponent}", {action: 'turn', code: t.times {ai_guess.prepend('0')}, is_your_turn:1}
+        ActionCable.server.broadcast "player_#{uuid}", {action: 'turn', code: t.times {ai_guess.prepend('0')}, is_your_turn:1}
       end
     end
   end
