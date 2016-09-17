@@ -36,7 +36,8 @@ class VirtualGame
       else
         ai_guess = ai_guess.to_s
         t = 4 - ai_guess.size
-        ActionCable.server.broadcast "player_#{uuid}", {action: 'turn', code: t.times {ai_guess.prepend('0')}, is_your_turn:1}
+        response = '0' * t << ai_guess
+        ActionCable.server.broadcast "player_#{uuid}", {action: 'turn', code: response, is_your_turn:1}
       end
     end
   end
