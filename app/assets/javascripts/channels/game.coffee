@@ -1,6 +1,7 @@
 App.game = App.cable.subscriptions.create "GameChannel",
   connected: ->
     @printMessage("Подкючен. Поиск оппонента")
+    App.game.perform('seek', {'mode': 'tb', 'time_limit': 0, 'turn_limit': 0, 'turn_time_limit': 0})
 
   disconnected: ->
     @printMessage("Отключен")

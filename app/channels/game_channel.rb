@@ -2,7 +2,6 @@
 class GameChannel < ApplicationCable::Channel
   def subscribed
     stream_from "player_#{uuid}"
-    Seek.create(uuid)
   end
 
   def unsubscribed
@@ -16,5 +15,13 @@ class GameChannel < ApplicationCable::Channel
 
   def make_turn(data)
     Game.turn(uuid, data)
+  end
+
+  def seek(data)
+    Seek.create(uuid, data)
+  end
+
+  def virtual_game
+    VirtualGame.init(uuid)
   end
 end
