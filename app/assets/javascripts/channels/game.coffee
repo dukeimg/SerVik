@@ -1,4 +1,4 @@
-createChannel = ->
+App.createChannel = ->
   App.game = App.cable.subscriptions.create "GameChannel",
     connected: ->
       @printMessage("Подкючен. Поиск оппонента")
@@ -6,7 +6,7 @@ createChannel = ->
 
     disconnected: ->
       @printMessage("Отключен")
-  
+
     received: (data) ->
       switch data.action
         when "subscribed"
