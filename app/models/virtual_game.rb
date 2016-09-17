@@ -23,11 +23,9 @@ class VirtualGame
 
     if guess == answer
       end_game(uuid)
-      response = '4:4'
-      ActionCable.server.broadcast "player_#{uuid}", {action: 'turn', msg: response, is_your_turn:0}
     else
       response = self.crypt(guess, answer)
-      ActionCable.server.broadcast "player_#{uuid}", {action: 'turn', msg: response, is_your_turn:0}
+      ActionCable.server.broadcast "player_#{uuid}", {action: 'turn', msg: response, is_your_turn:0, code: guess}
       sleep(1)
       ai_guess = Random.rand(0..9999)
       answer = REDIS.get("code_for:#{uuid}")
