@@ -10,11 +10,19 @@ class GameChannel < ApplicationCable::Channel
   end
 
   def set_code(data)
-    Game.set_code(uuid, data)
+    if data.virtual
+      VirtualGame.set_code(uuid, data)
+    else
+      Game.set_code(uuid, data)
+    end
   end
 
   def make_turn(data)
-    Game.turn(uuid, data)
+    if data.virtual
+      VirtualGame.turn(uuid, data)
+    else
+      Game.turn(uuid, data)
+    end
   end
 
   def seek(data)
