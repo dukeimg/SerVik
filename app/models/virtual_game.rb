@@ -29,7 +29,7 @@ class VirtualGame
       response = crypt(guess, answer)
       ActionCable.server.broadcast "player_#{uuid}", {action: 'turn', msg: response, is_your_turn:0}
       sleep(1)
-      ai_guess = rand(0..9999)
+      ai_guess = Random.rand(0..9999)
       answer = REDIS.get("code_for:#{uuid}")
       if ai_guess == answer.to_i
         end_game(uuid)
