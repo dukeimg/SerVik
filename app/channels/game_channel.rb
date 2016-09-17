@@ -26,7 +26,7 @@ class GameChannel < ApplicationCable::Channel
   end
 
   def v_make_turn(data)
-    Game.turn(uuid, data)
+    VirtualGame.turn(uuid, data)
   end
 
   def virtual_game
