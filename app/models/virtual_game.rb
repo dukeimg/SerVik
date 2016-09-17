@@ -26,7 +26,7 @@ class VirtualGame
       response = '4:4'
       ActionCable.server.broadcast "player_#{uuid}", {action: 'turn', msg: response, is_your_turn:0}
     else
-      response = crypt(guess, answer)
+      response = self.crypt(guess, answer)
       ActionCable.server.broadcast "player_#{uuid}", {action: 'turn', msg: response, is_your_turn:0}
       sleep(1)
       ai_guess = Random.rand(0..9999)
@@ -43,7 +43,7 @@ class VirtualGame
 
   private
 
-  def crypt(guess, answer)
+  def self.crypt(guess, answer)
     guess_arr = guess.split('')
     answer_arr = answer.split('')
     a = (guess_arr & answer_arr).size
