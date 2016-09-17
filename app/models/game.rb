@@ -1,6 +1,8 @@
 class Game
   def self.init(uuid1, uuid2)
     @player_1, @player_2 = [uuid1, uuid2].shuffle
+    Seek.remove(@player_1)
+    Seek.remove(@player_2)
 
     REDIS.set("opponent_for:#{@player_1}", @player_2)
     REDIS.set("opponent_for:#{@player_2}", @player_1)
@@ -25,18 +27,23 @@ class Game
     loser = opponent_for(winner)
     ActionCable.server.broadcast "player_#{winner}", {action: "end_game", win:1}
     ActionCable.server.broadcast "player_#{loser}", {action: "end_game", win:0, opponent_code: get_code(winner)}
+    clear_redis(winner, loser)
   end
 
   def self.forfeit(uuid)
-    if winner = opponent_for(uuid)
+    winner = opponent_for(uuid)
+    if winner
       ActionCable.server.broadcast "player_#{winner}", {action: "opponent_forfeits"}
     end
+    clear_redis(uuid, winner)
   end
 
   def self.opponent_disconnected(uuid)
-    if winner = opponent_for(uuid)
+    winner = opponent_for(uuid)
+    if winner
       ActionCable.server.broadcast "player_#{winner}", {action: "opponent_disconnected"}
     end
+    clear_redis(uuid, winner)
   end
 
   def self.turn(uuid, data)
@@ -68,5 +75,12 @@ class Game
   def self.get_code(uuid)
     return '2751' if Rails.env.test?
     REDIS.get("code_for:#{uuid}")
+  end
+
+  def clear_redis(pl_1, pl_2)
+    REDIS.del("opponent_for:#{pl_1}")
+    REDIS.del("opponent_for:#{pl_2}")
+    REDIS.del("code_for:#{pl_1}")
+    REDIS.del("code_for:#{pl_2}")
   end
 end
