@@ -7,6 +7,8 @@ class Game
 
     ActionCable.server.broadcast "player_#{@player_1}", {action: "waiting_for_code"}
     ActionCable.server.broadcast "player_#{@player_2}", {action: "waiting_for_code"}
+
+    true
   end
   
   def self.set_code(uuid, data)
