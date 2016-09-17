@@ -6,7 +6,7 @@ class VirtualGame
   def self.set_code(uuid, data)
     REDIS.set("code_for:#{uuid}", data['msg'])
     REDIS.set("virtual_opponent_code_for:#{uuid}", Random.rand(1000..9999).to_s)
-    start
+    self.start
   end
 
   def self.start

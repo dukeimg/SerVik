@@ -4,7 +4,14 @@
     %meta{content: "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}
     %title SerVik
     = csrf_meta_tags
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-  %body{'ng-app' => 'servik'}
+    %link{:rel => 'stylesheet', :href => 'https://fonts.googleapis.com/icon?family=Material+Icons'}
+  %body.mdl-layout.mdl-js-layout.mdl-layout--fixed-header{'ng-app' => 'servik'}
+    %header.mdl-layout__header
+      .mdl-layout__header-row
+        %span.mdl-layout__title SerVik
+        .mdl-layout-spacer
+        %nav.mdl-navigation
+          = link_to 'О проекте', '#', :class => 'mdl-navigation__link'
     = yield
