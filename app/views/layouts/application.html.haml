@@ -7,12 +7,13 @@
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     %link{:rel => 'stylesheet', :href => 'https://fonts.googleapis.com/icon?family=Material+Icons'}
-  %body.mdl-layout.mdl-js-layout.mdl-layout--fixed-header{'ng-app' => 'servik'}
-    %header.mdl-layout__header
-      .mdl-layout__header-row
-        %span.mdl-layout__title SerVik
-        .mdl-layout-spacer
-        %nav.mdl-navigation
-          = link_to 'О проекте', about_path, :class => 'mdl-navigation__link'
-          = link_to 'Загрузить', '#', :class => 'mdl-navigation__link'
-    = yield
+  %body
+    .mdl-layout.mdl-js-layout.mdl-layout--fixed-header
+      %header.mdl-layout__header
+        .mdl-layout__header-row
+          %span.mdl-layout__title= link_to 'Servik', root_path, :class => 'mdl-navigation__link'
+          .mdl-layout-spacer
+          %nav.mdl-navigation
+            = link_to 'О проекте', about_path, :class => 'mdl-navigation__link'
+            = link_to 'Загрузить', download_path, :class => 'mdl-navigation__link'
+      = yield
