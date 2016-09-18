@@ -40,6 +40,7 @@ class Game
   def self.opponent_disconnected(uuid)
     if winner = opponent_for(uuid)
       ActionCable.server.broadcast "player_#{winner}", {action: "opponent_disconnected"}
+      self.end_game(winner)
       self.clear_redis(uuid, winner)
     else
       self.clear_redis(uuid, nil)
@@ -81,7 +82,12 @@ class Game
   def self.crypt(guess, answer)
     guess_arr = guess.split('')
     answer_arr = answer.split('')
-    a = (answer_arr.select {|a| guess_arr.include? a}).size
+    a1, a2 = [guess_arr, answer_arr].map(&:dup) # to keep originals intact
+    a = loop.inject([]) do |memo|
+      break memo if a1.empty?
+      memo << (a2.delete_at(a2.index a1.pop) rescue nil)
+    end.compact.size
+
     b = (guess_arr.zip(answer_arr).map { |x, y| x == y }).inject(Hash.new(0)) { |total, e| total[e] += 1 ;total}[true]
     "#{a}:#{b}"
   end

@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  before_filter :get_url, :set_locale
+  before_action :get_url, :set_locale
 
   def default_url_options(options = {})
     { :locale => I18n.locale }

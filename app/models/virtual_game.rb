@@ -17,10 +17,6 @@ class VirtualGame
     REDIS.del("code_for:#{uuid}")
   end
 
-  def self.forfeit(uuid)
-    self.clear_redis(uuid,)
-  end
-
   def self.turn(uuid, data)
     guess = data['msg']
     answer = REDIS.get("virtual_opponent_code_for:#{uuid}")
@@ -55,7 +51,12 @@ class VirtualGame
   def self.crypt(guess, answer)
     guess_arr = guess.split('')
     answer_arr = answer.split('')
-    a = (answer_arr.select {|a| guess_arr.include? a}).size
+    a1, a2 = [guess_arr, answer_arr].map(&:dup) # to keep originals intact
+    a = loop.inject([]) do |memo|
+      break memo if a1.empty?
+      memo << (a2.delete_at(a2.index a1.pop) rescue nil)
+    end.compact.size
+
     b = (guess_arr.zip(answer_arr).map { |x, y| x == y }).inject(Hash.new(0)) { |total, e| total[e] += 1 ;total}[true]
     "#{a}:#{b}"
   end

@@ -33,10 +33,6 @@ class GameChannel < ApplicationCable::Channel
     VirtualGame.turn(uuid, data)
   end
 
-  def v_forfeit(data)
-    VirtualGame.forfeit(uuid)
-  end
-
   def virtual_game
     VirtualGame.init(uuid)
   end
