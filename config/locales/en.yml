@@ -21,3 +21,10 @@
 
 en:
   hello: "Hello world"
+  menu:
+    about: 'about'
+  play:
+    title: 'Play'
+  meta:
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eu nisl fringilla, egestas augue eget,
+    imperdiet sapien. Cras vitae neque metus.'

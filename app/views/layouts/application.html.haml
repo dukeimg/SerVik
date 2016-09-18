@@ -1,8 +1,14 @@
 !!!
-%html
+%html{:prefix => 'og: http://ogp.me/ns#', :lang => @lang}
   %head
     %meta{content: "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}
-    %title SerVik
+    %title= "#{yield(:title)} SerVik"
+    %meta{:property => 'og:title', :content => "#{yield(:title)} SerVik"}
+    %meta{:property => 'og:type', :content => 'website'}
+    %meta{:property => 'og:url', :content => @url}
+    %meta{:property => 'og:image', :content => ''}
+    %meta{:property => 'og:description', :content => t('meta.description')}
+    %meta{:property => 'og:locale', :content => @lang}
     = csrf_meta_tags
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
@@ -11,9 +17,11 @@
     .mdl-layout.mdl-js-layout.mdl-layout--fixed-header
       %header.mdl-layout__header
         .mdl-layout__header-row
-          %span.mdl-layout__title= link_to 'Servik', root_path, :class => 'mdl-navigation__link'
+          = link_to root_path, :class => 'mdl-navigation__link' do
+            %span.mdl-layout__title Servik
+          = link_to t('menu.about'), about_path, :class => 'mdl-navigation__link'
           .mdl-layout-spacer
           %nav.mdl-navigation
-            = link_to 'О проекте', about_path, :class => 'mdl-navigation__link'
-            = link_to 'Загрузить', download_path, :class => 'mdl-navigation__link'
+            = link_to 'EN', {:locale => :en}, :class => 'mdl-navigation__link'
+            = link_to 'RU', {:locale => :ru}, :class => 'mdl-navigation__link'
       = yield

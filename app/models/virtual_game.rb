@@ -17,6 +17,10 @@ class VirtualGame
     REDIS.del("code_for:#{uuid}")
   end
 
+  def self.forfeit(uuid)
+    self.clear_redis(uuid,)
+  end
+
   def self.turn(uuid, data)
     guess = data['msg']
     answer = REDIS.get("virtual_opponent_code_for:#{uuid}")
@@ -41,6 +45,11 @@ class VirtualGame
     end
   end
 
+  def self.end_game(winner)
+    ActionCable.server.broadcast "player_#{winner}", {action: "end_game", win:1}
+    self.clear_redis(winner)
+  end
+
   private
 
   def self.crypt(guess, answer)
@@ -49,5 +58,10 @@ class VirtualGame
     a = (answer_arr.select {|a| guess_arr.include? a}).size
     b = (guess_arr.zip(answer_arr).map { |x, y| x == y }).inject(Hash.new(0)) { |total, e| total[e] += 1 ;total}[true]
     "#{a}:#{b}"
+  end
+
+  def self.clear_redis(uuid)
+    REDIS.del("code_for:#{uuid}")
+    REDIS.del("virtual_opponent_code_for:#{uuid}")
   end
 end

@@ -17,6 +17,10 @@ class GameChannel < ApplicationCable::Channel
     Game.turn(uuid, data)
   end
 
+  def forfeit(data)
+    Game.forfeit(uuid)
+  end
+
   def seek(data)
     Seek.create(uuid, data)
   end
@@ -27,6 +31,10 @@ class GameChannel < ApplicationCable::Channel
 
   def v_make_turn(data)
     VirtualGame.turn(uuid, data)
+  end
+
+  def v_forfeit(data)
+    VirtualGame.forfeit(uuid)
   end
 
   def virtual_game
