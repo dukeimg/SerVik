@@ -46,7 +46,7 @@ class VirtualGame
   def self.crypt(guess, answer)
     guess_arr = guess.split('')
     answer_arr = answer.split('')
-    a = (guess_arr & answer_arr).size
+    a = (answer_arr.select {|a| guess_arr.include? a}).size
     b = (guess_arr.zip(answer_arr).map { |x, y| x == y }).inject(Hash.new(0)) { |total, e| total[e] += 1 ;total}[true]
     "#{a}:#{b}"
   end

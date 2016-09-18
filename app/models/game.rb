@@ -53,17 +53,11 @@ class Game
 
     if guess == answer
       end_game(uuid)
-      response = '4:4'
     else
-      guess_arr = guess.split('')
-      answer_arr = answer.split('')
-      a = (guess_arr & answer_arr).size
-      b = (guess_arr.zip(answer_arr).map { |x, y| x == y }).inject(Hash.new(0)) { |total, e| total[e] += 1 ;total}[true]
-      response = "#{a}:#{b}"
+      response = crypt(guess, answer)
       ActionCable.server.broadcast "player_#{opponent}", {action: 'turn', code: guess, is_your_turn:1}
       ActionCable.server.broadcast "player_#{uuid}", {action: 'turn', msg: response, is_your_turn:0}
     end
-    response # Для теста
   end
 
   private
@@ -82,5 +76,13 @@ class Game
     REDIS.del("opponent_for:#{pl_2}")
     REDIS.del("code_for:#{pl_1}")
     REDIS.del("code_for:#{pl_2}")
+  end
+
+  def self.crypt(guess, answer)
+    guess_arr = guess.split('')
+    answer_arr = answer.split('')
+    a = (answer_arr.select {|a| guess_arr.include? a}).size
+    b = (guess_arr.zip(answer_arr).map { |x, y| x == y }).inject(Hash.new(0)) { |total, e| total[e] += 1 ;total}[true]
+    "#{a}:#{b}"
   end
 end
