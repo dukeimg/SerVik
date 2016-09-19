@@ -42,7 +42,8 @@ class VirtualGame
   end
 
   def self.end_game(winner)
-    ActionCable.server.broadcast "player_#{winner}", {action: "end_game", win:1}
+    o_c = REDIS.get("virtual_opponent_code_for:#{winner}")
+    ActionCable.server.broadcast "player_#{winner}", {action: "end_game", win:1, opponent_code: o_c}
     self.clear_redis(winner)
   end
 
