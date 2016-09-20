@@ -56,8 +56,8 @@ class Game
       end_game(uuid)
     else
       response = crypt(guess, answer)
-      ActionCable.server.broadcast "player_#{opponent}", {action: 'turn', msg: response, is_your_turn:0, code: guess}
-      ActionCable.server.broadcast "player_#{uuid}", {action: 'turn', msg: response, is_your_turn:1, code: guess}
+      ActionCable.server.broadcast "player_#{opponent}", {action: 'turn', msg: response, is_your_turn:1, code: guess}
+      ActionCable.server.broadcast "player_#{uuid}", {action: 'turn', msg: response, is_your_turn:0, code: guess}
     end
   end
 
