@@ -4,14 +4,14 @@ class Game
   def self.set_code(uuid, data)
     REDIS.set("code_for:#{uuid}", data['msg'])
     if get_code(opponent_for(uuid))
-      start
+      start(uuid, opponent_for(uuid))
     end
   end
 
   # Старт игры
-  def self.start
-    ActionCable.server.broadcast "player_#{@player_1}", {action: "game_start", is_your_turn:1}
-    ActionCable.server.broadcast "player_#{@player_2}", {action: "game_start", is_your_turn:0}
+  def self.start(p_1, p_2)
+    ActionCable.server.broadcast "player_#{p_1}", {action: "game_start", is_your_turn:1}
+    ActionCable.server.broadcast "player_#{p_2}", {action: "game_start", is_your_turn:0}
   end
 
   # Конец игры
