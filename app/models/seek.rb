@@ -1,9 +1,9 @@
 class Seek
-  def self.create(uuid, data)
+  def initialize(uuid, data)
     filter = data.select {|key, value| value if data[key] != 0}
     if d = REDIS.hscan_each("seeks").detect {|u, d| d == (d || filter)}
       remove(d[0])
-      Game.init(uuid, d[0])
+      Game.new(uuid, d[0], filter)
       puts
     else
       REDIS.hset("seeks", uuid, data)

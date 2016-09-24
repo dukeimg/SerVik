@@ -1,14 +1,14 @@
 class Game
-  def self.init(uuid1, uuid2)
+
+  def initialize(uuid1, uuid2, params)
     @player_1, @player_2 = [uuid1, uuid2].shuffle
+    @params = params
 
     REDIS.set("opponent_for:#{@player_1}", @player_2)
     REDIS.set("opponent_for:#{@player_2}", @player_1)
 
     ActionCable.server.broadcast "player_#{@player_1}", {action: "waiting_for_code"}
     ActionCable.server.broadcast "player_#{@player_2}", {action: "waiting_for_code"}
-
-    true
   end
   
   def self.set_code(uuid, data)

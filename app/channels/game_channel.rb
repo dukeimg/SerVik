@@ -23,7 +23,7 @@ class GameChannel < ApplicationCable::Channel
 
   def seek(data)
     ActionCable.server.broadcast "player_#{uuid}", {action: "seek_started"}
-    Seek.create(uuid, data)
+    Seek.new(uuid, data)
   end
 
   def v_set_code(data)
