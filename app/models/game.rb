@@ -26,7 +26,7 @@ class Game
   # Игрок сдался. Оппонент получает об этом уведомление. База данных очищается
   def self.forfeit(uuid)
     if winner = opponent_for(uuid)
-      end_game(winner, uuid, 'opponent_forfeits')
+      end_game(winner, nil, 'opponent_forfeits')
     end
     self.clear_redis(uuid, winner)
   end
