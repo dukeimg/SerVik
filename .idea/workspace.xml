@@ -62,7 +62,7 @@
         <entry file="file://$PROJECT_DIR$/app/channels/application_cable/connection.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
-              <caret line="10" column="49" selection-start-line="10" selection-start-column="49" selection-end-line="10" selection-end-column="49" />
+              <caret line="10" column="86" selection-start-line="10" selection-start-column="86" selection-end-line="10" selection-end-column="86" />
               <folding />
             </state>
           </provider>
@@ -672,7 +672,7 @@
       <workItem from="1474387194735" duration="991000" />
       <workItem from="1474722965431" duration="350000" />
       <workItem from="1474728420700" duration="1276000" />
-      <workItem from="1474735284318" duration="6355000" />
+      <workItem from="1474735284318" duration="6468000" />
     </task>
     <task id="LOCAL-00001" summary="First server test">
       <created>1473525695510</created>
@@ -975,7 +975,14 @@
       <option name="project" value="LOCAL" />
       <updated>1474750395217</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="Случйано обернул переменную в кавычки :D">
+      <created>1474750582438</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1474750582438</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1011,7 +1018,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78492000" />
+    <option name="totallyTimeSpent" value="78605000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1855" height="1056" extended-state="6" />
@@ -1087,7 +1094,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="First server test" />
     <MESSAGE value="Production ACtionCable allowed origins &#10;" />
     <MESSAGE value="Sub msg" />
     <MESSAGE value="Debug message" />
@@ -1112,7 +1118,8 @@
     <MESSAGE value="Вывод количества игроков онлайн" />
     <MESSAGE value="Добавлены debug messages в консоль" />
     <MESSAGE value="Рефакторинг моделей&#10;Игрокни в сети изменены на players_online&#10;Комментарии к коду" />
-    <option name="LAST_COMMIT_MESSAGE" value="Рефакторинг моделей&#10;Игрокни в сети изменены на players_online&#10;Комментарии к коду" />
+    <MESSAGE value="Случйано обернул переменную в кавычки :D" />
+    <option name="LAST_COMMIT_MESSAGE" value="Случйано обернул переменную в кавычки :D" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1434,7 +1441,7 @@
     <entry file="file://$PROJECT_DIR$/app/channels/application_cable/connection.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
-          <caret line="10" column="49" selection-start-line="10" selection-start-column="49" selection-end-line="10" selection-end-column="49" />
+          <caret line="10" column="86" selection-start-line="10" selection-start-column="86" selection-end-line="10" selection-end-column="86" />
           <folding />
         </state>
       </provider>
