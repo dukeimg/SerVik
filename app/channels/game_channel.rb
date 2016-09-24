@@ -2,11 +2,13 @@
 class GameChannel < ApplicationCable::Channel
   def subscribed
     stream_from "player_#{uuid}"
+    ActionCable.server.broadcast('game', ActionCable.server.connections.size)
   end
 
   def unsubscribed
     Seek.remove(uuid)
     Game.opponent_disconnected(uuid)
+    ActionCable.server.broadcast('game', ActionCable.server.connections.size)
   end
 
   def set_code(data)
