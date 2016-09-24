@@ -5,7 +5,10 @@ class VirtualGame
 
   def self.set_code(uuid, data)
     REDIS.set("code_for:#{uuid}", data['msg'])
-    REDIS.set("virtual_opponent_code_for:#{uuid}", Random.rand(1000..9999).to_s)
+    rand_code = Random.rand(1000..9999).to_s
+    t = 4 - rand_code.size
+    code = '0' * t << rand_code
+    REDIS.set("virtual_opponent_code_for:#{uuid}", code)
     self.start(uuid)
   end
 
@@ -22,7 +25,7 @@ class VirtualGame
     answer = REDIS.get("virtual_opponent_code_for:#{uuid}")
 
     if guess == answer
-      end_game(uuid)
+      end_game(uuid, nil, 'code_is_guessed')
     else
       response = self.crypt(guess, answer)
       ActionCable.server.broadcast "player_#{uuid}", {action: 'turn', msg: response, is_your_turn:0, code: guess}
@@ -30,7 +33,7 @@ class VirtualGame
       ai_guess = Random.rand(0..9999)
       answer = REDIS.get("code_for:#{uuid}")
       if ai_guess == answer.to_i
-        end_game(uuid)
+        end_game(nil, uuid, 'code_is_guessed')
       else
         ai_guess = ai_guess.to_s
         t = 4 - ai_guess.size
@@ -41,10 +44,18 @@ class VirtualGame
     end
   end
 
-  def self.end_game(winner)
-    o_c = REDIS.get("virtual_opponent_code_for:#{winner}")
-    ActionCable.server.broadcast "player_#{winner}", {action: "end_game", win:1, opponent_code: o_c}
+  # Конец игры
+  def self.end_game(winner, loser, reason)
+    if loser
+      ActionCable.server.broadcast "player_#{loser}", {action: "end_game", win:0, opponent_code: get_code(winner), reason: reason}
+    end
+    ActionCable.server.broadcast "player_#{winner}", {action: "end_game", win:1,  opponent_code: get_code(loser), reason: reason}
     self.clear_redis(winner)
+  end
+
+  # Игрок сдался. Оппонент получает об этом уведомление. База данных очищается
+  def self.forfeit(uuid)
+
   end
 
   private
