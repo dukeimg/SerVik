@@ -3,8 +3,8 @@ class Seek
     filter = data.select {|key, value| value if data[key] != 0}
 
     # Temporal debug messages
-    logger.debug "data: #{data}"
-    logger.debug "filter: #{filter}"
+    puts "data: #{data}"
+    puts "filter: #{filter}"
 
     if d = REDIS.hscan_each("seeks").detect {|u, d| d == (d || filter)}
       remove(d[0])
