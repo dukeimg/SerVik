@@ -46,10 +46,11 @@ class VirtualGame
 
   # Конец игры
   def self.end_game(winner, loser, reason)
+    ai_code = REDIS.get("virtual_opponent_code_for:#{uuid}")
     if loser
-      ActionCable.server.broadcast "player_#{loser}", {action: "end_game", win:0, opponent_code: get_code(winner), reason: reason}
+      ActionCable.server.broadcast "player_#{loser}", {action: "end_game", win:0, opponent_code: ai_code, reason: reason}
     end
-    ActionCable.server.broadcast "player_#{winner}", {action: "end_game", win:1,  opponent_code: get_code(loser), reason: reason}
+    ActionCable.server.broadcast "player_#{winner}", {action: "end_game", win:1,  opponent_code: ai_code, reason: reason}
     self.clear_redis(winner)
   end
 
