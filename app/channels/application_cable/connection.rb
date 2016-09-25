@@ -7,13 +7,13 @@ module ApplicationCable
 
       players_online = ActionCable.server.connections.size
       transmit({"title": "players_online", "message": players_online})
-      puts players_online # debug
+      puts "Игроков в сети #{players_online}" # debug
     end
 
     def disconnect
       players_online = ActionCable.server.connections.size
       transmit({"title": "players_online", "message": players_online})
-      puts players_online # debug
+      puts "Игроков в сети #{players_online}" # debug
     end
   end
 end
