@@ -4,11 +4,16 @@ module ApplicationCable
 
     def connect
       self.uuid = SecureRandom.uuid
-      transmit({"title": "players_online", "message": ActionCable.server.connections.size})
+
+      players_online = ActionCable.server.connections.size
+      transmit({"title": "players_online", "message": players_online})
+      puts players_online # debug
     end
 
     def disconnect
-      transmit({"title": "players_online", "message": ActionCable.server.connections.size})
+      players_online = ActionCable.server.connections.size
+      transmit({"title": "players_online", "message": players_online})
+      puts players_online # debug
     end
   end
 end
