@@ -5,13 +5,13 @@ module ApplicationCable
     def connect
       self.uuid = SecureRandom.uuid
 
-      players_online = ActionCable.server.remote_connections.size
+      players_online = ActionCable.server.connections.size
       transmit({"title": "players_online", "message": players_online})
       puts "Игроков в сети #{players_online}" # debug
     end
 
     def disconnect
-      players_online = ActionCable.server.remote_connections.size
+      players_online = ActionCable.server.connections.size
       transmit({"title": "players_online", "message": players_online})
       puts "Игроков в сети #{players_online}" # debug
     end
