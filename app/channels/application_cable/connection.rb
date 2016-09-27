@@ -6,6 +6,7 @@ module ApplicationCable
       self.uuid = SecureRandom.uuid
 
       players_online = REDIS.get('players_online') || 0
+      players_online = players_online.to_i
       players_online += 1
       REDIS.set('players_online', players_online)
       transmit({'title': 'players_online', 'message': players_online})
@@ -13,7 +14,7 @@ module ApplicationCable
     end
 
     def disconnect
-      players_online = REDIS.get('players_online')
+      players_online = REDIS.get('players_online').to_i
       players_online -= 1
       REDIS.set('players_online', players_online)
       transmit({'title': 'players_online', 'message': players_online})
