@@ -19,6 +19,10 @@ module ApplicationCable
       REDIS.set('players_online', players_online)
       transmit({'title': 'players_online', 'message': players_online})
       puts "Игроков в сети #{players_online}" # debug
+
+      if Game.opponent_for(self.uuid)
+        Game.opponent_disconnected(uuid)
+      end
     end
   end
 end

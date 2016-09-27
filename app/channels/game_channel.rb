@@ -6,7 +6,6 @@ class GameChannel < ApplicationCable::Channel
 
   def unsubscribed
     Seek.remove(uuid)
-    Game.opponent_disconnected(uuid)
   end
 
   def set_code(data)
