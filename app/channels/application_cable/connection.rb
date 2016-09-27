@@ -21,7 +21,7 @@ module ApplicationCable
       puts "Игроков в сети #{players_online}" # debug
 
       if Game.opponent_for(self.uuid)
-        Game.opponent_disconnected(uuid)
+        Game.opponent_disconnected(self.uuid)
       end
     end
   end
