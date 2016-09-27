@@ -9,7 +9,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="34787232-a8da-4fc4-b117-f4225586c072" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/SerVik.iml" afterPath="$PROJECT_DIR$/.idea/SerVik.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/channels/application_cable/connection.rb" afterPath="$PROJECT_DIR$/app/channels/application_cable/connection.rb" />
     </list>
@@ -606,14 +605,7 @@
       <workItem from="1474752419556" duration="1365000" />
       <workItem from="1474798162511" duration="729000" />
       <workItem from="1474800153091" duration="3090000" />
-      <workItem from="1474986715047" duration="1687000" />
-    </task>
-    <task id="LOCAL-00003" summary="Sub msg">
-      <created>1473691512593</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1473691512593</updated>
+      <workItem from="1474986715047" duration="2538000" />
     </task>
     <task id="LOCAL-00004" summary="Sub msg">
       <created>1473691662713</created>
@@ -951,7 +943,14 @@
       <option name="project" value="LOCAL" />
       <updated>1474808136245</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="Новый алгоритм вывода игроков онлайн">
+      <created>1474989580560</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1474989580560</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -987,13 +986,13 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="86626000" />
+    <option name="totallyTimeSpent" value="87477000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1665" y="24" width="1855" height="1056" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20287451" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20287451" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1063,7 +1062,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Вернул нужный код" />
     <MESSAGE value="Virtual Game" />
     <MESSAGE value="Фильтры" />
     <MESSAGE value="Virtual game random g fix&#10;" />
@@ -1088,7 +1086,8 @@
     <MESSAGE value="Исправлена NoMethodError в VirtualGame.end_game" />
     <MESSAGE value="Добавлен вывод в консоль количества игроков и сети" />
     <MESSAGE value="Замена connections на remote_connections" />
-    <option name="LAST_COMMIT_MESSAGE" value="Замена connections на remote_connections" />
+    <MESSAGE value="Новый алгоритм вывода игроков онлайн" />
+    <option name="LAST_COMMIT_MESSAGE" value="Новый алгоритм вывода игроков онлайн" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
