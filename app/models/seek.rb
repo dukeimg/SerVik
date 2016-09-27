@@ -2,7 +2,7 @@ class Seek
   def initialize(uuid, data)
     filter = data['filter']
     if filter
-      init_seek_with_filters(uuid, filter)
+      init_seek_with_filters(uuid, data)
     else
       init_quick_game(uuid)
     end
@@ -28,7 +28,8 @@ class Seek
     end
   end
 
-  def init_seek_with_filters(uuid, filter)
+  def init_seek_with_filters(uuid, data)
+    filter = data['filter']
     active_filters = filter.select {|key, value| value if data[key] != 0} if data['filter'].exists? else ''
 
     # Temporal debug messages

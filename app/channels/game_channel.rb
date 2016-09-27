@@ -26,6 +26,11 @@ class GameChannel < ApplicationCable::Channel
     Seek.new(uuid, data)
   end
 
+  def get_rooms
+    seeks = REDIS.hgetall("seeks")
+    ActionCable.server.broadcast "player_#{uuid}", {title: "rooms", data: seeks}
+  end
+
   def v_set_code(data)
     VirtualGame.set_code(uuid, data)
   end
