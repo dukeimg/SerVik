@@ -10,7 +10,7 @@ module ApplicationCable
       players_online += 1
       REDIS.set('players_online', players_online)
       transmit({'title': 'players_online', 'message': players_online})
-      puts "Игроков в сети #{players_online}" # debug
+      logger.add_tags 'ActionCable', "Игроков в сети #{players_online}" # debug
     end
 
     def disconnect
