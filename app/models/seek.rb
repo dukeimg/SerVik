@@ -30,7 +30,8 @@ class Seek
 
   def init_seek_with_filters(uuid, data)
     filter = data['filter']
-    active_filters = filter.select {|key, value| value if data[key] != 0} if data['filter'].exists? else ''
+    # active_filters = filter.select {|key, value| value if data[key] != 0} if data['filter'].exists? else ''
+    active_filters = filter.select {|key, value| value if data[key] != 0} || ''
 
     # Temporal debug messages
     puts "data: #{data}"

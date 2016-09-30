@@ -8,9 +8,9 @@
     </enabled-run-configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="34787232-a8da-4fc4-b117-f4225586c072" name="Default" comment="Мне не понравился logger. Верну puts">
+    <list default="true" id="34787232-a8da-4fc4-b117-f4225586c072" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/virtual_game.rb" afterPath="$PROJECT_DIR$/app/models/virtual_game.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/seek.rb" afterPath="$PROJECT_DIR$/app/models/seek.rb" />
     </list>
     <ignored path="SerVik.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -69,7 +69,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="virtual_game.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="virtual_game.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/virtual_game.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="810">
@@ -79,11 +79,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="seek.rb" pinned="false" current-in-tab="false">
+      <file leaf-file-name="seek.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/models/seek.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="774">
-              <caret line="43" column="29" selection-start-line="43" selection-start-column="29" selection-end-line="43" selection-end-column="29" />
+            <state relative-caret-position="346">
+              <caret line="36" column="24" selection-start-line="36" selection-start-column="24" selection-end-line="36" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -152,11 +152,11 @@
         <option value="$PROJECT_DIR$/app/models/custom_game.rb" />
         <option value="$PROJECT_DIR$/app/models/quick_game.rb" />
         <option value="$PROJECT_DIR$/app/models/game.rb" />
-        <option value="$PROJECT_DIR$/app/models/seek.rb" />
         <option value="$PROJECT_DIR$/app/channels/game_channel.rb" />
         <option value="$PROJECT_DIR$/j.json" />
         <option value="$PROJECT_DIR$/app/channels/application_cable/connection.rb" />
         <option value="$PROJECT_DIR$/app/models/virtual_game.rb" />
+        <option value="$PROJECT_DIR$/app/models/seek.rb" />
       </list>
     </option>
   </component>
@@ -645,14 +645,7 @@
       <workItem from="1475156519951" duration="2661000" />
       <workItem from="1475166599640" duration="41000" />
       <workItem from="1475243779516" duration="1269000" />
-      <workItem from="1475245106610" duration="441000" />
-    </task>
-    <task id="LOCAL-00011" summary="Sub msg">
-      <created>1473695962564</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1473695962564</updated>
+      <workItem from="1475245106610" duration="894000" />
     </task>
     <task id="LOCAL-00012" summary="Sub msg">
       <created>1473696154614</created>
@@ -990,7 +983,14 @@
       <option name="project" value="LOCAL" />
       <updated>1475166631042</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="Исправления VitrualGame.end_game()">
+      <created>1475245574042</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1475245574042</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1026,13 +1026,13 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="95432000" />
+    <option name="totallyTimeSpent" value="95885000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1665" y="24" width="1855" height="1056" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21393035" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21393035" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1102,7 +1102,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Crypt fix и pages controller" />
     <MESSAGE value="Virtual Game responce fix" />
     <MESSAGE value="Ещё фиксы" />
     <MESSAGE value="Отправка кода" />
@@ -1127,7 +1126,8 @@
     <MESSAGE value="Добавлено debug message" />
     <MESSAGE value="Обновлено debug message" />
     <MESSAGE value="Мне не понравился logger. Верну puts" />
-    <option name="LAST_COMMIT_MESSAGE" value="Мне не понравился logger. Верну puts" />
+    <MESSAGE value="Исправления VitrualGame.end_game()" />
+    <option name="LAST_COMMIT_MESSAGE" value="Исправления VitrualGame.end_game()" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1404,14 +1404,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/seek.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="774">
-          <caret line="43" column="29" selection-start-line="43" selection-start-column="29" selection-end-line="43" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/j.json" />
     <entry file="file://$PROJECT_DIR$/app/channels/application_cable/channel.rb">
       <provider selected="true" editor-type-id="text-editor">
@@ -1441,6 +1433,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="810">
           <caret line="45" column="5" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/seek.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="346">
+          <caret line="36" column="24" selection-start-line="36" selection-start-column="24" selection-end-line="36" selection-end-column="24" />
           <folding />
         </state>
       </provider>
