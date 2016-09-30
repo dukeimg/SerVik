@@ -9,6 +9,7 @@ class VirtualGame
     t = 4 - rand_code.size
     code = '0' * t << rand_code
     REDIS.set("virtual_opponent_code_for:#{uuid}", code)
+    puts "AI_CODE #{code}"
     self.start(uuid)
   end
 
@@ -46,17 +47,12 @@ class VirtualGame
 
   # Конец игры
   def self.end_game(winner, loser, reason)
-    ai_code = REDIS.get("virtual_opponent_code_for:#{uuid}")
+    ai_code = REDIS.get("virtual_opponent_code_for:#{winner}") || nil
     if loser
       ActionCable.server.broadcast "player_#{loser}", {action: "end_game", win:0, opponent_code: ai_code, reason: reason}
     end
     ActionCable.server.broadcast "player_#{winner}", {action: "end_game", win:1,  opponent_code: ai_code, reason: reason}
     self.clear_redis(winner)
-  end
-
-  # Игрок сдался. Оппонент получает об этом уведомление. База данных очищается
-  def self.forfeit(uuid)
-
   end
 
   private
