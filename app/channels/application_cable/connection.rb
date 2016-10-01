@@ -13,7 +13,7 @@ module ApplicationCable
       dispatch_websocket_message("{\"title\": \"players_online\", \"message\": #{players_online}}")
       puts "Игроков в сети #{players_online}" # debug
       puts subscriptions
-      puts ActionCable.server.connections
+      ActionCable.server.connections.each {|c| puts c}
     end
 
     def disconnect
