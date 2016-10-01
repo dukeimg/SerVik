@@ -20,8 +20,8 @@ class Game
       ActionCable.server.broadcast "player_#{loser}", {action: "end_game", win:0, opponent_code: get_code(winner), reason: reason}
     end
     ActionCable.server.broadcast "player_#{winner}", {action: "end_game", win:1,  opponent_code: get_code(loser), reason: reason}
-    GameChannel.reject_subscription(winner)
-    GameChannel.reject_subscription(loser)
+    reject_subscription "player_#{winner}"
+    reject_subscription "player_#{loser}"
     self.clear_redis(winner, loser)
   end
 
