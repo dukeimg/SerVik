@@ -1,4 +1,3 @@
-%h1 SerVik
 -#%p
 -#  %i Примечание: я пока не делал валидацию
 -##messages
@@ -7,8 +6,23 @@
 -#  %input{:type => 'text', :id => 'code_field'}
 -#  %input{:type => 'submit', :id => 'code_submit'}
 -#%div
--#  %p Играть (пока не поиграть)
+-#  %p Играт  ь (пока не поиграть)
 -#  %input{:type => 'text', :id => 'guess_field'}
 -#  %input{:type => 'submit', :id => 'guess_submit'}
 -##player_turns
 -##opponent_turns
+%h1#roller ROLLER
+:javascript
+  App.createChannel();
+  $(document).ready(function() {
+    var elt         = document.getElementById("roller");
+    var texts       = ["AAAAAA", "CRYPTO"];
+    elt.textroller  = new TextRoller({
+      el: elt,
+      values: texts,    // an array of texts.     default : [el.innerHtml]
+      align: "right",
+      theme: 'default',
+      loop: false,     // at the end, restart.   default : true
+      delay: 0
+    });
+  })

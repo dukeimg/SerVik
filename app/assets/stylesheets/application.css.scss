@@ -15,3 +15,52 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.content {
+  background: linear-gradient(to bottom, #4CB8C4, #FFD194);
+  min-height: calc(100vh - 60px);
+  color: rgb(75, 75, 75);
+}
+
+a {
+  text-decoration: none !important;
+  cursor: pointer !important;
+}
+
+.navbar {
+  a {
+    color: white;
+    background: none;
+
+    &:hover {
+      color: #e1e1e1;
+      background: none !important;
+    }
+  }
+}
+
+footer {
+  background: rgb(75, 75, 75);
+  color: white;
+
+  .players, .footer-menu {
+    margin: 20px 0;
+  }
+
+
+  .footer-menu {
+
+    & > * {
+      padding-right: 10px;
+    }
+
+    a {
+      color: white;
+
+      &:hover {
+        color: #e1e1e1;
+      }
+    }
+  }
+
+}

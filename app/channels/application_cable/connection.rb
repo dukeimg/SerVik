@@ -4,16 +4,18 @@ module ApplicationCable
 
     def connect
       self.uuid = SecureRandom.uuid
-      transmit({'title': 'players_online', 'message': ActionCable.server.connections.size + 1})
+
+      msg = {"identifier":"{\"channel\":\"NotificationsChannel\"}","message":{"title":"players_online","message":ActionCable.server.connections.size + 1}}
+      transmit(msg)
       ActionCable.server.connections.each do |connection|
-        connection.transmit({'title': 'players_online', 'message': ActionCable.server.connections.size + 1})
+        connection.transmit(msg)
       end
     end
 
     def disconnect
-      transmit({'title': 'players_online', 'message': ActionCable.server.connections.size})
+      msg = {"identifier":"{\"channel\":\"NotificationsChannel\"}","message":{"title":"players_online","message":ActionCable.server.connections.size}}
       ActionCable.server.connections.each do |connection|
-        connection.transmit({'title': 'players_online', 'message': ActionCable.server.connections.size})
+        connection.transmit(msg)
       end
 
       if Game.opponent_for(self.uuid)
