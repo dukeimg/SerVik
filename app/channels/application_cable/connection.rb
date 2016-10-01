@@ -6,23 +6,11 @@ module ApplicationCable
       self.uuid = SecureRandom.uuid
 
       REDIS.sadd('players_online', uuid)
-      # puts 'Важно!!!'
-      # transmit({'title': 'players_online', 'message': '100500'})
-      # puts 'Важно!!!'
-      # puts transmit({'title': 'players_online', 'message': '100500'})
-      # ActionCable.server.broadcast "action_cable/#{uuid}", {title: 'players_online', message: '100500'}
-      # notify_players
-
-      puts ActionCable.server.connections.size
-      puts ActionCable.server.connections
-      ActionCable.server.connections.each do |connection|
-        puts connection
-        connection.transmit({'title': 'players_online', 'message': ActionCable.server.connections.size})
-      end
+      transmit({'title': 'players_online', 'message': ActionCable.server.connections.size + 1})
+      notify_players
     end
 
     def disconnect
-      REDIS.srem('players_online', uuid)
       notify_players
 
       if Game.opponent_for(self.uuid)
@@ -36,9 +24,9 @@ module ApplicationCable
     end
 
     def notify_players
-      players_online = REDIS.smembers('players_online')
-      players_online.each do |player|
-        transmit({'title': 'players_online', 'message': players_online.size})
+      ActionCable.server.connections.each do |connection|
+        puts connection
+        connection.transmit({'title': 'players_online', 'message': ActionCable.server.connections.size})
       end
     end
   end
