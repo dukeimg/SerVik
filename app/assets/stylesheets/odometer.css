@@ -98,4 +98,5 @@
 }
 .odometer-digit-spacer, .odometer-digit, .odometer-value, .odometer-last-value {
     width: calc(800px / 6);
+    color: white;
 }
