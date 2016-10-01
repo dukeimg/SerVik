@@ -6,11 +6,11 @@ module ApplicationCable
       self.uuid = SecureRandom.uuid
 
       REDIS.sadd('players_online', uuid)
-      puts 'Важно!!!'
-      transmit({'title': 'players_online', 'message': '100500'})
-      puts 'Важно!!!'
-      puts transmit({'title': 'players_online', 'message': '100500'})
-      ActionCable.server.broadcast "action_cable/#{uuid}", {title: 'players_online', message: '100500'}
+      # puts 'Важно!!!'
+      # transmit({'title': 'players_online', 'message': '100500'})
+      # puts 'Важно!!!'
+      # puts transmit({'title': 'players_online', 'message': '100500'})
+      # ActionCable.server.broadcast "action_cable/#{uuid}", {title: 'players_online', message: '100500'}
       notify_players
     end
 
