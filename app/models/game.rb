@@ -20,6 +20,8 @@ class Game
       ActionCable.server.broadcast "player_#{loser}", {action: "end_game", win:0, opponent_code: get_code(winner), reason: reason}
     end
     ActionCable.server.broadcast "player_#{winner}", {action: "end_game", win:1,  opponent_code: get_code(loser), reason: reason}
+    GameChannel.unsubscribe_from_channel(winner)
+    GameChannel.unsubscribe_from_channel(loser)
     self.clear_redis(winner, loser)
   end
 
@@ -29,7 +31,6 @@ class Game
       end_game(winner, nil, 'opponent_forfeits')
     end
     self.clear_redis(uuid, winner)
-    GameChannel.unsubscribe_from_channel
   end
 
   # Разрыв соединение. Если имееется оппонент, то ему присваеивается победа
