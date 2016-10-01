@@ -26,7 +26,7 @@ module ApplicationCable
     def notify_players
       players_online = REDIS.smembers('players_online')
       players_online.each do |player|
-        ActionCable.server.broadcast player, {title: 'players_online', message: players_online.size}
+        ActionCable.server.broadcast "action_cable/#{player}", {title: 'players_online', message: players_online.size}
       end
     end
   end
