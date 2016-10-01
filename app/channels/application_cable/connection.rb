@@ -4,17 +4,14 @@ module ApplicationCable
 
     def connect
       self.uuid = SecureRandom.uuid
-      @players = @players || []
 
       REDIS.sadd('players_online', uuid)
-      @players << uuid
       notify_players
     end
 
     def disconnect
       REDIS.srem('players_online', uuid)
       notify_players
-      @players.delete(uuid)
 
       if Game.opponent_for(self.uuid)
         Game.opponent_disconnected(self.uuid)
@@ -27,9 +24,9 @@ module ApplicationCable
     end
 
     def notify_players
-      # players_online = REDIS.smembers('players_online')
-      @players.each do |player|
-        ActionCable.server.pubsub.broadcast player, {title: 'players_online', message: @players.size}
+      players_online = REDIS.smembers('players_online')
+      players_online.each do |player|
+        ActionCable.server.broadcast 'action_cable', {title: 'players_online', message: players_online.size}
       end
     end
   end
