@@ -6,6 +6,7 @@ module ApplicationCable
       self.uuid = SecureRandom.uuid
 
       REDIS.sadd('players_online', uuid)
+      ActionCable.server.broadcast "action_cable/#{uuid}", {title: 'players_online', message: players_online.size}
       notify_players
     end
 
