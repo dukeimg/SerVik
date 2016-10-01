@@ -12,8 +12,7 @@ module ApplicationCable
       transmit({'title': 'players_online', 'message': players_online})
       dispatch_websocket_message("{\"title\": \"players_online\", \"message\": #{players_online}}")
       puts "Игроков в сети #{players_online}" # debug
-      puts subscriptions
-      ActionCable.server.connections.each {|c| puts c}
+      puts "ActionCable.server.connections.size == #{ActionCable.server.connections.size}"
     end
 
     def disconnect
