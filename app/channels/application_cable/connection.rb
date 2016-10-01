@@ -11,7 +11,12 @@ module ApplicationCable
       # puts 'Важно!!!'
       # puts transmit({'title': 'players_online', 'message': '100500'})
       # ActionCable.server.broadcast "action_cable/#{uuid}", {title: 'players_online', message: '100500'}
-      notify_players
+      # notify_players
+
+      ActionCable.server.connections.each do |connection|
+        puts connection
+        connection.transmit({'title': 'players_online', 'message': ActionCable.server.connections.size})
+      end
     end
 
     def disconnect
@@ -31,9 +36,8 @@ module ApplicationCable
     def notify_players
       players_online = REDIS.smembers('players_online')
       players_online.each do |player|
-        transmit identifier: player, message: {'title': 'players_online', 'message': players_online.size}
+        transmit({'title': 'players_online', 'message': players_online.size})
       end
-
     end
   end
 end
