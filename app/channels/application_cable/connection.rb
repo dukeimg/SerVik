@@ -10,7 +10,10 @@ module ApplicationCable
       players_online += 1
       REDIS.set('players_online', players_online)
       transmit({'title': 'players_online', 'message': players_online})
+      send_async :dispatch_websocket_message, {'title': 'players_online', 'message': players_online}
       puts "Игроков в сети #{players_online}" # debug
+      puts subscriptions
+      puts
     end
 
     def disconnect

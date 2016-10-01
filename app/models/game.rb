@@ -29,6 +29,7 @@ class Game
       end_game(winner, nil, 'opponent_forfeits')
     end
     self.clear_redis(uuid, winner)
+    GameChannel.unsubscribe_from_channel
   end
 
   # Разрыв соединение. Если имееется оппонент, то ему присваеивается победа
