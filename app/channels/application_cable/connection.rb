@@ -31,9 +31,7 @@ module ApplicationCable
     def notify_players
       players_online = REDIS.smembers('players_online')
       players_online.each do |player|
-        ActiveSupport::Notifications.instrument("transmit.action_cable", payload) do
-          connection.transmit identifier: player, message: {'title': 'players_online', 'message': players_online.size}
-        end
+        transmit identifier: player, message: {'title': 'players_online', 'message': players_online.size}
       end
 
     end
