@@ -1,10 +1,7 @@
 module ApplicationCable
   class Connection < ActionCable::Connection::Base
     identified_by :uuid
-
-    def initialize
-      @players = []
-    end
+    @players = []
 
     def connect
       self.uuid = SecureRandom.uuid
