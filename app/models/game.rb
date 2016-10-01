@@ -20,7 +20,8 @@ class Game
       ActionCable.server.broadcast "player_#{loser}", {action: "end_game", win:0, opponent_code: get_code(winner), reason: reason}
     end
     ActionCable.server.broadcast "player_#{winner}", {action: "end_game", win:1,  opponent_code: get_code(loser), reason: reason}
-    # ActionCable.server.remote_connections.where(uuid: winner).
+    GameChannel.reject_subscription(winner)
+    GameChannel.reject_subscription(loser)
     self.clear_redis(winner, loser)
   end
 

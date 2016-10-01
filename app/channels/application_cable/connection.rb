@@ -4,8 +4,6 @@ module ApplicationCable
 
     def connect
       self.uuid = SecureRandom.uuid
-
-      REDIS.sadd('players_online', uuid)
       transmit({'title': 'players_online', 'message': ActionCable.server.connections.size + 1})
       ActionCable.server.connections.each do |connection|
         connection.transmit({'title': 'players_online', 'message': ActionCable.server.connections.size + 1})
