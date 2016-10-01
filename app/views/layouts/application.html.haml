@@ -14,14 +14,17 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     %link{:rel => 'stylesheet', :href => 'https://fonts.googleapis.com/icon?family=Material+Icons'}
   %body
-    .mdl-layout.mdl-js-layout.mdl-layout--fixed-header
-      %header.mdl-layout__header
-        .mdl-layout__header-row
-          = link_to root_path, :class => 'mdl-navigation__link' do
-            %span.mdl-layout__title Servik
-          = link_to t('menu.about'), about_path, :class => 'mdl-navigation__link'
-          .mdl-layout-spacer
-          %nav.mdl-navigation
-            = link_to 'EN', {:locale => :en}, :class => 'mdl-navigation__link'
-            = link_to 'RU', {:locale => :ru}, :class => 'mdl-navigation__link'
-      = yield
+    %header
+      %nav.navbar.navbar-default
+        .container-fluid
+          .navbar-header
+            = link_to root_path, :class => 'navbar-brand' do
+              %span.mdl-layout__title Servik
+            = link_to t('menu.about'), about_path, :class => 'mdl-navigation__link'
+          .navbar-collapse.collapse
+            %ul.nav.navbar-nav
+              
+        %nav.mdl-navigation
+          = link_to 'EN', {:locale => :en}, :class => 'mdl-navigation__link'
+          = link_to 'RU', {:locale => :ru}, :class => 'mdl-navigation__link'
+    = yield
