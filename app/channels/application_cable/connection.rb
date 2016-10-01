@@ -13,6 +13,8 @@ module ApplicationCable
       # ActionCable.server.broadcast "action_cable/#{uuid}", {title: 'players_online', message: '100500'}
       # notify_players
 
+      puts ActionCable.server.connections.size
+      puts ActionCable.server.connections
       ActionCable.server.connections.each do |connection|
         puts connection
         connection.transmit({'title': 'players_online', 'message': ActionCable.server.connections.size})

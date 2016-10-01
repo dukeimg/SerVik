@@ -53,7 +53,7 @@
         <entry file="file://$PROJECT_DIR$/app/channels/application_cable/connection.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="288">
-              <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+              <caret line="16" column="41" selection-start-line="16" selection-start-column="41" selection-end-line="16" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -785,14 +785,7 @@
       <workItem from="1475166599640" duration="41000" />
       <workItem from="1475243779516" duration="1269000" />
       <workItem from="1475245106610" duration="929000" />
-      <workItem from="1475303221306" duration="11554000" />
-    </task>
-    <task id="LOCAL-00044" summary="Случйано обернул переменную в кавычки :D">
-      <created>1474750582438</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1474750582438</updated>
+      <workItem from="1475303221306" duration="11682000" />
     </task>
     <task id="LOCAL-00045" summary="Пора спать :P">
       <created>1474750685408</created>
@@ -1130,7 +1123,14 @@
       <option name="project" value="LOCAL" />
       <updated>1475314377644</updated>
     </task>
-    <option name="localTasksCounter" value="93" />
+    <task id="LOCAL-00093" summary="Дебаггерская хня">
+      <created>1475314908017</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1475314908018</updated>
+    </task>
+    <option name="localTasksCounter" value="94" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1166,7 +1166,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="107474000" />
+    <option name="totallyTimeSpent" value="107602000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1665" y="24" width="1855" height="1056" extended-state="6" />
@@ -1653,7 +1653,7 @@
     <entry file="file://$PROJECT_DIR$/app/channels/application_cable/connection.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
-          <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+          <caret line="16" column="41" selection-start-line="16" selection-start-column="41" selection-end-line="16" selection-end-column="41" />
           <folding />
         </state>
       </provider>
