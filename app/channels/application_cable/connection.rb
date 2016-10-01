@@ -32,7 +32,7 @@ module ApplicationCable
       players_online = REDIS.smembers('players_online')
       players_online.each do |player|
         ActiveSupport::Notifications.instrument("transmit.action_cable", payload) do
-          connection.transmit identifier: uuid, message: {'title': 'players_online', 'message': players_online.size}
+          connection.transmit identifier: player, message: {'title': 'players_online', 'message': players_online.size}
         end
       end
 
