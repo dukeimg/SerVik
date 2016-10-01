@@ -31,7 +31,7 @@ module ApplicationCable
     def notify_players
       players_online = REDIS.smembers('players_online')
       players_online.each do |player|
-        connection.transmit identifier: uuid, message: {'title': 'players_online', 'message': '100500'}
+        connection.transmit identifier: uuid, message: {'title': 'players_online', 'message': players_online.size}
       end
     end
   end
