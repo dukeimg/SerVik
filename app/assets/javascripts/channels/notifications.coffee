@@ -8,4 +8,5 @@ App.notifications = App.cable.subscriptions.create "NotificationsChannel",
   received: (data) ->
     switch data.title
       when 'players_online'
+        localStorage.setItem('players_online', data.message)
         $("#players-online").html(data.message)

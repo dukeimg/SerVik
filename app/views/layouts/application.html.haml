@@ -21,7 +21,7 @@
           .container-fluid
             .navbar-header
               = link_to root_path, :class => 'navbar-brand' do
-                %span.mdl-layout__title Servik
+                %span.mdl-layout__title CRYPTO
             .navbar-collapse.collapse
               %ul.nav.navbar-nav
                 %li
@@ -43,3 +43,5 @@
             %p.players
               Игроков в сети:
               %span#players-online
+            :javascript
+              $("#players-online").html(localStorage.getItem('players_online'));
