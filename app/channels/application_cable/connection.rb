@@ -1,10 +1,10 @@
 module ApplicationCable
   class Connection < ActionCable::Connection::Base
     identified_by :uuid
-    @players = []
 
     def connect
       self.uuid = SecureRandom.uuid
+      @players = @players || []
 
       REDIS.sadd('players_online', uuid)
       @players << uuid
