@@ -10,8 +10,9 @@
 -#  %input{:type => 'text', :id => 'guess_field'}
 -#  %input{:type => 'submit', :id => 'guess_submit'}
 -##player_turns
--##opponent_turns
-%h1#roller ROLLER
+-##opponent_turns'
+- content_for :title, 'Play'
+%h1#roller
 :javascript
   App.createChannel();
   $(document).ready(function() {
