@@ -37,7 +37,8 @@ Rails.application.configure do
   # Mount Action Cable outside main process or domain
   # config.action_cable.mount_path = nil
   config.web_socket_server_url = 'wss://servik.herokuapp.com/cable'
-  config.action_cable.allowed_request_origins = ['https://servik.herokuapp.com', 'http:servik.herokuapp.com', '*', 'http://0.0.0.0:3000']
+  config.action_cable.allowed_request_origins = ['https://servik.herokuapp.com', 'http://servik.herokuapp.com']
+  config.disable_request_forgery_protection = true
 
 
 

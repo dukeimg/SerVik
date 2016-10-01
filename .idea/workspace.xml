@@ -61,8 +61,8 @@
       <file leaf-file-name="production.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="702">
-              <caret line="39" column="136" selection-start-line="39" selection-start-column="136" selection-end-line="39" selection-end-column="136" />
+            <state relative-caret-position="720">
+              <caret line="40" column="50" selection-start-line="40" selection-start-column="2" selection-end-line="40" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -795,14 +795,7 @@
       <workItem from="1475245106610" duration="929000" />
       <workItem from="1475303221306" duration="16861000" />
       <workItem from="1475325284490" duration="1708000" />
-      <workItem from="1475337496781" duration="533000" />
-    </task>
-    <task id="LOCAL-00055" summary="NoMethodError fix">
-      <created>1474991296016</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1474991296016</updated>
+      <workItem from="1475337496781" duration="967000" />
     </task>
     <task id="LOCAL-00056" summary="action: get_rooms">
       <created>1474992975632</created>
@@ -1140,7 +1133,14 @@
       <option name="project" value="LOCAL" />
       <updated>1475337560513</updated>
     </task>
-    <option name="localTasksCounter" value="104" />
+    <task id="LOCAL-00104" summary="'http://0.0.0.0:3000'">
+      <created>1475338035605</created>
+      <option name="number" value="00104" />
+      <option name="presentableId" value="LOCAL-00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1475338035605</updated>
+    </task>
+    <option name="localTasksCounter" value="105" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1176,13 +1176,13 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="115022000" />
+    <option name="totallyTimeSpent" value="115456000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1855" height="1056" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22111663" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22111663" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1252,7 +1252,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Добавлен msg" />
     <MESSAGE value="Исправлен is_your_turn" />
     <MESSAGE value="Добвлены инициализаторы" />
     <MESSAGE value="Вывод количества игроков онлайн" />
@@ -1277,7 +1276,8 @@
     <MESSAGE value="Поправил forfeit" />
     <MESSAGE value="Reject subscription" />
     <MESSAGE value="Fix для Лёхи" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix для Лёхи" />
+    <MESSAGE value="'http://0.0.0.0:3000'" />
+    <option name="LAST_COMMIT_MESSAGE" value="'http://0.0.0.0:3000'" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1637,8 +1637,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="702">
-          <caret line="39" column="136" selection-start-line="39" selection-start-column="136" selection-end-line="39" selection-end-column="136" />
+        <state relative-caret-position="720">
+          <caret line="40" column="50" selection-start-line="40" selection-start-column="2" selection-end-line="40" selection-end-column="50" />
           <folding />
         </state>
       </provider>
