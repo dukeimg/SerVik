@@ -18,3 +18,14 @@
         .col-sm-6.col-sm-offset-3.download-icons
           = link_to '#' do
             = image_tag 'app-store.png', :title => t('download.app_store'), :alt => t('download.app_store'), :class => 'img-responsive'
+:javascript
+  new Swiper ('.swiper-container', {
+    direction: 'horizontal',
+    loop: true,
+    autoplay: 5000,
+    autoheight: true,
+    roundLenght: true,
+    keyboardControl: true,
+    grabCursor: true,
+    pagination: '.swiper-pagination'
+  });

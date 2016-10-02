@@ -23,8 +23,12 @@ en:
   hello: "Hello world"
   menu:
     about: 'about'
+    download: 'download'
   play:
     title: 'Play'
+    instant_game: 'Instant game'
+    my_game: 'Custom game'
+    download: 'Download'
   meta:
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eu nisl fringilla, egestas augue eget,
     imperdiet sapien. Cras vitae neque metus.'

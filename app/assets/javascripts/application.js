@@ -15,18 +15,3 @@
 //= require turbolinks
 //= require Swiper/dist/js/swiper.jquery.min.js
 //= require_tree .
-
-$(document).ready(function () {
-    //initialize swiper when document ready
-    var mySwiper = new Swiper ('.swiper-container', {
-        // Optional parameters
-        direction: 'horizontal',
-        loop: true,
-        autoplay: 5000,
-        autoheight: true,
-        roundLenght: true,
-        keyboardControl: true,
-        grabCursor: true,
-        pagination: '.swiper-pagination'
-    });
-});

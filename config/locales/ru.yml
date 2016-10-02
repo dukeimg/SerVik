@@ -1,8 +1,12 @@
 ru:
   menu:
     about: 'О проекте'
+    download: 'Загрузить'
   play:
     title: 'Играть в'
+    instant_game: 'Быстрая игра'
+    my_game: 'Моя игра'
+    download: 'Загрузить'
   meta:
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eu nisl fringilla, egestas augue eget,
     imperdiet sapien. Cras vitae neque metus.'
