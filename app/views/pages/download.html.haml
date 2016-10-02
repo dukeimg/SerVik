@@ -13,8 +13,10 @@
             .swiper-slide.slide-5
           .swiper-pagination
       .col-sm-6.zero-col.text-center
-        %h1 #{t('download.title')} CRYPTO
-        %p Сюда по желанию можно будет вставить немного текста
+        %h1= t('download.heading')
+        %p
+          %strike= t('download.subtext.one')
+          %span= t('download.subtext.two')
         .row
           .col-sm-6.col-sm-offset-3.download-icons
             = link_to '#' do

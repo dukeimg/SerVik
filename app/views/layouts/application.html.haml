@@ -18,14 +18,16 @@
     = yield
     %footer
       .container-fluid
-        .row
+        .row.hidden-xs
           .col-sm-6
             .footer-menu
               %span= "© #{Date.today.year} BlackBuild"
               = link_to t('menu.about'), about_path
-          .col-sm-6.text-right
+          .col-md-6.text-right
             %p.players
               #{t('players_online')}:
               %span#players-online
-            :javascript
-              $("#players-online").html(localStorage.getItem('players_online'));
+        .row.text-center.visible-xs
+          %p.players= "© #{Date.today.year} BlackBuild"
+    :javascript
+      $("#players-online").html(localStorage.getItem('players_online'));
