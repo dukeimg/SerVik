@@ -26,7 +26,8 @@ class GameChannel < ApplicationCable::Channel
   end
 
   def get_rooms(data)
-    seeks = REDIS.hgetall("seeks")
+    seeks = []
+    REDIS.hgetall("seeks").each_with_index {|(k,v), i| seeks[i] << (JSON.parse v.gsub('=>', ':')); seeks[i]['uuid'] = k}
     ActionCable.server.broadcast "player_#{uuid}", {title: "rooms", data: seeks.to_json}
   end
 
