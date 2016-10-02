@@ -26,6 +26,10 @@
 a {
   text-decoration: none !important;
   cursor: pointer !important;
+
+  &:hover, &:active, &:focus {
+    background: none !important;
+  }
 }
 
 .navbar {
@@ -35,7 +39,6 @@ a {
 
     &:hover {
       color: #e1e1e1;
-      background: none !important;
     }
   }
 }
@@ -47,7 +50,6 @@ a {
 
     &:hover {
       color: rgb(50, 50, 50);
-      background: none !important;
     }
   }
 }
