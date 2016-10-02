@@ -1,5 +1,7 @@
 require_relative 'boot'
 
+require "action_view"
+require "action_view/template/resolver"
 require "rails"
 # Pick the frameworks you want:
 require "active_model/railtie"

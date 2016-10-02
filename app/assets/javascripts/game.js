@@ -24,3 +24,21 @@ $(document).ready(function () {
         }
     });
 });
+
+
+var startSeek = function () {
+    console.log('start seek');
+    $('.menu > ul').fadeOut('slow', function () {
+        $('.loading-container').fadeIn('slow');
+        App.game.perform('seek');
+    })
+};
+
+var stopSeek = function () {
+    console.log('stop seek');
+    App.cable.disconnect();
+    $('.loading-container').fadeOut('slow', function () {
+        $('.menu > ul').fadeIn('slow');
+        App.cable.connect();
+    })
+};

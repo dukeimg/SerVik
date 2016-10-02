@@ -15,19 +15,3 @@
 //= require turbolinks
 //= require Swiper/dist/js/swiper.jquery.min.js
 //= require_tree .
-
-$(document).ready(function () {
-    $('#play-button').click(function () {
-        $('.menu > ul').fadeOut('slow', function () {
-            $('.loading-container').fadeIn('slow');
-            App.game.perform('seek');
-        })
-    });
-    $('#stop-search').click(function () {
-        App.cable.disconnect();
-        $('.loading-container').fadeOut('slow', function () {
-            $('.menu > ul').fadeIn('slow');
-            App.cable.connect();
-        })
-    })
-});
