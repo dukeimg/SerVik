@@ -42,7 +42,7 @@ class Seek
       CustomGame.new(uuid, d[0], filter)
       puts
     else
-      REDIS.hset("seeks", uuid, data)
+      REDIS.hset("seeks", uuid, filter)
     end
   end
 end
