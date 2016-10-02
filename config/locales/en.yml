@@ -29,3 +29,14 @@ en:
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eu nisl fringilla, egestas augue eget,
     imperdiet sapien. Cras vitae neque metus.'
   players_online: 'Players online'
+  download:
+    title: 'Download'
+    app_store: 'Download from the App Store'
+    lorem: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras venenatis ut nibh id efficitur. Vivamus tortor
+     mauris, congue ut tortor nec, dapibus vestibulum lorem. Integer euismod lectus nunc, eu aliquam metus aliquam nec.
+     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla aliquet orci nisi, eget auctor elit laoreet in.
+     Mauris a ullamcorper orci. Sed fermentum a nibh vel malesuada. Donec semper, ipsum eu ultricies aliquam, magna
+     turpis aliquet nunc, sit amet cursus lectus nunc non nisl. Nulla et maximus orci. Aliquam tincidunt eleifend
+     sollicitudin. Maecenas eu mi sed erat posuere condimentum eu consectetur ante. Vivamus nec pretium dolor. Aenean
+     imperdiet, sapien at accumsan porttitor, dui purus commodo risus, et rhoncus urna justo finibus magna. Ut id risus
+     mi. Ut vitae volutpat nisl, eu lacinia tortor.'

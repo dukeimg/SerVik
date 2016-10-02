@@ -21,7 +21,12 @@ $(document).ready(function () {
     var mySwiper = new Swiper ('.swiper-container', {
         // Optional parameters
         direction: 'horizontal',
-        loop: true
+        loop: true,
+        autoplay: 5000,
+        autoheight: true,
+        roundLenght: true,
+        keyboardControl: true,
+        grabCursor: true,
+        pagination: '.swiper-pagination'
     });
-    console.log(mySwiper);
 });

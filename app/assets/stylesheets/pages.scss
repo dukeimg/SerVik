@@ -2,6 +2,20 @@
 // They will automatically be included in application.css.scss.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .swiper-container {
-  width: 600px;
-  height: 300px;
+  width: 281px;
+  height: 500px;
+  margin-top: 20px !important;
 }
+
+@for $i from 1 through 5 {
+  .slide-#{$i} {
+    width: 1248px;
+    height: 2209px;
+    background: url('screenshot #{$i}.jpg') center / cover;
+  }
+}
+
+.download-icons {
+  padding-top: 20px;
+}
+
