@@ -40,6 +40,18 @@ a {
   }
 }
 
+.navbar-reversed {
+  a {
+    color: rgb(75, 75, 75);
+    background: none;
+
+    &:hover {
+      color: rgb(50, 50, 50);
+      background: none !important;
+    }
+  }
+}
+
 footer {
   background: rgb(75, 75, 75);
   color: white;

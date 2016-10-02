@@ -12,17 +12,27 @@
 -##player_turns
 -##opponent_turns'
 - content_for :title, t('play.title')
-.container.welcome
-  .row
-    %h1#roller
-  .row.menu
-    %ul
-      %li
-        = link_to t('play.instant_game'), '', 'onclick' => 'return false'
-      %li
-        = link_to t('play.my_game'), download_path
-      %li
-        = link_to t('play.download'), download_path
+.content
+  = render('layouts/header')
+  .container.welcome
+    .row
+      %h1#roller
+    .row.menu
+      %ul
+        %li
+          = link_to t('play.instant_game'), '', 'onclick' => 'return false', :id => 'play-button'
+        %li
+          = link_to t('play.my_game'), download_path
+        %li
+          = link_to t('play.download'), download_path
+      .loading-container
+        .text-center
+          %p= t('play.searching_for_players')
+          .spinner
+            .bounce1
+            .bounce2
+            .bounce3
+          %button#stop-search{:class => 'btn btn-danger'}= t('cancel')
 :javascript
   App.createChannel();
   $(document).ready(function() {

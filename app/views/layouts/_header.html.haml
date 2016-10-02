@@ -1,0 +1,17 @@
+%header
+  %nav.navbar
+    .container-fluid
+      .navbar-header
+        = link_to root_path, :class => 'navbar-brand' do
+          %span.mdl-layout__title CRYPTO
+      .navbar-collapse.collapse
+        %ul.nav.navbar-nav
+          %li
+            = link_to t('menu.about'), about_path, :class => 'mdl-navigation__link'
+          %li
+            = link_to t('menu.download'), download_path, :class => 'mdl-navigation__link'
+        %ul.nav.navbar-nav.navbar-right
+          %li
+            = link_to 'EN', {:locale => :en}, :class => 'mdl-navigation__link'
+          %li
+            = link_to 'RU', {:locale => :ru}, :class => 'mdl-navigation__link'

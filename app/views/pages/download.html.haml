@@ -1,23 +1,34 @@
 - content_for :title, t('download.title')
-.container
-  .row
-    .col-sm-6
-      .swiper-container
-        .swiper-wrapper
-          .swiper-slide.slide-1
-          .swiper-slide.slide-2
-          .swiper-slide.slide-3
-          .swiper-slide.slide-4
-          .swiper-slide.slide-5
-        .swiper-pagination
-    .col-sm-6
-      %h1 #{t('download.title')} CRYPTO
-      %p
-        = t('download.lorem')
-      .row
-        .col-sm-6.col-sm-offset-3.download-icons
-          = link_to '#' do
-            = image_tag 'app-store.png', :title => t('download.app_store'), :alt => t('download.app_store'), :class => 'img-responsive'
+= render('layouts/header_reversed')
+%section.zero
+  .container
+    .row
+      .col-sm-6
+        .swiper-container
+          .swiper-wrapper
+            .swiper-slide.slide-1
+            .swiper-slide.slide-2
+            .swiper-slide.slide-3
+            .swiper-slide.slide-4
+            .swiper-slide.slide-5
+          .swiper-pagination
+      .col-sm-6.zero-col.text-center
+        %h1 #{t('download.title')} CRYPTO
+        %p Сюда по желанию можно будет вставить немного текста
+        .row
+          .col-sm-6.col-sm-offset-3.download-icons
+            = link_to '#' do
+              = image_tag 'app-store.png',
+              :title => t('download.app_store'),
+              :alt => t('download.app_store'),
+              :width => 250
+%section.one
+  .container
+    .arrow-wrapper
+      .arrow-down
+    .row
+      .text-center
+        %p Я не знаю, что сюда написать
 :javascript
   new Swiper ('.swiper-container', {
     direction: 'horizontal',

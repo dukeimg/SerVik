@@ -1,11 +1,9 @@
 App.createChannel = ->
   App.game = App.cable.subscriptions.create "GameChannel",
     connected: ->
-      @printMessage("Подкючен. Поиск оппонента")
-      # App.game.perform('seek', {'mode': 'tb', 'time_limit': 0, 'turn_limit': 0, 'turn_time_limit': 0})
 
     disconnected: ->
-      @printMessage("Отключен")
+
 
     received: (data) ->
       switch data.action
@@ -22,6 +20,8 @@ App.createChannel = ->
           if data.is_your_turn
             msg = 'Ваш ход'
           @printMessage("Игра началась #{msg}")
+        when 'waiting_for_code'
+          console.log('waiting for code')
 
 
     printMessage: (message) ->
