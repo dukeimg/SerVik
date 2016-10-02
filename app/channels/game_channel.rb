@@ -26,9 +26,14 @@ class GameChannel < ApplicationCable::Channel
   end
 
   def get_rooms(data)
-    seeks = []
-    REDIS.hgetall("seeks").each_with_index {|(k,v), i| seeks[i] << (JSON.parse v.gsub('=>', ':')); seeks[i]['uuid'] = k}
-    ActionCable.server.broadcast "player_#{uuid}", {title: "rooms", data: seeks.to_json}
+    h_seeks = REDIS.hgetall("seeks")
+    if h_seeks
+      seeks = []
+      h_seeks.each_with_index {|(k,v), i| seeks[i] = (JSON.parse v.gsub('=>', ':')); seeks[i]['uuid'] = k}
+      ActionCable.server.broadcast "player_#{uuid}", {title: "rooms", data: seeks.to_json}
+    else
+      ActionCable.server.broadcast "player_#{uuid}", {title: "rooms", data: {}}
+    end
   end
 
   def v_set_code(data)

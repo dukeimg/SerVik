@@ -37,7 +37,7 @@ class Seek
     puts "data: #{data}"
     puts "filter: #{filter}"
 
-    REDIS.hset("seeks", uuid, data)
+    REDIS.hset("seeks", uuid, filter)
 
 
 
