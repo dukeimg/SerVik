@@ -41,7 +41,7 @@
               = link_to t('menu.about'), about_path, :class => 'mdl-navigation__link'
           .col-sm-6.text-right
             %p.players
-              Игроков в сети:
+              #{t('players_online')}:
               %span#players-online
             :javascript
               $("#players-online").html(localStorage.getItem('players_online'));

@@ -25,9 +25,9 @@ class GameChannel < ApplicationCable::Channel
     Seek.new(uuid, data)
   end
 
-  def get_rooms
+  def get_rooms(data)
     seeks = REDIS.hgetall("seeks")
-    ActionCable.server.broadcast "player_#{uuid}", {title: "rooms", data: seeks}
+    ActionCable.server.broadcast "player_#{uuid}", {title: "rooms", data: seeks.to_json}
   end
 
   def v_set_code(data)

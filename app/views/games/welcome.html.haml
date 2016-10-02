@@ -11,8 +11,18 @@
 -#  %input{:type => 'submit', :id => 'guess_submit'}
 -##player_turns
 -##opponent_turns'
-- content_for :title, 'Play'
-%h1#roller
+- content_for :title, t('play.title')
+.container.welcome
+  .row
+    %h1#roller
+  .row.menu
+    %ul
+      %li
+        = link_to t('play.instant_game'), '', 'onclick' => 'return false'
+      %li
+        = link_to t('play.my_game'), download_path
+      %li
+        = link_to t('play.download'), download_path
 :javascript
   App.createChannel();
   $(document).ready(function() {
