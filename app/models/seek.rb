@@ -18,6 +18,16 @@ class Seek
     REDIS.del('q_seeks')
   end
 
+  def self.connect(uuid, data)
+    opponent = REDIS.hget('seeks', data.uuid)
+    if opponent
+      REDIS.hdel('seeks', data.uuid)
+      CustomGame.new(uuid, d[0], active_filters || d[1])
+    else
+      ActionCable.server.broadcast "player_#{uuid}", {action: 'connection_error', reason: 'room_does_not_exist'}
+    end
+  end
+
   private
 
   def init_quick_game(uuid)
@@ -45,6 +55,17 @@ class Seek
       end
     else
       REDIS.hset("seeks", uuid, filter)
+    end
+  end
+
+  def get_rooms
+    h_seeks = REDIS.hgetall("seeks")
+    if h_seeks
+      seeks = []
+      h_seeks.each_with_index {|(k,v), i| seeks[i] = (JSON.parse v.gsub('=>', ':')); seeks[i]['uuid'] = k}
+      ActionCable.server.broadcast 'GameChannel', {title: 'rooms', data: seeks.to_json}
+    else
+      ActionCable.server.broadcast 'GameChannel', {title: 'rooms', data: {}}
     end
   end
 end
