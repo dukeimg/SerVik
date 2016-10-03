@@ -65,9 +65,12 @@ class Seek
     if h_seeks
       seeks = []
       h_seeks.each_with_index {|(k,v), i| seeks[i] = (JSON.parse v.gsub('=>', ':')); seeks[i]['uuid'] = k}
-      ActionCable.server.broadcast 'GameChannel', {title: 'rooms', data: seeks.to_json}
+      msg = {"identifier":"{\"channel\":\"GameChannel\"}","message":{title: 'rooms', data: seeks.to_json}}
     else
-      ActionCable.server.broadcast 'GameChannel', {title: 'rooms', data: {}}
+      msg = {"identifier":"{\"channel\":\"GameChannel\"}","message":{title: 'rooms', data: {}}}
+    end
+    ActionCable.server.connections.each do |connection|
+      connection.transmit(msg)
     end
   end
 end
