@@ -38,9 +38,10 @@ class Seek
     else
       ActionCable.server.broadcast "player_#{uuid}", {action: 'connection_error', reason: 'room_does_not_exist'}
     end
-    rooms = get_rooms
-    send_rooms_data(rooms)
+    send_rooms_data
   end
+
+  private
 
 
   def init_quick_game(uuid)
@@ -69,12 +70,12 @@ class Seek
     else
       REDIS.hset("seeks", uuid, filter)
     end
-    rooms = get_rooms
-    send_rooms_data(rooms)
+    send_rooms_data
   end
 
 
-  def send_rooms_data(msg)
+  def send_rooms_data
+    msg = get_rooms
     ActionCable.server.connections.each do |connection|
       connection.transmit({"identifier":"{\"channel\":\"GameChannel\"}","message": msg})
     end
