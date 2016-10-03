@@ -40,7 +40,7 @@ class Seek
       REDIS.hdel('seeks', d[0])
       CustomGame.new(uuid, d[0], active_filters || d[1])
     else
-      REDIS.hset("seeks", uuid, data)
+      REDIS.hset("seeks", uuid, filter)
     end
   end
 end
