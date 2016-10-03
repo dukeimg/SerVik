@@ -26,7 +26,19 @@ class Seek
     else
       ActionCable.server.broadcast "player_#{uuid}", {action: 'connection_error', reason: 'room_does_not_exist'}
     end
-    get_rooms
+    send_rooms_data(get_rooms)
+  end
+
+  def get_rooms
+    h_seeks = REDIS.hgetall("seeks")
+    if h_seeks
+      seeks = []
+      h_seeks.each_with_index {|(k,v), i| seeks[i] = (JSON.parse v.gsub('=>', ':')); seeks[i]['uuid'] = k}
+      msg = {"identifier":"{\"channel\":\"GameChannel\"}","message":{title: 'rooms', data: seeks.to_json}}
+    else
+      msg = {"identifier":"{\"channel\":\"GameChannel\"}","message":{title: 'rooms', data: {}}}
+    end
+    return msg
   end
 
   private
@@ -57,18 +69,11 @@ class Seek
     else
       REDIS.hset("seeks", uuid, filter)
     end
-    get_rooms
+    send_rooms_data(get_rooms)
   end
 
-  def get_rooms
-    h_seeks = REDIS.hgetall("seeks")
-    if h_seeks
-      seeks = []
-      h_seeks.each_with_index {|(k,v), i| seeks[i] = (JSON.parse v.gsub('=>', ':')); seeks[i]['uuid'] = k}
-      msg = {"identifier":"{\"channel\":\"GameChannel\"}","message":{title: 'rooms', data: seeks.to_json}}
-    else
-      msg = {"identifier":"{\"channel\":\"GameChannel\"}","message":{title: 'rooms', data: {}}}
-    end
+
+  def send_rooms_data(msg)
     ActionCable.server.connections.each do |connection|
       connection.transmit(msg)
     end
