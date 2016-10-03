@@ -18,18 +18,7 @@ class Seek
     REDIS.del('q_seeks')
   end
 
-  def self.connect(uuid, data)
-    opponent = REDIS.hget('seeks', data.uuid)
-    if opponent
-      REDIS.hdel('seeks', data.uuid)
-      CustomGame.new(uuid, d[0], active_filters || d[1])
-    else
-      ActionCable.server.broadcast "player_#{uuid}", {action: 'connection_error', reason: 'room_does_not_exist'}
-    end
-    send_rooms_data(get_rooms)
-  end
-
-  def get_rooms
+  def self.get_rooms
     h_seeks = REDIS.hgetall("seeks")
     if h_seeks
       seeks = []
@@ -40,6 +29,19 @@ class Seek
     end
     msg
   end
+
+  def self.connect(uuid, data)
+    opponent = REDIS.hget('seeks', data.uuid)
+    if opponent
+      REDIS.hdel('seeks', data.uuid)
+      CustomGame.new(uuid, d[0], active_filters || d[1])
+    else
+      ActionCable.server.broadcast "player_#{uuid}", {action: 'connection_error', reason: 'room_does_not_exist'}
+    end
+    rooms = get_rooms
+    send_rooms_data(rooms)
+  end
+
 
   def init_quick_game(uuid)
     if opponent = REDIS.spop("q_seeks")
@@ -67,13 +69,14 @@ class Seek
     else
       REDIS.hset("seeks", uuid, filter)
     end
-    send_rooms_data(get_rooms)
+    rooms = get_rooms
+    send_rooms_data(rooms)
   end
 
 
   def send_rooms_data(msg)
     ActionCable.server.connections.each do |connection|
-      connection.transmit({"identifier":"{\"channel\":\"GameChannel\"}","message":msg})
+      connection.transmit({"identifier":"{\"channel\":\"GameChannel\"}","message": msg})
     end
   end
 end

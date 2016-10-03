@@ -2,7 +2,8 @@
 class GameChannel < ApplicationCable::Channel
   def subscribed
     stream_from "player_#{uuid}"
-    ActionCable.server.broadcast "player_#{uuid}", Seek.get_rooms
+    rooms = Seek.get_rooms
+    ActionCable.server.broadcast "player_#{uuid}", rooms
   end
 
   def unsubscribed
