@@ -30,23 +30,18 @@ class Seek
 
   def init_seek_with_filters(uuid, data)
     filter = data['filter']
-    # active_filters = filter.select {|key, value| value if data[key] != 0} if data['filter'].exists? else ''
-    # active_filters = filter.select {|key, value| value if data[key] != 0} || ''
+    active_filters = filter.select {|key, value| value if filter[key] != 0} || ''
 
     # Temporal debug messages
     puts "data: #{data}"
     puts "filter: #{filter}"
 
-    REDIS.hset("seeks", uuid, filter)
-
-
-
-    # if d = REDIS.hscan_each("seeks").detect {|u, d| d == (d || active_filters)}
-    #   remove(d[0])
-    #   CustomGame.new(uuid, d[0], filter)
-    #   puts
-    # else
-    #   REDIS.hset("seeks", uuid, data)
-    # end
+    if d = REDIS.hscan_each("seeks").detect {|u, d| d == (d || active_filters)}
+      remove(d[0])
+      CustomGame.new(uuid, d[0], active_filters || d[1])
+      puts
+    else
+      REDIS.hset("seeks", uuid, data)
+    end
   end
 end
