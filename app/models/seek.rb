@@ -29,16 +29,16 @@ class Seek
     send_rooms_data(get_rooms)
   end
 
-  def get_rooms
+  def self.get_rooms
     h_seeks = REDIS.hgetall("seeks")
     if h_seeks
       seeks = []
       h_seeks.each_with_index {|(k,v), i| seeks[i] = (JSON.parse v.gsub('=>', ':')); seeks[i]['uuid'] = k}
-      msg = {"identifier":"{\"channel\":\"GameChannel\"}","message":{title: 'rooms', data: seeks.to_json}}
+      msg = {title: 'rooms', data: seeks.to_json}
     else
-      msg = {"identifier":"{\"channel\":\"GameChannel\"}","message":{title: 'rooms', data: {}}}
+      msg = {title: 'rooms', data: {}}
     end
-    return msg
+    msg
   end
 
   private
@@ -75,7 +75,7 @@ class Seek
 
   def send_rooms_data(msg)
     ActionCable.server.connections.each do |connection|
-      connection.transmit(msg)
+      connection.transmit({"identifier":"{\"channel\":\"GameChannel\"}","message":msg})
     end
   end
 end

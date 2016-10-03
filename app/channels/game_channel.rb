@@ -2,7 +2,7 @@
 class GameChannel < ApplicationCable::Channel
   def subscribed
     stream_from "player_#{uuid}"
-    connection.transmit(Seek.get_rooms)
+    ActionCable.server.broadcast "player_#{uuid}", Seek.get_rooms
   end
 
   def unsubscribed
