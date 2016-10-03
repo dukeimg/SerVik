@@ -8,17 +8,17 @@ class Seek
     end
   end
 
-  def remove(uuid)
+  def self.remove(uuid)
     REDIS.hdel("seeks", uuid)
     REDIS.srem('q_seeks', uuid)
   end
 
-  def clear_all
+  def self.clear_all
     REDIS.del("seeks")
     REDIS.del('q_seeks')
   end
 
-  def get_rooms
+  def self.get_rooms
     h_seeks = REDIS.hgetall("seeks")
     if h_seeks
       seeks = []
@@ -30,7 +30,7 @@ class Seek
     msg
   end
 
-  def connect(uuid, data)
+  def self.connect(uuid, data)
     opponent = REDIS.hget('seeks', data.uuid)
     if opponent
       REDIS.hdel('seeks', data.uuid)
@@ -44,7 +44,7 @@ class Seek
   private
 
 
-  def init_quick_game(uuid)
+  def self.init_quick_game(uuid)
     if opponent = REDIS.spop("q_seeks")
       QuickGame.new(uuid, opponent)
     else
@@ -52,7 +52,7 @@ class Seek
     end
   end
 
-  def init_seek_with_filters(uuid, data)
+  def self.init_seek_with_filters(uuid, data)
     filter = data['filter']
     active_filters = filter.select {|key, value| value if filter[key] != 0} || ''
 
@@ -74,7 +74,7 @@ class Seek
   end
 
 
-  def send_rooms_data
+  def self.send_rooms_data
     msg = get_rooms
     ActionCable.server.connections.each do |connection|
       connection.transmit({"identifier":"{\"channel\":\"GameChannel\"}","message": msg})
