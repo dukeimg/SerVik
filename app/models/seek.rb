@@ -37,8 +37,12 @@ class Seek
     puts "filter: #{filter}"
 
     if d = REDIS.hscan_each("seeks").detect {|u, d| d == (d || active_filters)}
-      REDIS.hdel('seeks', d[0])
-      CustomGame.new(uuid, d[0], active_filters || d[1])
+      if d[0] == uuid
+        REDIS.hset("seeks", uuid, filter)
+      else
+        REDIS.hdel('seeks', d[0])
+        CustomGame.new(uuid, d[0], active_filters || d[1])
+      end
     else
       REDIS.hset("seeks", uuid, filter)
     end
