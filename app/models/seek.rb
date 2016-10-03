@@ -77,6 +77,7 @@ class Seek
   def send_rooms_data
     msg = Seek.get_rooms
     ActionCable.server.connections.each do |connection|
+      puts "Broadcasting rooms to #{uuid}"
       connection.transmit({"identifier":"{\"channel\":\"GameChannel\"}","message": msg})
     end
   end
