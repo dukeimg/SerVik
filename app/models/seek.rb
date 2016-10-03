@@ -41,8 +41,6 @@ class Seek
     msg
   end
 
-  private
-
   def init_quick_game(uuid)
     if opponent = REDIS.spop("q_seeks")
       QuickGame.new(uuid, opponent)
