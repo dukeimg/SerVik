@@ -11,7 +11,6 @@
     <list default="true" id="34787232-a8da-4fc4-b117-f4225586c072" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/channels/game_channel.rb" afterPath="$PROJECT_DIR$/app/channels/game_channel.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/seek.rb" afterPath="$PROJECT_DIR$/app/models/seek.rb" />
     </list>
     <ignored path="SerVik.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -53,8 +52,8 @@
       <file leaf-file-name="game_channel.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/channels/game_channel.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
+            <state relative-caret-position="72">
+              <caret line="4" column="39" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -221,8 +220,8 @@
         <option value="$PROJECT_DIR$/config/locales/en.yml" />
         <option value="$PROJECT_DIR$/app/controllers/application_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.haml" />
-        <option value="$PROJECT_DIR$/app/channels/game_channel.rb" />
         <option value="$PROJECT_DIR$/app/models/seek.rb" />
+        <option value="$PROJECT_DIR$/app/channels/game_channel.rb" />
       </list>
     </option>
   </component>
@@ -705,14 +704,7 @@
       <workItem from="1475423518691" duration="8075000" />
       <workItem from="1475432276528" duration="3464000" />
       <workItem from="1475439075534" duration="1502000" />
-      <workItem from="1475504032352" duration="5720000" />
-    </task>
-    <task id="LOCAL-00083" summary="Дебаггерская хня">
-      <created>1475313208728</created>
-      <option name="number" value="00083" />
-      <option name="presentableId" value="LOCAL-00083" />
-      <option name="project" value="LOCAL" />
-      <updated>1475313208728</updated>
+      <workItem from="1475504032352" duration="5852000" />
     </task>
     <task id="LOCAL-00084" summary="Дебаггерская хня">
       <created>1475313416944</created>
@@ -1050,7 +1042,14 @@
       <option name="project" value="LOCAL" />
       <updated>1475511154631</updated>
     </task>
-    <option name="localTasksCounter" value="132" />
+    <task id="LOCAL-00132" summary="Новый Seek с фильтрами">
+      <created>1475511545110</created>
+      <option name="number" value="00132" />
+      <option name="presentableId" value="LOCAL-00132" />
+      <option name="project" value="LOCAL" />
+      <updated>1475511545110</updated>
+    </task>
+    <option name="localTasksCounter" value="133" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1086,13 +1085,13 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="168307000" />
+    <option name="totallyTimeSpent" value="168439000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1665" y="24" width="1855" height="1056" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19955777" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19955777" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1556,8 +1555,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/channels/game_channel.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
+        <state relative-caret-position="72">
+          <caret line="4" column="39" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
           <folding />
         </state>
       </provider>
