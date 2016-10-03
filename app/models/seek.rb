@@ -8,17 +8,17 @@ class Seek
     end
   end
 
-  def self.remove(uuid)
+  def remove(uuid)
     REDIS.hdel("seeks", uuid)
     REDIS.srem('q_seeks', uuid)
   end
 
-  def self.clear_all
+  def clear_all
     REDIS.del("seeks")
     REDIS.del('q_seeks')
   end
 
-  def self.get_rooms
+  def get_rooms
     h_seeks = REDIS.hgetall("seeks")
     if h_seeks
       seeks = []
@@ -30,7 +30,7 @@ class Seek
     msg
   end
 
-  def self.connect(uuid, data)
+  def connect(uuid, data)
     opponent = REDIS.hget('seeks', data.uuid)
     if opponent
       REDIS.hdel('seeks', data.uuid)
