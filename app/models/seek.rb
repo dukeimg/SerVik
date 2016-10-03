@@ -26,6 +26,7 @@ class Seek
     else
       ActionCable.server.broadcast "player_#{uuid}", {action: 'connection_error', reason: 'room_does_not_exist'}
     end
+    get_rooms
   end
 
   private
@@ -56,6 +57,7 @@ class Seek
     else
       REDIS.hset("seeks", uuid, filter)
     end
+    get_rooms
   end
 
   def get_rooms
