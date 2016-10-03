@@ -29,7 +29,7 @@ class Seek
     send_rooms_data(get_rooms)
   end
 
-  def get_rooms
+  def self.get_rooms
     h_seeks = REDIS.hgetall("seeks")
     if h_seeks
       seeks = []
