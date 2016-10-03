@@ -61,8 +61,8 @@
       <file leaf-file-name="seek.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/models/seek.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="80" column="0" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
+            <state relative-caret-position="296">
+              <caret line="72" column="19" selection-start-line="72" selection-start-column="19" selection-end-line="72" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -693,14 +693,7 @@
       <workItem from="1475439075534" duration="1502000" />
       <workItem from="1475504032352" duration="6837000" />
       <workItem from="1475522997308" duration="1521000" />
-      <workItem from="1475525538414" duration="2943000" />
-    </task>
-    <task id="LOCAL-00096" summary="Дебаггерская хня">
-      <created>1475315536718</created>
-      <option name="number" value="00096" />
-      <option name="presentableId" value="LOCAL-00096" />
-      <option name="project" value="LOCAL" />
-      <updated>1475315536718</updated>
+      <workItem from="1475525538414" duration="3074000" />
     </task>
     <task id="LOCAL-00097" summary="Поправил forfeit">
       <created>1475315900286</created>
@@ -1038,7 +1031,14 @@
       <option name="project" value="LOCAL" />
       <updated>1475528167949</updated>
     </task>
-    <option name="localTasksCounter" value="145" />
+    <task id="LOCAL-00145" summary="Добавил debug message в send_rooms_data">
+      <created>1475528513916</created>
+      <option name="number" value="00145" />
+      <option name="presentableId" value="LOCAL-00145" />
+      <option name="project" value="LOCAL" />
+      <updated>1475528513920</updated>
+    </task>
+    <option name="localTasksCounter" value="146" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1074,7 +1074,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="173888000" />
+    <option name="totallyTimeSpent" value="174019000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1855" height="1056" extended-state="6" />
@@ -1150,7 +1150,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Reject subscription" />
     <MESSAGE value="Fix для Лёхи" />
     <MESSAGE value="'http://0.0.0.0:3000'" />
     <MESSAGE value="config.disable_request_forgery_protection = true" />
@@ -1175,7 +1174,8 @@
     <MESSAGE value="Новый Seek с фильтрами" />
     <MESSAGE value="config.action_cable.disable_request_forgery_protection = true" />
     <MESSAGE value="Попытка исправить NameError - undefined local variable or method `get_rooms'" />
-    <option name="LAST_COMMIT_MESSAGE" value="Попытка исправить NameError - undefined local variable or method `get_rooms'" />
+    <MESSAGE value="Добавил debug message в send_rooms_data" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавил debug message в send_rooms_data" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1552,8 +1552,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/seek.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="80" column="0" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
+        <state relative-caret-position="296">
+          <caret line="72" column="19" selection-start-line="72" selection-start-column="19" selection-end-line="72" selection-end-column="19" />
           <folding />
         </state>
       </provider>
