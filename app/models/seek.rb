@@ -44,7 +44,7 @@ class Seek
   private
 
 
-  def self.init_quick_game(uuid)
+  def init_quick_game(uuid)
     if opponent = REDIS.spop("q_seeks")
       QuickGame.new(uuid, opponent)
     else
@@ -52,7 +52,7 @@ class Seek
     end
   end
 
-  def self.init_seek_with_filters(uuid, data)
+  def init_seek_with_filters(uuid, data)
     filter = data['filter']
     active_filters = filter.select {|key, value| value if filter[key] != 0} || ''
 
@@ -74,7 +74,7 @@ class Seek
   end
 
 
-  def self.send_rooms_data
+  def send_rooms_data
     msg = get_rooms
     ActionCable.server.connections.each do |connection|
       connection.transmit({"identifier":"{\"channel\":\"GameChannel\"}","message": msg})
