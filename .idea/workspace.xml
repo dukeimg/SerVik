@@ -722,14 +722,7 @@
       <workItem from="1475504032352" duration="6837000" />
       <workItem from="1475522997308" duration="1521000" />
       <workItem from="1475525538414" duration="3222000" />
-      <workItem from="1475777683582" duration="771000" />
-    </task>
-    <task id="LOCAL-00099" summary="Поправил forfeit">
-      <created>1475316834860</created>
-      <option name="number" value="00099" />
-      <option name="presentableId" value="LOCAL-00099" />
-      <option name="project" value="LOCAL" />
-      <updated>1475316834860</updated>
+      <workItem from="1475777683582" duration="903000" />
     </task>
     <task id="LOCAL-00100" summary="Поправил forfeit">
       <created>1475318430641</created>
@@ -1067,7 +1060,14 @@
       <option name="project" value="LOCAL" />
       <updated>1475528759843</updated>
     </task>
-    <option name="localTasksCounter" value="148" />
+    <task id="LOCAL-00148" summary="create_mock_room helper">
+      <created>1475778473101</created>
+      <option name="number" value="00148" />
+      <option name="presentableId" value="LOCAL-00148" />
+      <option name="project" value="LOCAL" />
+      <updated>1475778473106</updated>
+    </task>
+    <option name="localTasksCounter" value="149" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1103,13 +1103,13 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="174938000" />
+    <option name="totallyTimeSpent" value="175070000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1855" height="1056" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20619127" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20619127" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1179,7 +1179,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="'http://0.0.0.0:3000'" />
     <MESSAGE value="config.disable_request_forgery_protection = true" />
     <MESSAGE value="Вернул всё как было" />
     <MESSAGE value="Новая главная страница&#10;Расширен transmit players_online" />
@@ -1204,7 +1203,8 @@
     <MESSAGE value="Попытка исправить NameError - undefined local variable or method `get_rooms'" />
     <MESSAGE value="Добавил debug message в send_rooms_data" />
     <MESSAGE value="Убрал сообщение" />
-    <option name="LAST_COMMIT_MESSAGE" value="Убрал сообщение" />
+    <MESSAGE value="create_mock_room helper" />
+    <option name="LAST_COMMIT_MESSAGE" value="create_mock_room helper" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
