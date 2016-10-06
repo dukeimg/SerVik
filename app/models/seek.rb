@@ -36,13 +36,13 @@ class Seek
     if opponent
       opponent = eval(opponent)
       opponent.delete('title_game')
-      active_filters = opponent.select {|key, value| value if opponent[key] != 0} || ''
+      active_filters = opponent.select {|key, value| value if opponent[key] != 0}
       REDIS.hdel('seeks', opponent_uuid)
       CustomGame.new(uuid, opponent_uuid, active_filters)
     else
       ActionCable.server.broadcast "player_#{uuid}", {action: 'connection_error', reason: 'room_does_not_exist'}
     end
-    Seek.send_rooms_data
+    send_rooms_data
   end
 
   def send_rooms_data
