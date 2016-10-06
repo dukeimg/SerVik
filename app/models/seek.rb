@@ -34,7 +34,7 @@ class Seek
     opponent_uuid = data['uuid']
     opponent = REDIS.hget('seeks', opponent_uuid)
     if opponent
-      opponent.delete('title_game')
+      opponent = eval(opponent).delete('title_game')
       active_filters = opponent.select {|key, value| value if filter[key] != 0} || ''
       REDIS.hdel('seeks', opponent_uuid)
       CustomGame.new(uuid, opponent_uuid, active_filters || d[1])
