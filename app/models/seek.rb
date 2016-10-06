@@ -31,10 +31,11 @@ class Seek
   end
 
   def self.connect(uuid, data)
-    opponent = REDIS.hget('seeks', data['uuid'])
+    opponent_uuid = data['uuid']
+    opponent = REDIS.hget('seeks', opponent_uuid)
     if opponent
-      REDIS.hdel('seeks', data['uuid'])
-      CustomGame.new(uuid, d[0], active_filters || d[1])
+      REDIS.hdel('seeks', opponent_uuid)
+      CustomGame.new(uuid, opponent_uuid, active_filters || d[1])
     else
       ActionCable.server.broadcast "player_#{uuid}", {action: 'connection_error', reason: 'room_does_not_exist'}
     end
