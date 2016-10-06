@@ -42,10 +42,10 @@ class Seek
     else
       ActionCable.server.broadcast "player_#{uuid}", {action: 'connection_error', reason: 'room_does_not_exist'}
     end
-    self.send_rooms_data
+    send_rooms_data
   end
 
-  def send_rooms_data
+  def self.send_rooms_data
     msg = Seek.get_rooms
     ActionCable.server.connections.each do |connection|
       connection.transmit({"identifier":"{\"channel\":\"GameChannel\"}","message": msg})
