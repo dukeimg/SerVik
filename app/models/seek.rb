@@ -42,6 +42,13 @@ class Seek
     send_rooms_data
   end
 
+  def send_rooms_data
+    msg = Seek.get_rooms
+    ActionCable.server.connections.each do |connection|
+      connection.transmit({"identifier":"{\"channel\":\"GameChannel\"}","message": msg})
+    end
+  end
+
   private
 
 
@@ -72,13 +79,5 @@ class Seek
       REDIS.hset("seeks", uuid, filter)
     end
     send_rooms_data
-  end
-
-
-  def send_rooms_data
-    msg = Seek.get_rooms
-    ActionCable.server.connections.each do |connection|
-      connection.transmit({"identifier":"{\"channel\":\"GameChannel\"}","message": msg})
-    end
   end
 end

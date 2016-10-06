@@ -61,8 +61,8 @@
       <file leaf-file-name="seek.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/models/seek.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="23" column="9" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
+            <state relative-caret-position="306">
+              <caret line="45" column="12" selection-start-line="45" selection-start-column="12" selection-end-line="45" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -722,14 +722,7 @@
       <workItem from="1475504032352" duration="6837000" />
       <workItem from="1475522997308" duration="1521000" />
       <workItem from="1475525538414" duration="3222000" />
-      <workItem from="1475777683582" duration="2089000" />
-    </task>
-    <task id="LOCAL-00103" summary="Fix для Лёхи">
-      <created>1475337560512</created>
-      <option name="number" value="00103" />
-      <option name="presentableId" value="LOCAL-00103" />
-      <option name="project" value="LOCAL" />
-      <updated>1475337560513</updated>
+      <workItem from="1475777683582" duration="2640000" />
     </task>
     <task id="LOCAL-00104" summary="'http://0.0.0.0:3000'">
       <created>1475338035605</created>
@@ -1067,7 +1060,14 @@
       <option name="project" value="LOCAL" />
       <updated>1475778965031</updated>
     </task>
-    <option name="localTasksCounter" value="152" />
+    <task id="LOCAL-00152" summary="Рефакторинг Seek.connect">
+      <created>1475779819499</created>
+      <option name="number" value="00152" />
+      <option name="presentableId" value="LOCAL-00152" />
+      <option name="project" value="LOCAL" />
+      <updated>1475779819500</updated>
+    </task>
+    <option name="localTasksCounter" value="153" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1103,7 +1103,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="176256000" />
+    <option name="totallyTimeSpent" value="176807000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1855" height="1056" extended-state="6" />
@@ -1179,7 +1179,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Новая главная страница&#10;Расширен transmit players_online" />
     <MESSAGE value="Мелкие фиксы фронтенда" />
     <MESSAGE value="Всем спокойной ночи" />
     <MESSAGE value="Поменял название" />
@@ -1204,7 +1203,8 @@
     <MESSAGE value="Поменял имя игры у create_mock_room helper" />
     <MESSAGE value="create_mock_room helper" />
     <MESSAGE value="Исправление NoMethodError в Seek.connect" />
-    <option name="LAST_COMMIT_MESSAGE" value="Исправление NoMethodError в Seek.connect" />
+    <MESSAGE value="Рефакторинг Seek.connect" />
+    <option name="LAST_COMMIT_MESSAGE" value="Рефакторинг Seek.connect" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1574,8 +1574,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/seek.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="23" column="9" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
+        <state relative-caret-position="306">
+          <caret line="45" column="12" selection-start-line="45" selection-start-column="12" selection-end-line="45" selection-end-column="12" />
           <folding />
         </state>
       </provider>
