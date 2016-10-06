@@ -722,14 +722,7 @@
       <workItem from="1475504032352" duration="6837000" />
       <workItem from="1475522997308" duration="1521000" />
       <workItem from="1475525538414" duration="3222000" />
-      <workItem from="1475777683582" duration="4502000" />
-    </task>
-    <task id="LOCAL-00109" summary="Всем спокойной ночи">
-      <created>1475356945899</created>
-      <option name="number" value="00109" />
-      <option name="presentableId" value="LOCAL-00109" />
-      <option name="project" value="LOCAL" />
-      <updated>1475356945899</updated>
+      <workItem from="1475777683582" duration="4617000" />
     </task>
     <task id="LOCAL-00110" summary="Поменял название">
       <created>1475357412475</created>
@@ -1067,7 +1060,14 @@
       <option name="project" value="LOCAL" />
       <updated>1475782047683</updated>
     </task>
-    <option name="localTasksCounter" value="158" />
+    <task id="LOCAL-00158" summary="Рефакторинг Seek">
+      <created>1475782217531</created>
+      <option name="number" value="00158" />
+      <option name="presentableId" value="LOCAL-00158" />
+      <option name="project" value="LOCAL" />
+      <updated>1475782217531</updated>
+    </task>
+    <option name="localTasksCounter" value="159" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1103,7 +1103,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="178669000" />
+    <option name="totallyTimeSpent" value="178784000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1855" height="1056" extended-state="6" />
