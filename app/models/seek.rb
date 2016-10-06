@@ -39,7 +39,7 @@ class Seek
     else
       ActionCable.server.broadcast "player_#{uuid}", {action: 'connection_error', reason: 'room_does_not_exist'}
     end
-    send_rooms_data
+    Seek.send_rooms_data
   end
 
   def send_rooms_data
