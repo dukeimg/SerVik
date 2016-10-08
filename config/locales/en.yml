@@ -29,6 +29,7 @@ en:
     instant_game: 'Instant game'
     my_game: 'Custom game'
     download: 'Get on iPhone'
+    searching_for_players: 'Searching for players'
     set_code:
       msg: 'First, set a code that your opponent will try to guess. Choose wisely, it should be a challenge for your rival!'
       random: 'Random'

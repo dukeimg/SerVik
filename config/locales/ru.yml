@@ -7,10 +7,12 @@ ru:
     instant_game: 'Быстрая игра'
     my_game: 'Моя игра'
     download: 'Загрузить'
+    searching_for_players: 'Ищем игроков'
     set_code:
       msg: 'Для начала задайте код, который вашему оппоненту предстоит подобрать. Выберите комбинацию посложнее!'
       random: 'Рандом'
       submit: 'Старт'
+      waiting_for_opponent: 'Ожидание ввода кода от оппонента'
   meta:
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eu nisl fringilla, egestas augue eget,
     imperdiet sapien. Cras vitae neque metus.'

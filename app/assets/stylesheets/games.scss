@@ -11,6 +11,8 @@ $text--bright: rgb(110, 110, 110);
 
 .welcome {
   height: calc(100vh - 132px);
+  font-size: 18px;
+
   .menu {
     height: calc(100% - 72px);
     display: flex;
@@ -132,7 +134,7 @@ form#set-code input[type=text]{
     padding: 10px 15px;
     background: none;
     border: none;
-    width: 85px;
+    width: 100px;
     margin: 0;
     outline: none;
 
@@ -148,4 +150,8 @@ form#set-code input[type=text]{
       margin-left: -4px;
     }
   }
+}
+
+#waiting-for-opponent-container {
+  display: none;
 }
