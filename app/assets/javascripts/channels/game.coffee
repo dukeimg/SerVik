@@ -12,7 +12,7 @@ App.createChannel = ->
         when "opponent_disconnected"
           @printMessage('Соединение разорвано')
         when 'waiting_for_code'
-          @printMessage('Опонент найден. Жду код')
+          showSetCode()
         when 'turn'
           @printMessage(data.msg)
         when 'game_start'

@@ -14,4 +14,5 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require Swiper/dist/js/swiper.jquery.min.js
+//= require jquery.mask.min.js
 //= require_tree .

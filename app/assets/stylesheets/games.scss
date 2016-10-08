@@ -1,6 +1,14 @@
 // Place all the styles related to the games controller here.
 // They will automatically be included in application.css.scss.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// Variables
+
+$text: rgb(75, 75, 75);
+$text--bright: rgb(110, 110, 110);
+
+// Welcome Screen
+
 .welcome {
   height: calc(100vh - 132px);
   .menu {
@@ -22,15 +30,18 @@
     }
 
     a {
-      color: rgb(75, 75, 75);
+      color: $text;
       font-size: 30px;
 
       &:hover {
-        color: rgb(100, 100, 100)
+        color: $text--bright
       }
     }
   }
 }
+
+
+// Searching for opponents screen
 
 .loading-container {
   color: white;
@@ -86,4 +97,55 @@
       -webkit-transform: scale(1.0);
       transform: scale(1.0);
     }
+}
+
+// Set code screen
+
+#set-code-container {
+  display: none;
+}
+
+form#set-code input[type=text]{
+  height: 50px;
+  width: 40px;
+  text-align: center;
+  font-size: 2em;
+  border: none;
+  border-bottom: 1px solid #000;
+  background: none;
+  color: $text;
+
+  &:focus {
+    background: none;
+    border-bottom: 1px solid #000;
+    outline: none;
+  }
+}
+
+.set-code-buttons {
+  margin-top: 25px;
+  display: inline-block;
+  border: 1px solid $text;
+  border-radius: 25px;
+
+  button {
+    padding: 10px 15px;
+    background: none;
+    border: none;
+    width: 85px;
+    margin: 0;
+    outline: none;
+
+    &:hover {
+      color: $text--bright
+    }
+
+    &:first-child {
+      border-right: 1px solid $text;
+    }
+
+    &:last-child {
+      margin-left: -4px;
+    }
+  }
 }

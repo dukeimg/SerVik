@@ -6,9 +6,8 @@ module GamesHelper
   end
 
   def send_rooms_data(msg)
-    puts "ROOMS: #{msg}"
     ActionCable.server.connections.each do |connection|
-      connection.transmit(msg)
+      connection.transmit({"identifier":"{\"channel\":\"GameChannel\"}","message":msg})
     end
   end
 end

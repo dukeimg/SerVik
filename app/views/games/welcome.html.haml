@@ -33,7 +33,20 @@
             .bounce2
             .bounce3
           %button#stop-search{:class => 'btn btn-danger'}= t('cancel')
-      #set-code-container
+      #set-code-container.text-center
+        %p= t('play.set_code.msg')
+        %form#set-code
+          %input{:type => 'text', :maxlength => '1'}
+          %input{:type => 'text', :maxlength => '1'}
+          %input{:type => 'text', :maxlength => '1'}
+          %input{:type => 'text', :maxlength => '1'}
+        .set-code-buttons
+          %button{:onclick => 'generateRandomCode();'}= t('play.set_code.random')
+          %button{:onclick => 'setCode();'}= t('play.set_code.submit')
+      #waiting-for-opponent-container.text-center
+        %p= t('play.set_code.waiting_for_opponent')
+
+
 
 :javascript
   App.createChannel();

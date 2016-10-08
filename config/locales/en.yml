@@ -28,7 +28,12 @@ en:
     title: 'Play'
     instant_game: 'Instant game'
     my_game: 'Custom game'
-    download: 'Download'
+    download: 'Get on iPhone'
+    set_code:
+      msg: 'First, set a code that your opponent will try to guess. Choose wisely, it should be a challenge for your rival!'
+      random: 'Random'
+      submit: 'Start'
+      waiting_for_opponent: 'Waiting for code from your opponent'
   meta:
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eu nisl fringilla, egestas augue eget,
     imperdiet sapien. Cras vitae neque metus.'
