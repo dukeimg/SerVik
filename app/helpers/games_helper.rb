@@ -6,7 +6,7 @@ module GamesHelper
   end
 
   def send_rooms_data(msg)
-    puts "CONNEDCTIONS: #{ActionCable.server.connections}"
+    puts "ROOMS: #{msg}"
     ActionCable.server.connections.each do |connection|
       connection.transmit(msg)
     end
