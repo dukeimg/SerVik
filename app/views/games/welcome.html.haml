@@ -17,6 +17,16 @@
   .container.welcome
     .row
       %h1#roller
+      #game-container
+        .row.text-center
+          #give-up-flag
+          .your-code= t('play.game.your_code')
+          .timer
+            %span.mins
+            %span :
+            %span.secs
+        .row
+        .row
     .row.menu
       %ul
         %li
@@ -45,6 +55,8 @@
           %button{:onclick => 'setCode();'}= t('play.set_code.submit')
       #waiting-for-opponent-container.text-center
         %p= t('play.set_code.waiting_for_opponent')
+
+
 
 
 

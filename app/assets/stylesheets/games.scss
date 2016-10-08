@@ -12,6 +12,7 @@ $text--bright: rgb(110, 110, 110);
 .welcome {
   height: calc(100vh - 132px);
   font-size: 18px;
+  max-width: 800px;
 
   .menu {
     height: calc(100% - 72px);
@@ -105,6 +106,12 @@ $text--bright: rgb(110, 110, 110);
 
 #set-code-container {
   display: none;
+
+  p {
+    margin-bottom: 50px;
+  }
+
+
 }
 
 form#set-code input[type=text]{
@@ -125,7 +132,7 @@ form#set-code input[type=text]{
 }
 
 .set-code-buttons {
-  margin-top: 25px;
+  margin-top: 50px;
   display: inline-block;
   border: 1px solid $text;
   border-radius: 25px;
@@ -154,4 +161,32 @@ form#set-code input[type=text]{
 
 #waiting-for-opponent-container {
   display: none;
+}
+
+// Game container
+
+#game-container {
+  display: none;
+}
+
+#give-up-flag {
+  background:  $text url('flag.png') center / 40px 40px no-repeat;
+  border-radius: 50%;
+  width: 75px;
+  height: 75px;
+  transition: box-shadow, transform .3s;
+  float: left;
+
+  &:hover {
+    -webkit-box-shadow: 3px 1px 2px 0 rgba(0,0,0,0.75);
+    -moz-box-shadow: 3px 1px 2px 0 rgba(0,0,0,0.75);
+    box-shadow: 3px 1px 2px 0 rgba(0,0,0,0.75);
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+}
+
+.timer {
+  margin-top: 20px;
+  font-size: 25px;
 }

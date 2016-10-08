@@ -13,6 +13,8 @@ ru:
       random: 'Рандом'
       submit: 'Старт'
       waiting_for_opponent: 'Ожидание ввода кода от оппонента'
+    game:
+      your_code: 'Ваш код:'
   meta:
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eu nisl fringilla, egestas augue eget,
     imperdiet sapien. Cras vitae neque metus.'

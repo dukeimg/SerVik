@@ -35,6 +35,8 @@ en:
       random: 'Random'
       submit: 'Start'
       waiting_for_opponent: 'Waiting for code from your opponent'
+    game:
+      your_code: 'Your code:'
   meta:
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eu nisl fringilla, egestas augue eget,
     imperdiet sapien. Cras vitae neque metus.'

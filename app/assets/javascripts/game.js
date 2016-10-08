@@ -1,3 +1,5 @@
+var yourCode;
+
 App.web = {
     send_code: function (code) {
         App.game.perform('set_code', {'msg': code})
@@ -29,6 +31,8 @@ $(document).ready(function () {
     setCodeInputs.keydown(function (e) {
         setCodeInputsHandler(e);
     });
+
+    // debugShit();
 });
 
 var startSeek = function () {
@@ -90,10 +94,62 @@ var setCode = function () {
     });
     var codeString = codeArray.join('');
     App.game.perform('set_code', {msg: parseInt(codeString)});
+    yourCode = codeString;
 
     $('#set-code-container').fadeOut('slow', function () {
         $('#waiting-for-opponent-container').fadeIn('slow');
     });
-
-    $()
 };
+
+var initGame = function(gameData) {
+    initTimer();
+
+    setTimeout(function () {
+        $('#roller').fadeOut('slow');
+        $('#waiting-for-opponent-container').fadeOut('slow', function () {
+            $('#game-container').fadeIn('slow');
+        });
+    }, 1000);
+
+    var yourCodeContainer = $('.your-code');
+    yourCodeContainer.text(yourCodeContainer.text() + ' ' + yourCode);
+
+
+    if(gameData.is_your_turn) {
+
+    } else {
+
+    }
+};
+
+var initTimer = function () {
+    var start_time = new Date();
+    var timer = {};
+
+    function getCurrentValue() {
+        timer.raw = (new Date() - start_time) / 1000;
+        timer.mins = Math.floor(timer.raw / 60);
+        timer.secs = Math.floor(timer.raw - (timer.mins * 60));
+
+        $('.mins').html(('0' + timer.mins).slice(-2));
+        $('.secs').html(('0' + timer.secs).slice(-2));
+    }
+
+    setInterval(function () {
+        getCurrentValue();
+    }, 1000);
+
+    $(window).focus(function () {
+        console.log('focus');
+        setTimeout(getCurrentValue(), 1);
+    })
+};
+
+// DEBUG SHIT
+//
+// function debugShit() {
+//     initTimer();
+//     var code = 6431;
+//     var yourCode = $('.your-code');
+//     yourCode.text(yourCode.text() + ' ' + code);
+// }

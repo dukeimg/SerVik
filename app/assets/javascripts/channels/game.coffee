@@ -16,12 +16,7 @@ App.createChannel = ->
         when 'turn'
           @printMessage(data.msg)
         when 'game_start'
-          msg = 'Ход противника'
-          if data.is_your_turn
-            msg = 'Ваш ход'
-          @printMessage("Игра началась #{msg}")
-        when 'waiting_for_code'
-          console.log('waiting for code')
+          initGame(data)
 
 
     printMessage: (message) ->
