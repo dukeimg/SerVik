@@ -8,7 +8,7 @@ class GameChannel < ApplicationCable::Channel
 
   def unsubscribed
     Seek.remove(uuid)
-    GamesHelper.send_rooms_data
+    helper.send_rooms_data(Seek.get_rooms)
   end
 
   def set_code(data)

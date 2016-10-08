@@ -5,7 +5,7 @@ module GamesHelper
     REDIS.hset("seeks", 'fake_uuid', filter)
   end
 
-  def send_rooms_data
+  def send_rooms_data(msg)
     ActionCable.server.connections.each do |connection|
       connection.transmit(msg)
     end

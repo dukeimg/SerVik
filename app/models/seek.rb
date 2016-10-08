@@ -42,14 +42,7 @@ class Seek
     else
       ActionCable.server.broadcast "player_#{uuid}", {action: 'connection_error', reason: 'room_does_not_exist'}
     end
-    send_rooms_data
-  end
-
-  def self.send_rooms_data
-    msg = Seek.get_rooms
-    ActionCable.server.connections.each do |connection|
-      connection.transmit({"identifier":"{\"channel\":\"GameChannel\"}","message": msg})
-    end
+    helper.send_rooms_data(Seek.get_rooms)
   end
 
   private
@@ -81,6 +74,6 @@ class Seek
     else
       REDIS.hset("seeks", uuid, filter)
     end
-    send_rooms_data
+    helper.send_rooms_data(Seek.get_rooms)
   end
 end
