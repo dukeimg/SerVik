@@ -6,7 +6,7 @@
     %meta{:property => 'og:title', :content => "#{yield(:title)} SerVik"}
     %meta{:property => 'og:type', :content => 'website'}
     %meta{:property => 'og:url', :content => @url}
-    %meta{:property => 'og:image', :content => ''}
+    %meta{:property => 'og:image', :content => image_url('disk24.png')}
     %meta{:property => 'og:description', :content => t('meta.description')}
     %meta{:property => 'og:locale', :content => @lang}
     %meta{:name => 'viewport', :content => 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no'}
@@ -14,6 +14,45 @@
     = action_cable_meta_tag
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    :javascript
+      (function (d, w, c) {
+        (w[c] = w[c] || []).push(function() {
+          try {
+            w.yaCounter40097755 = new Ya.Metrika({
+              id:40097755,
+              clickmap:true,
+              trackLinks:true,
+              accurateTrackBounce:true,
+              webvisor:true,
+              trackHash:true
+            });
+          } catch(e) { }
+        });
+
+        var n = d.getElementsByTagName("script")[0],
+          s = d.createElement("script"),
+          f = function () { n.parentNode.insertBefore(s, n); };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+        if (w.opera == "[object Opera]") {
+          d.addEventListener("DOMContentLoaded", f, false);
+        } else { f(); }
+      })(document, window, "yandex_metrika_callbacks");
+
+    %script{:src => 'https://www.gstatic.com/firebasejs/3.4.1/firebase.js'}
+    :javascript
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyBKeLYaAVm93lgBvNNHFuh7iysFgW7bIiA",
+        authDomain: "crypto-3d02e.firebaseapp.com",
+        databaseURL: "https://crypto-3d02e.firebaseio.com",
+        storageBucket: "crypto-3d02e.appspot.com",
+        messagingSenderId: "990632354810"
+      };
+      firebase.initializeApp(config);
+  %noscript <div><img src="https://mc.yandex.ru/watch/40097755" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
   %body
     = yield
     %footer

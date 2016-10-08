@@ -77,5 +77,24 @@ footer {
       }
     }
   }
+}
 
+::-webkit-scrollbar
+{
+  width: 10px;  /* for vertical scrollbars */
+  height: 12px; /* for horizontal scrollbars */
+}
+
+::-webkit-scrollbar-track
+{
+  background: none;
+
+  &:active {
+    background: rgba(0, 0, 0, 0.1);
+  }
+}
+
+::-webkit-scrollbar-thumb
+{
+  background: rgba(0, 0, 0, 0.4);
 }

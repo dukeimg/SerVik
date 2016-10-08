@@ -1,38 +1,39 @@
--#%p
--#  %i Примечание: я пока не делал валидацию
--##messages
--#%div
--#  %p Загадать код
--#  %input{:type => 'text', :id => 'code_field'}
--#  %input{:type => 'submit', :id => 'code_submit'}
--#%div
--#  %p Играт  ь (пока не поиграть)
--#  %input{:type => 'text', :id => 'guess_field'}
--#  %input{:type => 'submit', :id => 'guess_submit'}
--##player_turns
--##opponent_turns'
 - content_for :title, t('play.title')
 .content
   = render('layouts/header')
   .container.welcome
     .row
       %h1#roller
-      #game-container
-        .row.text-center
-          #give-up-flag
-          .your-code= t('play.game.your_code')
-          .timer
-            %span.mins
-            %span :
-            %span.secs
-        .row
-        .row
+    #game-container
+      .row.text-center
+        #give-up-flag
+        .your-code= t('play.game.your_code')
+        .timer
+          %span.mins 00
+          %span :
+          %span.secs 00
+      .row.messages-container
+        -#.message-block.my
+        -#  .message 1234 | (2:2)
+        -#  .me Me
+        -#.message-block.his
+        -#  .him R
+        -#  .message 1234 | (2:2)
+      .row.code-input-container.text-center
+        %form#input-code
+          %input{:type => 'text', :maxlength => '1'}
+          %input{:type => 'text', :maxlength => '1'}
+          %input{:type => 'text', :maxlength => '1'}
+          %input{:type => 'text', :maxlength => '1'}
+          .send
     .row.menu
+      #give-up-container
+        %p.text-center= t('play.give_up.are_you_sure')
+        %button.btn-danger#give-up= t('play.give_up.give_up')
+        %button#continue= t('play.give_up.continue')
       %ul
         %li
           = link_to t('play.instant_game'), '', 'onclick' => 'return false', :id => 'play-button'
-        %li
-          = link_to t('play.my_game'), download_path
         %li
           = link_to t('play.download'), download_path
       .loading-container
@@ -42,7 +43,7 @@
             .bounce1
             .bounce2
             .bounce3
-          %button#stop-search{:class => 'btn btn-danger'}= t('cancel')
+          %button#stop-search{:class => 'btn btn-danger'}= t('play.cancel')
       #set-code-container.text-center
         %p= t('play.set_code.msg')
         %form#set-code
@@ -55,11 +56,6 @@
           %button{:onclick => 'setCode();'}= t('play.set_code.submit')
       #waiting-for-opponent-container.text-center
         %p= t('play.set_code.waiting_for_opponent')
-
-
-
-
-
 :javascript
   App.createChannel();
   $(document).ready(function() {

@@ -26,10 +26,11 @@ en:
     download: 'download'
   play:
     title: 'Play'
-    instant_game: 'Instant game'
+    instant_game: 'Play'
     my_game: 'Custom game'
     download: 'Get on iPhone'
     searching_for_players: 'Searching for players'
+    cancel: 'Cancel'
     set_code:
       msg: 'First, set a code that your opponent will try to guess. Choose wisely, it should be a challenge for your rival!'
       random: 'Random'
@@ -37,9 +38,12 @@ en:
       waiting_for_opponent: 'Waiting for code from your opponent'
     game:
       your_code: 'Your code:'
+    give_up:
+      are_you_sure: 'You are going to surrender! Your opponent will win and get score.'
+      give_up: 'Give up'
+      continue: 'Continue'
   meta:
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eu nisl fringilla, egestas augue eget,
-    imperdiet sapien. Cras vitae neque metus.'
+    description: 'A new breath into the classic game Bulls & Cows'
   players_online: 'Players online'
   download:
     title: 'Download'

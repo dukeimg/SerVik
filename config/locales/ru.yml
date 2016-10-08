@@ -4,10 +4,11 @@ ru:
     download: 'Загрузить'
   play:
     title: 'Играть в'
-    instant_game: 'Быстрая игра'
+    instant_game: 'Играть'
     my_game: 'Моя игра'
     download: 'Загрузить'
     searching_for_players: 'Ищем игроков'
+    cancel: 'Отмена'
     set_code:
       msg: 'Для начала задайте код, который вашему оппоненту предстоит подобрать. Выберите комбинацию посложнее!'
       random: 'Рандом'
@@ -15,9 +16,12 @@ ru:
       waiting_for_opponent: 'Ожидание ввода кода от оппонента'
     game:
       your_code: 'Ваш код:'
+    give_up:
+      are_you_sure: 'Вы собираетесь сдаться. Вашему противнику будет засчитана победа.'
+      give_up: 'Сдаться'
+      continue: 'Играть'
   meta:
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eu nisl fringilla, egestas augue eget,
-    imperdiet sapien. Cras vitae neque metus.'
+    description: 'Новый взгляд на классическую игру "Быки и коровы" с расширенными возможностями.'
   players_online: 'Игроков в сети'
   download:
     title: 'Загрузить'

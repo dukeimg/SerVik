@@ -14,7 +14,7 @@ App.createChannel = ->
         when 'waiting_for_code'
           showSetCode()
         when 'turn'
-          @printMessage(data.msg)
+          console.log(data)
         when 'game_start'
           initGame(data)
 

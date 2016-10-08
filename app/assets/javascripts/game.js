@@ -26,7 +26,7 @@ $(document).ready(function () {
         }
     });
 
-    var setCodeInputs = $('#set-code').find('input');
+    var setCodeInputs = $('.welcome').find('input');
     setCodeInputs.mask('0');
     setCodeInputs.keydown(function (e) {
         setCodeInputsHandler(e);
@@ -114,12 +114,44 @@ var initGame = function(gameData) {
     var yourCodeContainer = $('.your-code');
     yourCodeContainer.text(yourCodeContainer.text() + ' ' + yourCode);
 
-
     if(gameData.is_your_turn) {
 
     } else {
 
     }
+
+    $('body').toggleClass('game');
+
+    $('#give-up-flag').click(function () {
+        $('#give-up-flag').addClass('large').addClass('position--absolute');
+        $('.give-up-flag-spacer').show();
+        setTimeout(function () {
+            $('#give-up-container').fadeIn('slow').addClass('show')
+        }, 1000)
+    });
+
+    $('#continue').click(function () {
+        $('#give-up-container').hide().removeClass('show');
+        $('#give-up-flag').removeClass('large');
+
+        setTimeout(function () {
+            $('.give-up-flag-spacer').hide();
+            $('#give-up-flag').removeClass('position--absolute');
+        }, 1500)
+    });
+
+    $('#give-up').click(function () {
+        $('body').fadeOut('slow', function () {
+            App.cable.disconnect().connect();
+            $('#roller').show();
+            $('.give-up-flag-spacer').hide();
+            $('#give-up-container').hide().removeClass('show');
+            $('#give-up-flag').removeClass('large').removeClass('position--absolute');
+            $('body').fadeIn('slow').removeClass('game');
+            $('#game-container').hide();
+            $('ul').show();
+        });
+    })
 };
 
 var initTimer = function () {
@@ -138,18 +170,45 @@ var initTimer = function () {
     setInterval(function () {
         getCurrentValue();
     }, 1000);
-
-    $(window).focus(function () {
-        console.log('focus');
-        setTimeout(getCurrentValue(), 1);
-    })
 };
 
 // DEBUG SHIT
-//
-// function debugShit() {
-//     initTimer();
-//     var code = 6431;
-//     var yourCode = $('.your-code');
-//     yourCode.text(yourCode.text() + ' ' + code);
-// }
+
+function debugShit() {
+    initTimer();
+    var code = 6431;
+    var yourCode = $('.your-code');
+    yourCode.text(yourCode.text() + ' ' + code);
+    $('body').toggleClass('game');
+
+    $('#give-up-flag').click(function () {
+        $('#give-up-flag').addClass('large').addClass('position--absolute');
+        $('.give-up-flag-spacer').show();
+        setTimeout(function () {
+            $('#give-up-container').fadeIn('slow').addClass('show')
+        }, 1000)
+    });
+
+    $('#continue').click(function () {
+        $('#give-up-container').hide().removeClass('show');
+        $('#give-up-flag').removeClass('large');
+
+        setTimeout(function () {
+            $('.give-up-flag-spacer').hide();
+            $('#give-up-flag').removeClass('position--absolute');
+        }, 1500)
+    });
+
+    $('#give-up').click(function () {
+        $('body').fadeOut('slow', function () {
+            App.cable.disconnect().connect();
+            $('#roller').show();
+            $('.give-up-flag-spacer').hide();
+            $('#give-up-container').hide().removeClass('show');
+            $('#give-up-flag').removeClass('large').removeClass('position--absolute');
+            $('body').fadeIn('slow').removeClass('game');
+            $('#game-container').hide();
+            $('ul').show();
+        });
+    })
+}

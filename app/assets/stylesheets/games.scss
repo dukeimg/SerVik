@@ -7,6 +7,12 @@
 $text: rgb(75, 75, 75);
 $text--bright: rgb(110, 110, 110);
 
+// Global
+
+.game {
+  overflow: hidden;
+}
+
 // Welcome Screen
 
 .welcome {
@@ -57,6 +63,7 @@ $text--bright: rgb(110, 110, 110);
 
   .btn-danger {
     background-color: #ff6666;
+    border: none  ;
   }
 }
 
@@ -167,6 +174,7 @@ form#set-code input[type=text]{
 
 #game-container {
   display: none;
+  height: 100%;
 }
 
 #give-up-flag {
@@ -174,8 +182,11 @@ form#set-code input[type=text]{
   border-radius: 50%;
   width: 75px;
   height: 75px;
-  transition: box-shadow, transform .3s;
+  transition: box-shadow .3s, transform .3s, width 1.5s, height 1.5s, top 1.5s, left 1.5s, margin 1.5s;
   float: left;
+  z-index: 5;
+  margin-right: -75px;
+
 
   &:hover {
     -webkit-box-shadow: 3px 1px 2px 0 rgba(0,0,0,0.75);
@@ -184,9 +195,152 @@ form#set-code input[type=text]{
     transform: scale(1.1);
     cursor: pointer;
   }
+
+  &.large {
+    margin-left: -125vmax;
+    margin-top: -125vmax;
+    width: 250vmax;
+    height: 250vmax;
+    background-image: none;
+
+    &:hover {
+      box-shadow: none;
+      transform: none;
+      cursor: default;
+    }
+  }
+
+  &.position--absolute {
+    position: absolute !important;
+    pointer-events: none;
+  }
+}
+
+.give-up-flag-spacer {
+  display: none;
+  width: 75px;
+  height: 75px;
+  float: left;
 }
 
 .timer {
   margin-top: 20px;
   font-size: 25px;
+}
+
+// Give up container
+
+#give-up-container {
+  display: none;
+  z-index: 10;
+  color: white;
+  opacity: 0;
+  transition: opacity 3s;
+  width: 250px;
+  position: absolute;
+  top: 40%;
+  margin: 0 auto;
+
+  &.show {
+    display: flex !important;
+    flex-direction: column;
+    opacity: 1;
+  }
+
+  button {
+    padding: 15px;
+    background: none;
+    border-radius: 5px;
+    border: 1px solid white;
+    margin-top: 15px;
+    transition: color .6s, border-color .6s;
+
+    &:hover {
+      color: #dddddd;
+      border-color: #dddddd;
+    }
+
+    &.btn-danger:hover {
+      color: #ff6666;
+      border-color: #ff6666;
+    }
+  }
+}
+
+// Messages container
+
+.messages-container {
+  height: calc(100% - 160px);
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  padding: 0 5px;
+
+  .message-block {
+
+    &.my {
+      margin-left: auto;
+    }
+
+    &.his {
+      margin-right: auto;
+    }
+
+    .message {
+      background: white;
+      border-radius: 5px;
+      padding: 5px 10px;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .him, .me {
+      width: 35px;
+      height: 35px;
+      border-radius: 5px;
+      background-color: $text;
+      color: white;
+      display: inline-block;
+      vertical-align: middle;
+      text-align: center;
+      padding: 5px 0;
+    }
+
+  }
+
+
+}
+
+// Input code container
+
+.input-code-container {
+
+}
+
+#input-code {
+
+  .send {
+    width: 50px;
+    height: 50px;
+    margin: 0 -50px -18px 0;
+    background: url("forward.png") center / cover no-repeat;
+    display: inline-block;
+  }
+}
+
+form#input-code input[type=text]{
+  height: 50px;
+  width: 40px;
+  text-align: center;
+  font-size: 2em;
+  border: none;
+  border-bottom: 1px solid #000;
+  background: none;
+  color: $text;
+
+  &:focus {
+    background: none;
+    border-bottom: 1px solid #000;
+    outline: none;
+  }
 }
