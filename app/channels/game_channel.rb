@@ -1,5 +1,7 @@
 # Be sure to restart your server when you modify this file. Action Cable runs in a loop that does not support auto reloading.
 class GameChannel < ApplicationCable::Channel
+  include GamesHelper
+
   def subscribed
     stream_from "player_#{uuid}"
     rooms = Seek.get_rooms
@@ -8,7 +10,7 @@ class GameChannel < ApplicationCable::Channel
 
   def unsubscribed
     Seek.remove(uuid)
-    helper.send_rooms_data(Seek.get_rooms)
+    send_rooms_data(Seek.get_rooms)
   end
 
   def set_code(data)

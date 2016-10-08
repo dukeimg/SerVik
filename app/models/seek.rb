@@ -1,4 +1,5 @@
 class Seek
+  include GamesHelper
   def initialize(uuid, data)
     filter = data['filter']
     if filter
@@ -42,7 +43,7 @@ class Seek
     else
       ActionCable.server.broadcast "player_#{uuid}", {action: 'connection_error', reason: 'room_does_not_exist'}
     end
-    helper.send_rooms_data(Seek.get_rooms)
+    send_rooms_data(Seek.get_rooms)
   end
 
   private
@@ -74,6 +75,6 @@ class Seek
     else
       REDIS.hset("seeks", uuid, filter)
     end
-    helper.send_rooms_data(Seek.get_rooms)
+    send_rooms_data(Seek.get_rooms)
   end
 end
