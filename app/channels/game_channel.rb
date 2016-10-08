@@ -28,6 +28,7 @@ class GameChannel < ApplicationCable::Channel
   def seek(data)
     ActionCable.server.broadcast "player_#{uuid}", {action: "seek_started"}
     Seek.new(uuid, data)
+    send_rooms_data(Seek.get_rooms)
   end
 
   def connect(data)
