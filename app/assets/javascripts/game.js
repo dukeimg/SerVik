@@ -142,7 +142,8 @@ var initGame = function(gameData) {
 
     $('#give-up').click(function () {
         $('body').fadeOut('slow', function () {
-            App.cable.disconnect().connect();
+            App.cable.disconnect();
+            App.cable.connect();
             $('#roller').show();
             $('.give-up-flag-spacer').hide();
             $('#give-up-container').hide().removeClass('show');
