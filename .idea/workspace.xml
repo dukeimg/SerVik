@@ -120,7 +120,7 @@
         <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="648">
-              <caret line="40" column="206" selection-start-line="40" selection-start-column="206" selection-end-line="40" selection-end-column="206" />
+              <caret line="40" column="239" selection-start-line="40" selection-start-column="239" selection-end-line="40" selection-end-column="239" />
               <folding />
             </state>
           </provider>
@@ -846,14 +846,7 @@
       <workItem from="1475777683582" duration="4698000" />
       <workItem from="1475916019603" duration="18870000" />
       <workItem from="1475949251537" duration="17627000" />
-      <workItem from="1476016512679" duration="6519000" />
-    </task>
-    <task id="LOCAL-00125" summary="Новый Seek с фильтрами">
-      <created>1475505580659</created>
-      <option name="number" value="00125" />
-      <option name="presentableId" value="LOCAL-00125" />
-      <option name="project" value="LOCAL" />
-      <updated>1475505580660</updated>
+      <workItem from="1476016512679" duration="6738000" />
     </task>
     <task id="LOCAL-00126" summary="Новый Seek с фильтрами">
       <created>1475505730769</created>
@@ -1191,7 +1184,14 @@
       <option name="project" value="LOCAL" />
       <updated>1476035541486</updated>
     </task>
-    <option name="localTasksCounter" value="174" />
+    <task id="LOCAL-00174" summary="Добавил origins">
+      <created>1476043921145</created>
+      <option name="number" value="00174" />
+      <option name="presentableId" value="LOCAL-00174" />
+      <option name="project" value="LOCAL" />
+      <updated>1476043921145</updated>
+    </task>
+    <option name="localTasksCounter" value="175" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1227,13 +1227,13 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="221881000" />
+    <option name="totallyTimeSpent" value="222100000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1855" height="1056" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21282476" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21282476" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3445122" sideWeight="0.50193477" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1283,7 +1283,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Во ща по-любому должно работать. Зуб даю, бля буду" />
     <MESSAGE value="Немного респонсива в ваши глаза" />
     <MESSAGE value="Принудительный редирект мобильных устройств на страницу загрузки (if мобильник)" />
     <MESSAGE value="Удалил остатки MDL" />
@@ -1308,7 +1307,8 @@
     <MESSAGE value="Поправил баг в сдаться" />
     <MESSAGE value="Ускорил анимацию кнопки &quot;Сдаться&quot;" />
     <MESSAGE value="Включил защиту" />
-    <option name="LAST_COMMIT_MESSAGE" value="Включил защиту" />
+    <MESSAGE value="Добавил origins" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавил origins" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1683,7 +1683,7 @@
     <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="648">
-          <caret line="40" column="206" selection-start-line="40" selection-start-column="206" selection-end-line="40" selection-end-column="206" />
+          <caret line="40" column="239" selection-start-line="40" selection-start-column="239" selection-end-line="40" selection-end-column="239" />
           <folding />
         </state>
       </provider>
