@@ -32,6 +32,12 @@ $(document).ready(function () {
         setCodeInputsHandler(e);
     });
 
+    $('#set-code').find('input').keydown(function (e) {
+        if (e.keyCode == 13) {
+            setCode()
+        }
+    });
+
     // debugShit();
 });
 
@@ -93,12 +99,15 @@ var setCode = function () {
         codeArray.push($(this).val());
     });
     var codeString = codeArray.join('');
-    App.game.perform('set_code', {msg: parseInt(codeString)});
-    yourCode = codeString;
+    if (codeString.length == 4) {
+        App.game.perform('set_code', {msg: parseInt(codeString)});
+        yourCode = codeString;
 
-    $('#set-code-container').fadeOut('slow', function () {
-        $('#waiting-for-opponent-container').fadeIn('slow');
-    });
+
+        $('#set-code-container').fadeOut('slow', function () {
+            $('#waiting-for-opponent-container').fadeIn('slow');
+        });
+    }
 };
 
 var initGame = function(gameData) {
@@ -127,7 +136,7 @@ var initGame = function(gameData) {
         $('.give-up-flag-spacer').show();
         setTimeout(function () {
             $('#give-up-container').fadeIn('slow').addClass('show')
-        }, 1000)
+        }, 600)
     });
 
     $('#continue').click(function () {
@@ -137,11 +146,12 @@ var initGame = function(gameData) {
         setTimeout(function () {
             $('.give-up-flag-spacer').hide();
             $('#give-up-flag').removeClass('position--absolute');
-        }, 1500)
+        }, 1000)
     });
 
     $('#give-up').click(function () {
         $('body').fadeOut('slow', function () {
+            App.game.perform('forfeit');
             App.cable.disconnect();
             App.cable.connect();
             $('#roller').show();

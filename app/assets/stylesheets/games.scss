@@ -182,7 +182,7 @@ form#set-code input[type=text]{
   border-radius: 50%;
   width: 75px;
   height: 75px;
-  transition: box-shadow .3s, transform .3s, width 1.5s, height 1.5s, top 1.5s, left 1.5s, margin 1.5s;
+  transition: box-shadow .3s, transform .3s, width 1s, height 1s, margin 1s;
   float: left;
   z-index: 5;
   margin-right: -75px;
@@ -201,7 +201,6 @@ form#set-code input[type=text]{
     margin-top: -125vmax;
     width: 250vmax;
     height: 250vmax;
-    background-image: none;
 
     &:hover {
       box-shadow: none;
@@ -213,6 +212,7 @@ form#set-code input[type=text]{
   &.position--absolute {
     position: absolute !important;
     pointer-events: none;
+    background-image: none;
   }
 }
 

@@ -11,7 +11,7 @@
     <list default="true" id="34787232-a8da-4fc4-b117-f4225586c072" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/game.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/game.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/application.html.haml" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.haml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/games.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/games.scss" />
     </list>
     <ignored path="SerVik.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,7 +35,7 @@
     <SUITE FILE_PATH="coverage/SerVik@All_tests_in_spec__SerVik.coverage" NAME="All tests in spec: SerVik Coverage Results" MODIFIED="1474189891226" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/spec" MODULE_NAME="SerVik" />
     <SUITE FILE_PATH="coverage/SerVik@Run_spec__virtual_game_spec___SerVik.coverage" NAME="Run spec 'virtual_game_spec': SerVik Coverage Results" MODIFIED="1474189880845" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="SerVik" />
     <SUITE FILE_PATH="coverage/servik@Development__SerVik.coverage" NAME="Development: SerVik Coverage Results" MODIFIED="1475934035194" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="SerVik" />
-    <SUITE FILE_PATH="coverage/SerVik@Development__SerVik.coverage" NAME="Development: SerVik Coverage Results" MODIFIED="1476017906340" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="SerVik" />
+    <SUITE FILE_PATH="coverage/SerVik@Development__SerVik.coverage" NAME="Development: SerVik Coverage Results" MODIFIED="1476020945751" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="SerVik" />
     <SUITE FILE_PATH="coverage/servik@All_tests_in_spec__SerVik.coverage" NAME="All tests in spec: SerVik Coverage Results" MODIFIED="1473764569936" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/spec" MODULE_NAME="SerVik" />
     <SUITE FILE_PATH="coverage/SerVik@sabrina.coverage" NAME="sabrina Coverage Results" MODIFIED="1473524934050" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="SerVik" />
     <SUITE FILE_PATH="coverage/servik@spec__SerVik.coverage" NAME="spec: SerVik Coverage Results" MODIFIED="1473782997363" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="SerVik" />
@@ -81,11 +81,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.html.haml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="application.html.haml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.haml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="5" column="71" selection-start-line="5" selection-start-column="71" selection-end-line="5" selection-end-column="71" />
+            <state relative-caret-position="552">
+              <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
               <folding>
                 <marker date="1476018115954" expanded="true" signature="947:1711" ph="{...}" />
                 <marker date="1476018115954" expanded="true" signature="993:1297" ph="{...}" />
@@ -99,24 +99,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="welcome.html.haml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/games/welcome.html.haml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
-              <folding>
-                <marker date="1475966301501" expanded="true" signature="2104:2472" ph="{...}" />
-                <marker date="1475966301501" expanded="true" signature="2244:2466" ph="{&quot;el&quot;: elt...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="games.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/games.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="102" column="17" selection-start-line="102" selection-start-column="17" selection-end-line="102" selection-end-column="17" />
+            <state relative-caret-position="162">
+              <caret line="187" column="22" selection-start-line="187" selection-start-column="22" selection-end-line="187" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -125,8 +112,8 @@
       <file leaf-file-name="application.css.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="552">
+              <caret line="48" column="9" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -135,8 +122,18 @@
       <file leaf-file-name="game.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/game.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
-              <caret line="144" column="35" selection-start-line="144" selection-start-column="35" selection-end-line="144" selection-end-column="35" />
+            <state relative-caret-position="422">
+              <caret line="160" column="40" selection-start-line="160" selection-start-column="40" selection-end-line="160" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application_controller.rb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="72">
+              <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -231,10 +228,10 @@
         <option value="$PROJECT_DIR$/app/assets/javascripts/channels/game.coffee" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/application.css.scss" />
         <option value="$PROJECT_DIR$/app/views/games/welcome.html.haml" />
-        <option value="$PROJECT_DIR$/app/assets/stylesheets/games.scss" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/cable.js" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/game.js" />
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.haml" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/games.scss" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/game.js" />
       </list>
     </option>
   </component>
@@ -247,8 +244,8 @@
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
     <option name="FILTER_WARNINGS" value="false" />
-    <option name="FILTER_INFO" value="true" />
-    <option name="FILTER_DEBUG" value="true" />
+    <option name="FILTER_INFO" value="false" />
+    <option name="FILTER_DEBUG" value="false" />
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectFrameBounds">
@@ -870,14 +867,7 @@
       <workItem from="1475777683582" duration="4698000" />
       <workItem from="1475916019603" duration="18870000" />
       <workItem from="1475949251537" duration="17627000" />
-      <workItem from="1476016512679" duration="1604000" />
-    </task>
-    <task id="LOCAL-00122" summary="Принудительный редирект мобильных устройств на страницу загрузки (if мобильник)">
-      <created>1475434698217</created>
-      <option name="number" value="00122" />
-      <option name="presentableId" value="LOCAL-00122" />
-      <option name="project" value="LOCAL" />
-      <updated>1475434698217</updated>
+      <workItem from="1476016512679" duration="3554000" />
     </task>
     <task id="LOCAL-00123" summary="Удалил остатки MDL">
       <created>1475435463107</created>
@@ -1215,7 +1205,14 @@
       <option name="project" value="LOCAL" />
       <updated>1475966848319</updated>
     </task>
-    <option name="localTasksCounter" value="171" />
+    <task id="LOCAL-00171" summary="Поправил баг в сдаться">
+      <created>1476018128699</created>
+      <option name="number" value="00171" />
+      <option name="presentableId" value="LOCAL-00171" />
+      <option name="project" value="LOCAL" />
+      <updated>1476018128700</updated>
+    </task>
+    <option name="localTasksCounter" value="172" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1251,7 +1248,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="216966000" />
+    <option name="totallyTimeSpent" value="218916000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1855" height="1056" extended-state="6" />
@@ -1307,7 +1304,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Фикс для Heroku, невидящего картинки из assets pipeline" />
     <MESSAGE value="Правки по вёрстке" />
     <MESSAGE value="Добавил потерянный %li" />
     <MESSAGE value="Во ща по-любому должно работать. Зуб даю, бля буду" />
@@ -1332,7 +1328,8 @@
     <MESSAGE value="Исправил баг отображения игроков онлайн в браузере." />
     <MESSAGE value="Добавил Метрику и Firebase" />
     <MESSAGE value="Пофиксена проблема подключения на сторонних доменах" />
-    <option name="LAST_COMMIT_MESSAGE" value="Пофиксена проблема подключения на сторонних доменах" />
+    <MESSAGE value="Поправил баг в сдаться" />
+    <option name="LAST_COMMIT_MESSAGE" value="Поправил баг в сдаться" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1491,14 +1488,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="67" selection-start-line="5" selection-start-column="67" selection-end-line="5" selection-end-column="67" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/assets/javascripts/jquery.mask.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
@@ -1627,22 +1616,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/games.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="102" column="17" selection-start-line="102" selection-start-column="17" selection-end-line="102" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/pages/about.html.haml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
@@ -1677,14 +1650,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/game.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="144" column="35" selection-start-line="144" selection-start-column="35" selection-end-line="144" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/locales/en.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="552">
@@ -1695,8 +1660,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.haml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="71" selection-start-line="5" selection-start-column="71" selection-end-line="5" selection-end-column="71" />
+        <state relative-caret-position="552">
+          <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
           <folding>
             <marker date="1476018115954" expanded="true" signature="947:1711" ph="{...}" />
             <marker date="1476018115954" expanded="true" signature="993:1297" ph="{...}" />
@@ -1706,6 +1671,38 @@
             <marker date="1476018115954" expanded="true" signature="1901:2166" ph="{&quot;apiKey&quot;: &quot;AIzaSyBKeLYaAVm93lgBvNNHFuh7iysFgW7bIiA&quot;...}" />
             <marker date="1476018115954" expanded="true" signature="1901:2174" ph="{&quot;apiKey&quot;: &quot;AIzaSyBKeLYaAVm93lgBvNNHFuh7iysFgW7bIiA&quot;...}" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="552">
+          <caret line="48" column="9" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/games.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="187" column="22" selection-start-line="187" selection-start-column="22" selection-end-line="187" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/game.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="422">
+          <caret line="160" column="40" selection-start-line="160" selection-start-column="40" selection-end-line="160" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
