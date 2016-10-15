@@ -121,8 +121,8 @@
       <file leaf-file-name="seek.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/models/seek.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+            <state relative-caret-position="162">
+              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -827,14 +827,7 @@
       <workItem from="1475916019603" duration="18870000" />
       <workItem from="1475949251537" duration="17627000" />
       <workItem from="1476016512679" duration="6754000" />
-      <workItem from="1476547500871" duration="9308000" />
-    </task>
-    <task id="LOCAL-00130" summary="Новый Seek с фильтрами">
-      <created>1475510458855</created>
-      <option name="number" value="00130" />
-      <option name="presentableId" value="LOCAL-00130" />
-      <option name="project" value="LOCAL" />
-      <updated>1475510458855</updated>
+      <workItem from="1476547500871" duration="9435000" />
     </task>
     <task id="LOCAL-00131" summary="Новый Seek с фильтрами">
       <created>1475511154631</created>
@@ -1172,7 +1165,14 @@
       <option name="project" value="LOCAL" />
       <updated>1476556992281</updated>
     </task>
-    <option name="localTasksCounter" value="179" />
+    <task id="LOCAL-00179" summary="Ещё больше синглтонов!">
+      <created>1476557541830</created>
+      <option name="number" value="00179" />
+      <option name="presentableId" value="LOCAL-00179" />
+      <option name="project" value="LOCAL" />
+      <updated>1476557541830</updated>
+    </task>
+    <option name="localTasksCounter" value="180" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1208,13 +1208,13 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="231424000" />
+    <option name="totallyTimeSpent" value="231551000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1855" height="1056" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21503593" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21503593" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3445122" sideWeight="0.50193477" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1265,7 +1265,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Удалил остатки MDL" />
     <MESSAGE value="Исправил background-color для a:focus" />
     <MESSAGE value="Новый Seek с фильтрами" />
     <MESSAGE value="config.action_cable.disable_request_forgery_protection = true" />
@@ -1290,7 +1289,8 @@
     <MESSAGE value="Добавил origins" />
     <MESSAGE value="Добавил request origins" />
     <MESSAGE value="Добавил таймеры и 🥁 синглтон!!!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавил таймеры и 🥁 синглтон!!!" />
+    <MESSAGE value="Ещё больше синглтонов!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ещё больше синглтонов!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1657,8 +1657,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/seek.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        <state relative-caret-position="162">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
         </state>
       </provider>
