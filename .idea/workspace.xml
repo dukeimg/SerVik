@@ -121,8 +121,8 @@
       <file leaf-file-name="seek.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/models/seek.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="144">
+              <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -827,14 +827,7 @@
       <workItem from="1475916019603" duration="18870000" />
       <workItem from="1475949251537" duration="17627000" />
       <workItem from="1476016512679" duration="6754000" />
-      <workItem from="1476547500871" duration="9622000" />
-    </task>
-    <task id="LOCAL-00132" summary="Новый Seek с фильтрами">
-      <created>1475511545110</created>
-      <option name="number" value="00132" />
-      <option name="presentableId" value="LOCAL-00132" />
-      <option name="project" value="LOCAL" />
-      <updated>1475511545110</updated>
+      <workItem from="1476547500871" duration="9947000" />
     </task>
     <task id="LOCAL-00133" summary="Новый Seek с фильтрами">
       <created>1475511677798</created>
@@ -1172,7 +1165,14 @@
       <option name="project" value="LOCAL" />
       <updated>1476557650931</updated>
     </task>
-    <option name="localTasksCounter" value="181" />
+    <task id="LOCAL-00181" summary="Ещё больше синглтонов!">
+      <created>1476557841298</created>
+      <option name="number" value="00181" />
+      <option name="presentableId" value="LOCAL-00181" />
+      <option name="project" value="LOCAL" />
+      <updated>1476557841298</updated>
+    </task>
+    <option name="localTasksCounter" value="182" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1208,7 +1208,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="231738000" />
+    <option name="totallyTimeSpent" value="232063000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1855" height="1056" extended-state="6" />
@@ -1657,8 +1657,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/seek.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="144">
+          <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
           <folding />
         </state>
       </provider>

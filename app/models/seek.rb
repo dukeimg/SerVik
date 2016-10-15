@@ -2,9 +2,9 @@ class Seek
   def initialize(uuid, data)
     filter = data['filter']
     if filter
-      self.init_seek_with_filters(uuid, data)
+      Seek.init_seek_with_filters(uuid, data)
     else
-      self.init_quick_game(uuid)
+      Seek.init_quick_game(uuid)
     end
   end
 
