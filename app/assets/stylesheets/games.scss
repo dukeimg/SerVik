@@ -228,6 +228,10 @@ form#set-code input[type=text]{
   font-size: 25px;
 }
 
+.your-code .timer {
+  width: calc(100% - 75px);
+}
+
 // Give up container
 
 #give-up-container {

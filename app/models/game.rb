@@ -59,8 +59,6 @@ class Game
       end
     end
 
-    private
-
     # Идентификация оппонента
     def opponent_for(uuid)
       REDIS.get("opponent_for:#{uuid}")
