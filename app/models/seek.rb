@@ -48,8 +48,6 @@ class Seek
       send_rooms_data(Seek.get_rooms)
     end
 
-    private
-
     def init_quick_game(uuid)
       if opponent = REDIS.spop("q_seeks")
         QuickGame.new(uuid, opponent)
