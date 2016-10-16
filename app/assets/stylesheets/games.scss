@@ -228,8 +228,8 @@ form#set-code input[type=text]{
   font-size: 25px;
 }
 
-.your-code .timer {
-  width: calc(100% - 75px);
+.your-code, .timer {
+  width: calc(100% - 5px);
 }
 
 // Give up container
@@ -278,7 +278,7 @@ form#set-code input[type=text]{
   display: flex;
   flex-direction: column;
   overflow-y: scroll;
-  padding: 0 5px;
+  padding: 20px 5px 0 5px;
 
   .message-block {
 
@@ -296,6 +296,7 @@ form#set-code input[type=text]{
       padding: 5px 10px;
       display: inline-block;
       vertical-align: middle;
+      margin: 0 10px;
     }
 
     .him, .me {
@@ -310,6 +311,12 @@ form#set-code input[type=text]{
       padding: 5px 0;
     }
 
+  }
+
+  .turn {
+    display: none;
+    align-self: center;
+    color: $text;
   }
 
 
@@ -351,5 +358,48 @@ form#input-code input[type=text]{
     background: none;
     border-bottom: 1px solid #000;
     outline: none;
+  }
+}
+
+
+// End game modal
+
+#end-game-modal {
+  background: $text;
+  color: white;
+  position: fixed;
+  top: 40%;
+  left: calc(50% - 150px);
+  width: 300px;
+  padding: 20px;
+  display: none;
+
+  .end-game-title {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .end-game-message {
+    margin: 15px 0;
+  }
+
+  .close-btn {
+    padding: 15px;
+    background: none;
+    border-radius: 5px;
+    border: 1px solid white;
+    margin-top: 15px;
+    transition: color .6s, border-color .6s;
+
+    &:hover {
+      color: #dddddd;
+      border-color: #dddddd;
+      cursor: pointer;
+    }
+
+    &.btn-danger:hover {
+      color: #ff6666;
+      border-color: #ff6666;
+    }
   }
 }

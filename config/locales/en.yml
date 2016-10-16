@@ -31,12 +31,15 @@ en:
     download: 'Get on iPhone'
     searching_for_players: 'Searching for players'
     cancel: 'Cancel'
+    restart: 'Restart'
     set_code:
       msg: 'First, set a code that your opponent will try to guess. Choose wisely, it should be a challenge for your rival!'
       random: 'Random'
       submit: 'Start'
       waiting_for_opponent: 'Waiting for code from your opponent'
     game:
+      your_turn: 'Your turn'
+      opponents_turn: "Opponent's turn"
       your_code: 'Your code:'
     give_up:
       are_you_sure: 'You are going to surrender! Your opponent will win and get score.'

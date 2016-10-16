@@ -13,9 +13,9 @@ App.createChannel = ->
 #          # some code
         when 'waiting_for_code'
           showSetCode()
-        when 'turn'
-          console.log(data)
         when 'game_start'
           initGame(data)
         when 'turn'
           handleTurn(data)
+        when 'end_game'
+          handleEndGame(data)

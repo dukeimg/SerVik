@@ -13,12 +13,8 @@
           %span :
           %span.secs 00
       .row.messages-container
-        -#.message-block.my
-        -#  .message 1234 | (2:2)
-        -#  .me Me
-        -#.message-block.his
-        -#  .him R
-        -#  .message 1234 | (2:2)
+        .turn{'data-yours': 1}= t('play.game.your_turn')
+        .turn{'data-yours': 0}= t('play.game.opponents_turn')
       .row.code-input-container.text-center
         %form#input-code
           %input{:type => 'text', :maxlength => '1'}
@@ -57,6 +53,10 @@
       #waiting-for-opponent-container.text-center
         %p= t('play.set_code.waiting_for_opponent')
       #banner= render('layouts/banner')
+  #end-game-modal.text-center
+    .end-game-title
+    .end-game-message
+    .close-btn= t('play.restart')
 :javascript
   App.createChannel();
   $(document).ready(function() {

@@ -1,5 +1,32 @@
 // Global variables
-var yourCode, yourTurn, me, rival;
+var yourCode, yourTurn, me, rival, lang;
+
+var Messages = {
+    ru: {
+        win: {
+            title: 'Победа!',
+            code_is_guessed: 'Поздравляем, вы отгадали код противника: ',
+            opponent_disconnected: 'Потеряно соединение с оппонентом.',
+            opponent_forfeits: 'Оппонент сдался. Его код: '
+        },
+        lose: {
+            title: 'Поражение!',
+            code_is_guessed: 'Ваш оппонент оказался быстрее вас. Его код: '
+        }
+    },
+    en: {
+        win: {
+            title: 'Won!',
+            code_is_guessed:  'Congratulations, you have guessed the enemy’s code: ',
+            opponent_disconnected: 'Connection lost.',
+            opponent_forfeits: 'Your opponent has gave up. His code: '
+        },
+        lose: {
+            title: 'Lost!',
+            code_is_guessed: 'Your opponent was faster this time. His code: '
+        }
+    }
+};
 
 
 App.web = {
@@ -25,7 +52,7 @@ $.fn.getCode = function () {
 };
 
 $(document).ready(function () {
-    var lang = $('html').attr('lang');
+    lang = $('html').attr('lang');
 
     if (lang == 'ru') {
         me = 'Вы';
@@ -67,7 +94,6 @@ $(document).ready(function () {
 });
 
 var startSeek = function () {
-    console.log('start seek');
     $('.menu > ul').fadeOut('slow', function () {
         $('.loading-container').fadeIn('slow');
         App.game.perform('seek');
@@ -148,9 +174,11 @@ var initGame = function(gameData) {
     if (gameData.is_your_turn) {
         $('.send').removeClass('disabled');
         yourTurn = true;
+        $('.row').find("[data-yours='1']").show();
     } else {
         $('.send').addClass('disabled');
         yourTurn = false;
+        $('.row').find("[data-yours='0']").show();
     }
 
     $('body').toggleClass('game');
@@ -185,8 +213,9 @@ var initGame = function(gameData) {
             $('body').fadeIn('slow').removeClass('game');
             $('#game-container').hide();
             $('ul').show();
+            $('#banner').fadeIn('slow');
         });
-    })
+    });
 };
 
 var initTimer = function () {
@@ -210,55 +239,55 @@ var initTimer = function () {
 function makeTurn() {
     var code = $('#input-code').getCode();
     if (code != 'Invalid' && yourTurn == true) {
-        App.perform('make_turn', {msg: code});
+        App.game.perform('make_turn', {msg: code});
+        $('input').val('');
         $('.send').addClass('disabled');
         yourTurn = false;
         var message = "<div class='message-block my'><div class='message'>" + code + "</div><div class='me'>" + me +
             "</div></div>";
-        $('.messages-container').append(message);
+        var container= $('.messages-container');
+        container.append(message).animate({scrollTop: $(container).get(0).scrollHeight}, 300);
     }
+    $('.turn').hide();
 }
 
 function handleTurn(data) {
     yourTurn = data.is_your_turn;
+    var container= $('.messages-container');
     if (yourTurn == true) {
         $('.send').removeClass('disabled');
+        var message = "<div class='message-block his'><div class='him'>" + rival + "</div><div class='message'>"
+            + data.code + " | " + data.msg + "</div></div>";
+        container.append(message);
     } else {
         $('.send').addClass('disabled');
+        $('.my:last-child .message').html(data.code + " | " + data.msg)
     }
+    container.animate({scrollTop: $(container).get(0).scrollHeight}, 300);
+    $('.turn').hide();
 }
 
 
-// DEBUG SHIT
+function handleEndGame(data) {
+    $('.send').hide();
+    $('#give-up-container').hide();
+    yourTurn = false;
+    if (data.win) {
+        if(data.opponent_code == null) {
+            data.opponent_code = ''
+        }
+        $('.end-game-title').text(Messages[lang].win.title);
+        $('.end-game-message').text(Messages[lang].win[[data.reason]] + data.opponent_code)
+    } else {
+        $('.end-game-title').text(Messages[lang].lose.title);
+        $('.end-game-message').text(Messages[lang].lose[[data.reason]] + data.opponent_code)
+    }
+    $('#end-game-modal').show();
 
-function debugShit() {
-    initTimer();
-    var code = 6431;
-    var yourCode = $('.your-code');
-    yourCode.text(yourCode.text() + ' ' + code);
-    $('body').toggleClass('game');
-
-    $('#give-up-flag').click(function () {
-        $('#give-up-flag').addClass('large').addClass('position--absolute');
-        $('.give-up-flag-spacer').show();
-        setTimeout(function () {
-            $('#give-up-container').fadeIn('slow').addClass('show')
-        }, 1000)
-    });
-
-    $('#continue').click(function () {
-        $('#give-up-container').hide().removeClass('show');
-        $('#give-up-flag').removeClass('large');
-
-        setTimeout(function () {
-            $('.give-up-flag-spacer').hide();
-            $('#give-up-flag').removeClass('position--absolute');
-        }, 1500)
-    });
-
-    $('#give-up').click(function () {
+    $('.close-btn').click(function () {
         $('body').fadeOut('slow', function () {
-            App.cable.disconnect().connect();
+            App.cable.disconnect();
+            App.cable.connect();
             $('#roller').show();
             $('.give-up-flag-spacer').hide();
             $('#give-up-container').hide().removeClass('show');
@@ -266,7 +295,11 @@ function debugShit() {
             $('body').fadeIn('slow').removeClass('game');
             $('#game-container').hide();
             $('ul').show();
+            $('.send').show();
+            $('#end-game-modal').hide();
+            $('#set-code-container').hide();
             $('#banner').fadeIn('slow');
+            $('#waiting-for-opponent-container').hide();
         });
     })
 }
