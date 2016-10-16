@@ -7,17 +7,15 @@ App.createChannel = ->
 
     received: (data) ->
       switch data.action
-        when "subscribed"
-          @printMessage("UUID: #{data.uuid}.")
-        when "opponent_disconnected"
-          @printMessage('Соединение разорвано')
+#        when "subscribed"
+#          # some code
+#        when "opponent_disconnected"
+#          # some code
         when 'waiting_for_code'
           showSetCode()
         when 'turn'
           console.log(data)
         when 'game_start'
           initGame(data)
-
-
-    printMessage: (message) ->
-      $("#messages").append("<p>#{message}</p>")
+        when 'turn'
+          handleTurn(data)

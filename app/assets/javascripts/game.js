@@ -1,4 +1,6 @@
-var yourCode;
+// Global variables
+var yourCode, yourTurn, me, rival;
+
 
 App.web = {
     send_code: function (code) {
@@ -9,7 +11,30 @@ App.web = {
     }
 };
 
+$.fn.getCode = function () {
+    var codeArray = [];
+    $(this).find('input').each(function () {
+        codeArray.push($(this).val());
+    });
+    var codeString = codeArray.join('');
+    if(codeString.length == 4) {
+        return codeString
+    } else {
+        return 'Invalid'
+    }
+};
+
 $(document).ready(function () {
+    var lang = $('html').attr('lang');
+
+    if (lang == 'ru') {
+        me = 'Вы';
+        rival = 'П';
+    } else if ( lang == 'en') {
+        me = 'Me';
+        rival = 'R';
+    }
+
     $('#code_submit').click(function () {
         var code = $('#code_field').val();
         console.log(code, typeof(code));
@@ -94,15 +119,10 @@ var generateRandomCode = function () {
 };
 
 var setCode = function () {
-    var codeArray = [];
-    $('#set-code').find('input').each(function () {
-        codeArray.push($(this).val());
-    });
-    var codeString = codeArray.join('');
-    if (codeString.length == 4) {
-        App.game.perform('set_code', {msg: parseInt(codeString)});
-        yourCode = codeString;
-
+    var code = $('#set-code').getCode();
+    if (code != 'Invalid') {
+        App.game.perform('set_code', {msg: parseInt(code)});
+        yourCode = code;
 
         $('#set-code-container').fadeOut('slow', function () {
             $('#waiting-for-opponent-container').fadeIn('slow');
@@ -123,10 +143,12 @@ var initGame = function(gameData) {
     var yourCodeContainer = $('.your-code');
     yourCodeContainer.text(yourCodeContainer.text() + ' ' + yourCode);
 
-    if(gameData.is_your_turn) {
-
+    if (gameData.is_your_turn) {
+        $('.send').removeClass('disabled');
+        yourTurn = true;
     } else {
-
+        $('.send').addClass('disabled');
+        yourTurn = false;
     }
 
     $('body').toggleClass('game');
@@ -182,6 +204,28 @@ var initTimer = function () {
         getCurrentValue();
     }, 1000);
 };
+
+function makeTurn() {
+    var code = $('#input-code').getCode();
+    if (code != 'Invalid' && yourTurn == true) {
+        App.perform('make_turn', {msg: code});
+        $('.send').addClass('disabled');
+        yourTurn = false;
+        var message = "<div class='message-block my'><div class='message'>" + code + "</div><div class='me'>" + me +
+            "</div></div>";
+        $('.messages-container').append(message);
+    }
+}
+
+function handleTurn(data) {
+    yourTurn = data.is_your_turn;
+    if (yourTurn == true) {
+        $('.send').removeClass('disabled');
+    } else {
+        $('.send').addClass('disabled');
+    }
+}
+
 
 // DEBUG SHIT
 

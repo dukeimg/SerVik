@@ -9,6 +9,6 @@
   this.App || (this.App = {});
 
   App.cable = ActionCable.createConsumer('wss://servik.herokuapp.com/cable');
-  // App.cable = ActionCable.createConsumer();
+  //App.cable = ActionCable.createConsumer();
 
 }).call(this);
