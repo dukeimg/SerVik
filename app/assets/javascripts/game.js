@@ -71,7 +71,8 @@ var startSeek = function () {
     $('.menu > ul').fadeOut('slow', function () {
         $('.loading-container').fadeIn('slow');
         App.game.perform('seek');
-    })
+    });
+    $('#banner').fadeOut('slow');
 };
 
 var stopSeek = function () {
@@ -80,7 +81,8 @@ var stopSeek = function () {
     $('.loading-container').fadeOut('slow', function () {
         $('.menu > ul').fadeIn('slow');
         App.cable.connect();
-    })
+    });
+    $('#banner').fadeIn('slow');
 };
 
 var showSetCode = function () {
@@ -264,6 +266,7 @@ function debugShit() {
             $('body').fadeIn('slow').removeClass('game');
             $('#game-container').hide();
             $('ul').show();
+            $('#banner').fadeIn('slow');
         });
     })
 }
