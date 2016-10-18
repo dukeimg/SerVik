@@ -114,7 +114,6 @@ $(document).ready(function () {
 
     $('#code_submit').click(function () {
         var code = $('#code_field').val();
-        console.log(code, typeof(code));
         if(!isNaN(code)) {
             App.web.send_code(code)
         }
@@ -122,7 +121,6 @@ $(document).ready(function () {
 
     $('#guess_submit').click(function () {
         var code = $('#guess_field').val();
-        console.log(code, typeof(code));
         if(!isNaN(code)) {
             App.web.make_turn(code)
         }
@@ -157,7 +155,6 @@ var startSeek = function () {
 };
 
 var stopSeek = function () {
-    console.log('stop seek');
     App.cable.disconnect();
     $('.loading-container').fadeOut('slow', function () {
         $('.menu > ul').fadeIn('slow');
@@ -197,7 +194,6 @@ var setCodeInputsHandler = function (e) {
     };
     setTimeout(function () {
         if(e.currentTarget.value.length > 0) {
-            console.log($.inArray(e.keyCode.toString(), Object.keys(numKeys)));
             if ($.inArray(e.keyCode.toString(), Object.keys(numKeys)) != -1) {
                 $(e.currentTarget).val(numKeys[e.keyCode])
             }
