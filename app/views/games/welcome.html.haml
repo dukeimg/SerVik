@@ -7,7 +7,9 @@
     #game-container
       .row.text-center
         #give-up-flag
-        .your-code= t('play.game.your_code')
+        .your-code
+          = t('play.game.your_code')
+          %span#your-code
         .timer
           %span.mins 00
           %span :

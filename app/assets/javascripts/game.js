@@ -1,5 +1,40 @@
 // Global variables
-var yourCode, yourTurn, me, rival, lang;
+var yourCode, yourTurn, me, rival, lang, timer;
+var Timer = (function () {
+    var start_time, id;
+    var t = {};
+
+    function getCurrentValue() {
+        t.raw = (new Date() - start_time) / 1000;
+        t.mins = Math.floor(t.raw / 60);
+        t.secs = Math.floor(t.raw - (t.mins * 60));
+
+        $('.mins').html(('0' + t.mins).slice(-2));
+        $('.secs').html(('0' + t.secs).slice(-2));
+    }
+
+    return {
+        start: function () {
+            if (start_time == null) {
+                start_time = new Date()
+            }
+            id = setInterval(function () {
+                getCurrentValue();
+            }, 1000);
+        },
+        getId: function () {
+            return id
+        },
+        stop: function () {
+            clearInterval(id);
+        },
+        refresh: function () {
+            clearInterval(id);
+            start_time = null;
+        }
+    }
+});
+timer = new Timer();
 
 var Messages = {
     ru: {
@@ -51,6 +86,21 @@ $.fn.getCode = function () {
     }
 };
 
+$.fn.setCursorPosition = function (pos) {
+    this.each(function (index, elem) {
+        if (elem.setSelectionRange) {
+            elem.setSelectionRange(pos, pos);
+        } else if (elem.createTextRange) {
+            var range = elem.createTextRange();
+            range.collapse(true);
+            range.moveEnd('character', pos);
+            range.moveStart('character', pos);
+            range.select();
+        }
+    });
+    return this;
+};
+
 $(document).ready(function () {
     lang = $('html').attr('lang');
 
@@ -89,6 +139,11 @@ $(document).ready(function () {
             setCode()
         }
     });
+    $('#input-code').find('input').keydown(function (e) {
+        if (e.keyCode == 13) {
+            makeTurn();
+        }
+    });
 
     // debugShit();
 });
@@ -118,20 +173,40 @@ var showSetCode = function () {
 };
 
 var setCodeInputsHandler = function (e) {
-    console.log();
-    var numKeys = [48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105];
+    var numKeys = {
+        48: 0,
+        49: 1,
+        50: 2,
+        51: 3,
+        52: 4,
+        53: 5,
+        54: 6,
+        55: 7,
+        56: 8,
+        57: 9,
+        96: 0,
+        97: 1,
+        98: 2,
+        99: 3,
+        100: 4,
+        101: 5,
+        102: 6,
+        103: 7,
+        104: 8,
+        105: 9
+    };
     setTimeout(function () {
-        if(e.currentTarget.value.length > 0){
-            if ($.inArray(e.which, numKeys) != -1) {
-                $(e.currentTarget).val(String.fromCharCode(e.which))
+        if(e.currentTarget.value.length > 0) {
+            console.log($.inArray(e.keyCode.toString(), Object.keys(numKeys)));
+            if ($.inArray(e.keyCode.toString(), Object.keys(numKeys)) != -1) {
+                $(e.currentTarget).val(numKeys[e.keyCode])
             }
-            if (e.currentTarget.nextElementSibling){
+            if (e.currentTarget.nextElementSibling && (e.keyCode != 8 && e.keyCode != 37)) {
                 e.currentTarget.nextElementSibling.focus()
             }
-        } else {
-            if(e.currentTarget.previousElementSibling && e.which == 8){
-                e.currentTarget.previousElementSibling.focus()
-            }
+        }
+        if(e.currentTarget.previousElementSibling && (e.keyCode == 8 || e.keyCode == 37)){
+            e.currentTarget.previousElementSibling.focus()
         }
     }, 1);
 };
@@ -159,8 +234,17 @@ var setCode = function () {
     }
 };
 
+var clearData = function () {
+    $('input').val('');
+    $('#your-code').text('');
+    $('.mins').html('00');
+    $('.secs').html('00');
+    $('.messages-container').html('');
+    timer.refresh();
+};
+
 var initGame = function(gameData) {
-    initTimer();
+    timer.start();
 
     setTimeout(function () {
         $('#roller').fadeOut('slow');
@@ -169,8 +253,8 @@ var initGame = function(gameData) {
         });
     }, 1000);
 
-    var yourCodeContainer = $('.your-code');
-    yourCodeContainer.text(yourCodeContainer.text() + ' ' + yourCode);
+    var yourCodeContainer = $('#your-code');
+    yourCodeContainer.text(yourCode);
 
     if (gameData.is_your_turn) {
         $('.send').removeClass('disabled');
@@ -215,33 +299,18 @@ var initGame = function(gameData) {
             $('#game-container').hide();
             $('ul').show();
             $('#banner').fadeIn('slow');
+            clearData();
         });
     });
-};
-
-var initTimer = function () {
-    var start_time = new Date();
-    var timer = {};
-
-    function getCurrentValue() {
-        timer.raw = (new Date() - start_time) / 1000;
-        timer.mins = Math.floor(timer.raw / 60);
-        timer.secs = Math.floor(timer.raw - (timer.mins * 60));
-
-        $('.mins').html(('0' + timer.mins).slice(-2));
-        $('.secs').html(('0' + timer.secs).slice(-2));
-    }
-
-    setInterval(function () {
-        getCurrentValue();
-    }, 1000);
 };
 
 function makeTurn() {
     var code = $('#input-code').getCode();
     if (code != 'Invalid' && yourTurn == true) {
         App.game.perform('make_turn', {msg: code});
-        $('input').val('');
+        var elem = $($('#input-code').find('input')[0]);
+        elem.focus();
+        elem.setCursorPosition(0);
         $('.send').addClass('disabled');
         yourTurn = false;
         var message = "<div class='message-block my'><div class='message'>" + code + "</div><div class='me'>" + me +
@@ -270,6 +339,7 @@ function handleTurn(data) {
 
 
 function handleEndGame(data) {
+    timer.stop();
     $('.send').hide();
     $('#give-up-container').hide();
     yourTurn = false;
@@ -301,6 +371,7 @@ function handleEndGame(data) {
             $('#set-code-container').hide();
             $('#banner').fadeIn('slow');
             $('#waiting-for-opponent-container').hide();
+            clearData();
         });
     })
 }
