@@ -118,21 +118,18 @@ var showSetCode = function () {
 };
 
 var setCodeInputsHandler = function (e) {
-    console.log(e);
+    console.log();
     var numKeys = [48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105];
     setTimeout(function () {
         if(e.currentTarget.value.length > 0){
-            if ($.inArray(e.keyCode, numKeys) != -1) {
-                console.log('Верная клавиша(' + e.keyCode + '). Присваиваем полю значение ' + e.key );
-                $(e.currentTarget).val(e.key)
+            if ($.inArray(e.which, numKeys) != -1) {
+                $(e.currentTarget).val(String.fromCharCode(e.which))
             }
             if (e.currentTarget.nextElementSibling){
-                console.log('Переход на след. клавишу');
                 e.currentTarget.nextElementSibling.focus()
             }
         } else {
-            if(e.currentTarget.previousElementSibling && e.keyCode == 8){
-                console.log('Удаляем');
+            if(e.currentTarget.previousElementSibling && e.which == 8){
                 e.currentTarget.previousElementSibling.focus()
             }
         }
