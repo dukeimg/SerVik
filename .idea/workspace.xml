@@ -40,7 +40,7 @@
     <SUITE FILE_PATH="coverage/servik@Development__SerVik.coverage" NAME="Development: SerVik Coverage Results" MODIFIED="1476814218051" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="SerVik" />
   </component>
   <component name="CreatePatchCommitExecutor">
-    <option name="PATCH_PATH" value="" />
+    <option name="PATCH_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="DatabaseView">
     <option name="GROUP_SCHEMA" value="true" />
@@ -104,13 +104,13 @@
       <file leaf-file-name="application.html.haml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.haml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="567">
-              <caret line="60" column="4" selection-start-line="60" selection-start-column="4" selection-end-line="60" selection-end-column="4" />
+            <state relative-caret-position="531">
+              <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
               <folding>
-                <marker date="1476872179622" expanded="true" signature="993:1297" ph="{...}" />
-                <marker date="1476872179622" expanded="true" signature="1009:1274" ph="{...}" />
-                <marker date="1476872179622" expanded="true" signature="1060:1260" ph="{&quot;id&quot;: 40097755...}" />
-                <marker date="1476872179622" expanded="true" signature="1618:1689" ph="{...}" />
+                <marker date="1476872195650" expanded="true" signature="993:1297" ph="{...}" />
+                <marker date="1476872195650" expanded="true" signature="1009:1274" ph="{...}" />
+                <marker date="1476872195650" expanded="true" signature="1060:1260" ph="{&quot;id&quot;: 40097755...}" />
+                <marker date="1476872195650" expanded="true" signature="1618:1689" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -784,14 +784,7 @@
       <workItem from="1476650768736" duration="4368000" />
       <workItem from="1476789779785" duration="1982000" />
       <workItem from="1476812379107" duration="5904000" />
-      <workItem from="1476871504463" duration="669000" />
-    </task>
-    <task id="LOCAL-00143" summary="Попытка исправить NameError - undefined local variable or method `get_rooms'">
-      <created>1475528055565</created>
-      <option name="number" value="00143" />
-      <option name="presentableId" value="LOCAL-00143" />
-      <option name="project" value="LOCAL" />
-      <updated>1475528055565</updated>
+      <workItem from="1476871504463" duration="685000" />
     </task>
     <task id="LOCAL-00144" summary="Попытка исправить NameError - undefined local variable or method `get_rooms'">
       <created>1475528167949</created>
@@ -1129,7 +1122,14 @@
       <option name="project" value="LOCAL" />
       <updated>1476871666783</updated>
     </task>
-    <option name="localTasksCounter" value="192" />
+    <task id="LOCAL-00192" summary="Обновил Firebase">
+      <created>1476872185613</created>
+      <option name="number" value="00192" />
+      <option name="presentableId" value="LOCAL-00192" />
+      <option name="project" value="LOCAL" />
+      <updated>1476872185614</updated>
+    </task>
+    <option name="localTasksCounter" value="193" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1165,7 +1165,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="263782000" />
+    <option name="totallyTimeSpent" value="263798000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1665" y="24" width="1855" height="1056" extended-state="6" />
@@ -1589,13 +1589,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.haml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="60" column="4" selection-start-line="60" selection-start-column="4" selection-end-line="60" selection-end-column="4" />
+        <state relative-caret-position="531">
+          <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
           <folding>
-            <marker date="1476872179622" expanded="true" signature="993:1297" ph="{...}" />
-            <marker date="1476872179622" expanded="true" signature="1009:1274" ph="{...}" />
-            <marker date="1476872179622" expanded="true" signature="1060:1260" ph="{&quot;id&quot;: 40097755...}" />
-            <marker date="1476872179622" expanded="true" signature="1618:1689" ph="{...}" />
+            <marker date="1476872195650" expanded="true" signature="993:1297" ph="{...}" />
+            <marker date="1476872195650" expanded="true" signature="1009:1274" ph="{...}" />
+            <marker date="1476872195650" expanded="true" signature="1060:1260" ph="{&quot;id&quot;: 40097755...}" />
+            <marker date="1476872195650" expanded="true" signature="1618:1689" ph="{...}" />
           </folding>
         </state>
       </provider>
