@@ -56,18 +56,5 @@
               %span#players-online
         .row.text-center.visible-xs
           %p.players= "© #{Date.today.year} BlackBuild"
-    :plain
-      <script src="https://www.gstatic.com/firebasejs/3.5.0/firebase.js"></script>
-      <script>
-        // Initialize Firebase
-        var config = {
-          apiKey: "AIzaSyBKeLYaAVm93lgBvNNHFuh7iysFgW7bIiA",
-          authDomain: "crypto-3d02e.firebaseapp.com",
-          databaseURL: "https://crypto-3d02e.firebaseio.com",
-          storageBucket: "crypto-3d02e.appspot.com",
-          messagingSenderId: "990632354810"
-        };
-        firebase.initializeApp(config);
-      </script>
     :javascript
       $("#players-online").html(localStorage.getItem('players_online'));

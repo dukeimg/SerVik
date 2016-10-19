@@ -104,3 +104,15 @@ footer {
   bottom: 60px;
   margin: 0 auto;
 }
+
+.left-banner {
+  position: absolute;
+  left: 0;
+  top: calc(50vh - 300px);
+}
+
+.right-banner {
+  position: absolute;
+  right: 0;
+  top: calc(50vh - 300px);
+}

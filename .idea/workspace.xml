@@ -10,6 +10,9 @@
   <component name="ChangeListManager">
     <list default="true" id="34787232-a8da-4fc4-b117-f4225586c072" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.css.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.css.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/games/welcome.html.haml" afterPath="$PROJECT_DIR$/app/views/games/welcome.html.haml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/_banner.html" afterPath="$PROJECT_DIR$/app/views/layouts/_banner.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/application.html.haml" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.haml" />
     </list>
     <ignored path="SerVik.iws" />
@@ -81,11 +84,11 @@
       <file leaf-file-name="welcome.html.haml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/games/welcome.html.haml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="23" column="45" selection-start-line="23" selection-start-column="45" selection-end-line="23" selection-end-column="45" />
+            <state relative-caret-position="1080">
+              <caret line="60" column="4" selection-start-line="60" selection-start-column="4" selection-end-line="60" selection-end-column="4" />
               <folding>
-                <marker date="1476814185522" expanded="true" signature="2269:2637" ph="{...}" />
-                <marker date="1476814185522" expanded="true" signature="2409:2631" ph="{&quot;el&quot;: elt...}" />
+                <marker date="1476874486815" expanded="true" signature="2258:2626" ph="{...}" />
+                <marker date="1476874486815" expanded="true" signature="2398:2620" ph="{&quot;el&quot;: elt...}" />
               </folding>
             </state>
           </provider>
@@ -101,16 +104,26 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.html.haml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="_header_reversed.html.haml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/layouts/_header_reversed.html.haml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="288">
+              <caret line="16" column="44" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application.html.haml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.haml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="387">
-              <caret line="58" column="10" selection-start-line="58" selection-start-column="10" selection-end-line="58" selection-end-column="10" />
+            <state relative-caret-position="192">
+              <caret line="38" column="15" selection-start-line="38" selection-start-column="15" selection-end-line="38" selection-end-column="15" />
               <folding>
-                <marker date="1476872338839" expanded="true" signature="993:1297" ph="{...}" />
-                <marker date="1476872338839" expanded="true" signature="1009:1274" ph="{...}" />
-                <marker date="1476872338839" expanded="true" signature="1060:1260" ph="{&quot;id&quot;: 40097755...}" />
-                <marker date="1476872338839" expanded="true" signature="1618:1689" ph="{...}" />
+                <marker date="1476873168527" expanded="true" signature="993:1297" ph="{...}" />
+                <marker date="1476873168527" expanded="true" signature="1009:1274" ph="{...}" />
+                <marker date="1476873168527" expanded="true" signature="1060:1260" ph="{&quot;id&quot;: 40097755...}" />
+                <marker date="1476873168527" expanded="true" signature="1618:1689" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -119,8 +132,21 @@
       <file leaf-file-name="_banner.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/_banner.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="8" column="9" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
+            <state relative-caret-position="198">
+              <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
+              <folding>
+                <element signature="n#style#0;n#ins#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#ins#0;n#div#1;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application.css.scss" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="516">
+              <caret line="115" column="7" selection-start-line="115" selection-start-column="7" selection-end-line="115" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -202,16 +228,16 @@
         <option value="$PROJECT_DIR$/app/views/layouts/banner.html" />
         <option value="$PROJECT_DIR$/app/views/layouts/banner.html.haml" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/channels/game.coffee" />
-        <option value="$PROJECT_DIR$/app/assets/stylesheets/application.css.scss" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/games.scss" />
         <option value="$PROJECT_DIR$/config/locales/en.yml" />
         <option value="$PROJECT_DIR$/config/locales/ru.yml" />
-        <option value="$PROJECT_DIR$/app/views/games/welcome.html.haml" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/application.js" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/cable.js" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/game.js" />
-        <option value="$PROJECT_DIR$/app/views/layouts/_banner.html" />
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.haml" />
+        <option value="$PROJECT_DIR$/app/views/games/welcome.html.haml" />
+        <option value="$PROJECT_DIR$/app/views/layouts/_banner.html" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/application.css.scss" />
       </list>
     </option>
   </component>
@@ -384,6 +410,10 @@
               <option name="myItemId" value="assets" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="stylesheets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -404,6 +434,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="javascripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="servik" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="servik" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -784,14 +832,7 @@
       <workItem from="1476650768736" duration="4368000" />
       <workItem from="1476789779785" duration="1982000" />
       <workItem from="1476812379107" duration="5904000" />
-      <workItem from="1476871504463" duration="834000" />
-    </task>
-    <task id="LOCAL-00145" summary="Добавил debug message в send_rooms_data">
-      <created>1475528513916</created>
-      <option name="number" value="00145" />
-      <option name="presentableId" value="LOCAL-00145" />
-      <option name="project" value="LOCAL" />
-      <updated>1475528513920</updated>
+      <workItem from="1476871504463" duration="3073000" />
     </task>
     <task id="LOCAL-00146" summary="Добавил debug message в send_rooms_data">
       <created>1475528618839</created>
@@ -1129,7 +1170,14 @@
       <option name="project" value="LOCAL" />
       <updated>1476872217559</updated>
     </task>
-    <option name="localTasksCounter" value="194" />
+    <task id="LOCAL-00194" summary="Обновил Firebase">
+      <created>1476872348307</created>
+      <option name="number" value="00194" />
+      <option name="presentableId" value="LOCAL-00194" />
+      <option name="project" value="LOCAL" />
+      <updated>1476872348307</updated>
+    </task>
+    <option name="localTasksCounter" value="195" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1165,7 +1213,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="263947000" />
+    <option name="totallyTimeSpent" value="266186000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1665" y="24" width="1855" height="1056" extended-state="6" />
@@ -1351,13 +1399,6 @@
     </entry>
     <entry file="file://$USER_HOME$/.rvm/gems/ruby-2.3.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_utilities.scss" />
     <entry file="file://$USER_HOME$/.rvm/gems/ruby-2.3.0/gems/actioncable-5.0.0.1/lib/assets/compiled/action_cable.js" />
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/_header_reversed.html.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="16" column="44" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/blackbuild/home.html.haml" />
     <entry file="file://$PROJECT_DIR$/config/application.rb">
       <provider selected="true" editor-type-id="text-editor">
@@ -1490,13 +1531,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="534">
-          <caret line="105" column="1" selection-start-line="105" selection-start-column="1" selection-end-line="105" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/channels/game.coffee">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -1524,6 +1558,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4158">
           <caret line="231" column="22" selection-start-line="231" selection-start-column="22" selection-end-line="231" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1560,21 +1595,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/_banner.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="9" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/games/welcome.html.haml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="23" column="45" selection-start-line="23" selection-start-column="45" selection-end-line="23" selection-end-column="45" />
+        <state relative-caret-position="1080">
+          <caret line="60" column="4" selection-start-line="60" selection-start-column="4" selection-end-line="60" selection-end-column="4" />
           <folding>
-            <marker date="1476814185522" expanded="true" signature="2269:2637" ph="{...}" />
-            <marker date="1476814185522" expanded="true" signature="2409:2631" ph="{&quot;el&quot;: elt...}" />
+            <marker date="1476874486815" expanded="true" signature="2258:2626" ph="{...}" />
+            <marker date="1476874486815" expanded="true" signature="2398:2620" ph="{&quot;el&quot;: elt...}" />
           </folding>
         </state>
       </provider>
@@ -1587,16 +1614,43 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/_header_reversed.html.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="16" column="44" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.haml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="387">
-          <caret line="58" column="10" selection-start-line="58" selection-start-column="10" selection-end-line="58" selection-end-column="10" />
+        <state relative-caret-position="192">
+          <caret line="38" column="15" selection-start-line="38" selection-start-column="15" selection-end-line="38" selection-end-column="15" />
           <folding>
-            <marker date="1476872338839" expanded="true" signature="993:1297" ph="{...}" />
-            <marker date="1476872338839" expanded="true" signature="1009:1274" ph="{...}" />
-            <marker date="1476872338839" expanded="true" signature="1060:1260" ph="{&quot;id&quot;: 40097755...}" />
-            <marker date="1476872338839" expanded="true" signature="1618:1689" ph="{...}" />
+            <marker date="1476873168527" expanded="true" signature="993:1297" ph="{...}" />
+            <marker date="1476873168527" expanded="true" signature="1009:1274" ph="{...}" />
+            <marker date="1476873168527" expanded="true" signature="1060:1260" ph="{&quot;id&quot;: 40097755...}" />
+            <marker date="1476873168527" expanded="true" signature="1618:1689" ph="{...}" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/_banner.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
+          <folding>
+            <element signature="n#style#0;n#ins#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ins#0;n#div#1;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="516">
+          <caret line="115" column="7" selection-start-line="115" selection-start-column="7" selection-end-line="115" selection-end-column="7" />
+          <folding />
         </state>
       </provider>
     </entry>

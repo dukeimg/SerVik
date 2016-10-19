@@ -54,11 +54,11 @@
           %button{:onclick => 'setCode();'}= t('play.set_code.submit')
       #waiting-for-opponent-container.text-center
         %p= t('play.set_code.waiting_for_opponent')
-      #banner= render('layouts/banner')
   #end-game-modal.text-center
     .end-game-title
     .end-game-message
     .close-btn= t('play.restart')
+  = render('layouts/banner')
 :javascript
   App.createChannel();
   $(document).ready(function() {
