@@ -16,13 +16,22 @@ class Game
     end
 
     # Конец игры
-    def end_game(winner, loser, reason)
+    def end_game(winner, loser, reason, *draw)
+      w = 1
+      if draw
+        w = 0
+      end
       if loser
         ActionCable.server.broadcast "player_#{loser}", {action: "end_game", win:0, opponent_code: get_code(winner), reason: reason}
       end
-      ActionCable.server.broadcast "player_#{winner}", {action: "end_game", win:1,  opponent_code: get_code(loser), reason: reason}
+      ActionCable.server.broadcast "player_#{winner}", {action: "end_game", win:w,  opponent_code: get_code(loser), reason: reason}
       # TODO: Найти подписку
       self.clear_redis(winner, loser)
+    end
+
+    def time_is_up(uuid)
+      winner = opponent_for(uuid)
+      end_game(winner, uuid, 'time_is_up')
     end
 
     # Игрок сдался. Оппонент получает об этом уведомление. База данных очищается
@@ -48,14 +57,38 @@ class Game
       opponent = opponent_for(uuid)
       guess = data['msg']
       time_left = data['time_left']
+      is_last = data['is_last']
       answer = get_code(opponent)
 
       if guess == answer
         end_game(uuid, opponent, 'code_is_guessed')
       else
-        response = crypt(guess, answer)
-        ActionCable.server.broadcast "player_#{opponent}", {action: 'turn', msg: response, is_your_turn:1, code: guess, opponent_time_left:time_left}
-        ActionCable.server.broadcast "player_#{uuid}", {action: 'turn', msg: response, is_your_turn:0, code: guess}
+        response_arr = crypt(guess, answer)
+        highest = REDIS.get("#{uuid}_highest")
+        if response_arr[0] > highest[0] || (response_arr[0] >= highest[0] && response_arr[1] > highest[1])
+          REDIS.set("#{uuid}_highest", response_arr)
+          highest = response_arr
+        end
+        response = "#{response_arr[0]}:#{response_arr[1]}"
+        if is_last
+          if REDIS.get("#{opponent}_had_last_turn")
+            opponent_highest = REDIS.get("#{opponent}_highest")
+            if opponent_highest[0] > highest[0] || (opponent_highest[0] >= highest[0] && opponent_highest[1] > highest[1])
+              end_game(opponent, uuid, 'turn_limit_reached')
+            elsif opponent_highest[0] == highest[0] && opponent_highest[1] == highest[1]
+              end_game(opponent, uuid, 'draw', true)
+            else
+              end_game(uuid, opponent, 'turn_limit_reached')
+            end
+          else
+            REDIS.set("#{uuid}_had_last_turn", true)
+            ActionCable.server.broadcast "player_#{opponent}", {action: 'turn', msg: response, is_your_turn:1, code: guess, opponent_time_left:time_left}
+            ActionCable.server.broadcast "player_#{uuid}", {action: 'turn', msg: response, is_your_turn:0, code: guess}
+          end
+        else
+          ActionCable.server.broadcast "player_#{opponent}", {action: 'turn', msg: response, is_your_turn:1, code: guess, opponent_time_left:time_left}
+          ActionCable.server.broadcast "player_#{uuid}", {action: 'turn', msg: response, is_your_turn:0, code: guess}
+        end
       end
     end
 
@@ -76,6 +109,10 @@ class Game
       REDIS.del("opponent_for:#{pl_2}")
       REDIS.del("code_for:#{pl_1}")
       REDIS.del("code_for:#{pl_2}")
+      REDIS.del("#{pl_1}_had_last_turn")
+      REDIS.del("#{pl_2}_had_last_turn")
+      REDIS.del("#{pl_1}_highest")
+      REDIS.del("#{pl_2}_highest")
     end
 
     # Алгоритм анализа полученного от игрока кода
@@ -89,7 +126,7 @@ class Game
       end.compact.size # удаляем все nil и определяем длину
 
       b = (guess_arr.zip(answer_arr).map { |x, y| x == y }).inject(Hash.new(0)) { |total, e| total[e] += 1 ;total}[true]
-      "#{a}:#{b}"
+      [a, b]
     end
   end
 

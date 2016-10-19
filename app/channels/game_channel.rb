@@ -30,6 +30,10 @@ class GameChannel < ApplicationCable::Channel
     Seek.new(uuid, data)
   end
 
+  def time_is_up(data)
+    Game.time_is_up(uuid)
+  end
+
   def connect(data)
     Seek.connect(uuid, data)
   end
