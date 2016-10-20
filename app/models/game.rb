@@ -17,10 +17,7 @@ class Game
 
     # Конец игры
     def end_game(winner, loser, reason, *draw)
-      w = 1
-      if draw
-        w = 0
-      end
+      draw ? w = 1 : w = 0
       if loser
         ActionCable.server.broadcast "player_#{loser}", {action: "end_game", win:0, opponent_code: get_code(winner), reason: reason}
       end
@@ -65,17 +62,18 @@ class Game
       else
         response_arr = crypt(guess, answer)
         highest = REDIS.get("#{uuid}_highest")
-        if response_arr[0] > highest[0] || (response_arr[0] >= highest[0] && response_arr[1] > highest[1])
-          REDIS.set("#{uuid}_highest", response_arr)
-          highest = response_arr
+        current = response_arr.inject(0){|sum,x| sum + x }
+        if current > highest
+          highest = current
+          REDIS.set("#{uuid}_highest", highest)
         end
         response = "#{response_arr[0]}:#{response_arr[1]}"
         if is_last
           if REDIS.get("#{opponent}_had_last_turn")
             opponent_highest = REDIS.get("#{opponent}_highest")
-            if opponent_highest[0] > highest[0] || (opponent_highest[0] >= highest[0] && opponent_highest[1] > highest[1])
+            if opponent_highest > highest
               end_game(opponent, uuid, 'turn_limit_reached')
-            elsif opponent_highest[0] == highest[0] && opponent_highest[1] == highest[1]
+            elsif opponent_highest == highest
               end_game(opponent, uuid, 'draw', true)
             else
               end_game(uuid, opponent, 'turn_limit_reached')
