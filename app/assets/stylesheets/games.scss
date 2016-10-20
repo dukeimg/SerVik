@@ -275,20 +275,9 @@ form#set-code input[type=text]{
 
 .messages-container {
   height: calc(100% - 160px);
-  display: flex;
-  flex-direction: column;
-  overflow-y: scroll;
   padding: 20px 5px 0 5px;
 
   .message-block {
-
-    &.my {
-      margin-left: auto;
-    }
-
-    &.his {
-      margin-right: auto;
-    }
 
     .message {
       background: white;

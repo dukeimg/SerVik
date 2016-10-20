@@ -15,8 +15,8 @@
           %span :
           %span.secs 00
       .row.messages-container
-        .turn{'data-yours': 1}= t('play.game.your_turn')
-        .turn{'data-yours': 0}= t('play.game.opponents_turn')
+        .turn.text-center{'data-yours': 1}= t('play.game.your_turn')
+        .turn.text-center{'data-yours': 0}= t('play.game.opponents_turn')
       .row.code-input-container.text-center
         %form#input-code
           %input{:type => 'text', :maxlength => '1'}
