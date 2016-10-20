@@ -5,8 +5,34 @@ $text--bright: rgb(110, 110, 110);
 
 // Download
 
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  section .col-sm-6 {
+    height: 600px !important;
+  }
+}
+
 .download-icons {
   padding-top: 20px;
+}
+
+section {
+  margin-bottom: 50px;
+
+  p {
+    font-size: 30px;
+  }
+
+  img {
+    max-height: 600px;
+    margin: 0 auto;
+  }
+
+  .vcenter {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
 }
 
 section.zero {
@@ -47,7 +73,6 @@ section.two{
   background: white;
 
   p {
-    margin: 200px 0;
     font-size: 30px;
     color: $text;
   }

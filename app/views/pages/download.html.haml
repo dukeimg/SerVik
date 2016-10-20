@@ -4,19 +4,18 @@
   .container
     .row
       .col-sm-6
-        = image_tag 'mockup.png', :class => 'img-responsive', style: 'vertical-align: top; height: auto; width: 150%'
+        = image_tag 'mockup.png', :class => 'img-responsive'
       .col-sm-6.zero-col.text-center
         %h1= t('download.heading')
         %p
           %strike= t('download.subtext.one')
           %span= t('download.subtext.two')
-        .row
-          .col-sm-6.col-sm-offset-3.download-icons
-            = link_to 'https://itunes.apple.com/app/id1154066482' do
-              = image_tag 'app-store.png',
-              :title => t('download.app_store'),
-              :alt => t('download.app_store'),
-              :width => 250
+        .row.text-center
+          = link_to 'https://itunes.apple.com/app/id1154066482' do
+            = image_tag 'app-store.png',
+            :title => t('download.app_store'),
+            :alt => t('download.app_store'),
+            :width => 250
 %section.one
   .container
     .arrow-wrapper
@@ -26,31 +25,37 @@
         %p= t('download.block_1.p_1')
 %section.two
   .container
-    .arrow-wrapper
-      .arrow-down
     .row
       .col-sm-6.text-right
         = image_tag 'mockup_2.png', :class => 'img-responsive'
-      .col-sm-6.zero-col.text-center
+      .col-sm-6.text-center.vcenter
         %p= t('download.block_2.feature')
 %section.three
   .container
     .row
-      .col-sm-6.zero-col.text-center
+      .col-sm-6.text-center.vcenter
         %p= t('download.block_3.feature')
       .col-sm-6
-        = image_tag 'mockup_2.png', :class => 'img-responsive', style: 'vertical-align: top; height: auto; width: 150%'
+        = image_tag 'mockup_3.png', :class => 'img-responsive'
 %section.four
   .container
     .row
       .col-sm-6
-        = image_tag 'mockup.png', :class => 'img-responsive', style: 'vertical-align: top; height: auto; width: 150%'
-      .col-sm-6.zero-col.text-center
+        = image_tag 'mockup_2.png', :class => 'img-responsive'
+      .col-sm-6.text-center.vcenter
         %p= t('download.block_4.feature')
 %section.five
   .container
     .row
-      .col-sm-6.zero-col.text-center
+      .col-sm-6.text-center.vcenter
         %p= t('download.block_5.feature')
       .col-sm-6
-        = image_tag 'mockup.png', :class => 'img-responsive', style: 'vertical-align: top; height: auto; width: 150%'
+        = image_tag 'mockup_5.png', :class => 'img-responsive'
+%section
+  .container
+    .row.text-center
+      = link_to 'https://itunes.apple.com/app/id1154066482' do
+        = image_tag 'app-store.png',
+              :title => t('download.app_store'),
+              :alt => t('download.app_store'),
+              :width => 250
