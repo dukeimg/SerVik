@@ -23,4 +23,34 @@
       .arrow-down
     .row
       .text-center
-        %p Я не знаю, что сюда написать
+        %p= t('download.block_1.p_1')
+%section.two
+  .container
+    .arrow-wrapper
+      .arrow-down
+    .row
+      .col-sm-6.text-right
+        = image_tag 'mockup_2.png', :class => 'img-responsive'
+      .col-sm-6.zero-col.text-center
+        %p= t('download.block_2.feature')
+%section.three
+  .container
+    .row
+      .col-sm-6.zero-col.text-center
+        %p= t('download.block_3.feature')
+      .col-sm-6
+        = image_tag 'mockup_2.png', :class => 'img-responsive', style: 'vertical-align: top; height: auto; width: 150%'
+%section.four
+  .container
+    .row
+      .col-sm-6
+        = image_tag 'mockup.png', :class => 'img-responsive', style: 'vertical-align: top; height: auto; width: 150%'
+      .col-sm-6.zero-col.text-center
+        %p= t('download.block_4.feature')
+%section.five
+  .container
+    .row
+      .col-sm-6.zero-col.text-center
+        %p= t('download.block_5.feature')
+      .col-sm-6
+        = image_tag 'mockup.png', :class => 'img-responsive', style: 'vertical-align: top; height: auto; width: 150%'

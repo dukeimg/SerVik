@@ -55,6 +55,16 @@ en:
     subtext:
       one: 'Right now.'
       two: 'For free.'
+    block_1:
+      p_1: 'A new breath into the classic mind-breaking game «Cows & Bulls» with enhanced gameplay and advanced online mode.'
+    block_2:
+      feature: 'Compete with real people in your mind power. Gain points.'
+    block_3:
+      feature: 'Play by your own rules with friends. Experement!'
+    block_4:
+      feature: "Fight against bots to sharpen your skills. Beware, they're smart!"
+    block_5:
+      feature: 'Play more to enhance your intelligence.'
   lorem: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras venenatis ut nibh id efficitur. Vivamus tortor
    mauris, congue ut tortor nec, dapibus vestibulum lorem. Integer euismod lectus nunc, eu aliquam metus aliquam nec.
    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla aliquet orci nisi, eget auctor elit laoreet in.

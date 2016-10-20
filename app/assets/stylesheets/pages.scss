@@ -1,16 +1,9 @@
-.swiper-container {
-  width: 281px;
-  height: 500px;
-  margin: 20px 0 !important;
-}
+// Variables
 
-@for $i from 1 through 5 {
-  .slide-#{$i} {
-    width: 1248px;
-    height: 2209px;
-    background: url('screenshot #{$i}.jpg') center / cover;
-  }
-}
+$text: rgb(75, 75, 75);
+$text--bright: rgb(110, 110, 110);
+
+// Download
 
 .download-icons {
   padding-top: 20px;
@@ -45,8 +38,18 @@ section.one{
 
   p {
     margin: 100px 0 175px;
-    font-size: 75px;
+    font-size: 30px;
     color: white;
+  }
+}
+
+section.two{
+  background: white;
+
+  p {
+    margin: 200px 0;
+    font-size: 30px;
+    color: $text;
   }
 }
 
@@ -56,11 +59,11 @@ section.one{
   display: flex;
   justify-content: center;
 }
+
 .arrow-down {
   width: 0;
   height: 0;
   border-left: 100px solid transparent;
   border-right: 100px solid transparent;
-
   border-top: 75px solid #fff;
 }
