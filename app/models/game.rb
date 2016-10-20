@@ -63,7 +63,7 @@ class Game
         response_arr = crypt(guess, answer)
         highest = REDIS.get("#{uuid}_highest")
         current = response_arr.inject(0){|sum,x| sum + x }
-        if current > highest
+        if highest && current > highest
           highest = current
           REDIS.set("#{uuid}_highest", highest)
         end
