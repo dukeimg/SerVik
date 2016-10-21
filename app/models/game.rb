@@ -131,7 +131,7 @@ class Game
   # Отправляем сообщение об ожидании ввода кода
   def send_greet_messages(p_1, p_2, *params)
     data = {action: 'waiting_for_code'}
-    data['filters'] = params if params
+    data = {action: 'waiting_for_code', data: params} if params
     ActionCable.server.broadcast "player_#{p_1}", data
     ActionCable.server.broadcast "player_#{p_2}", data
   end
