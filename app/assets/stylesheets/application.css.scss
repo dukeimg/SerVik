@@ -43,10 +43,11 @@ a {
   }
 }
 
-.navbar-reversed {
+.navbar-transparent {
+  background: #f8f8f8;
+
   a {
-    color: rgb(75, 75, 75);
-    background: none;
+    color: $text-color;
 
     &:hover {
       color: rgb(50, 50, 50);

@@ -4,6 +4,6 @@ class CustomGame < Game
     @params = params
 
     set_opponents(@player_1, @player_2)
-    send_greet_messages(@player_1, @player_2)
+    send_greet_messages(@player_1, @player_2, params)
   end
 end
