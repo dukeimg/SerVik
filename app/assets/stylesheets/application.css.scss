@@ -55,6 +55,14 @@ a {
   }
 }
 
+.navbar-appstore {
+  padding: 5px 15px !important;
+}
+
+.navbar-appstore-img {
+  height: 40px;
+}
+
 footer {
   background: rgb(75, 75, 75);
   color: white;
@@ -75,6 +83,24 @@ footer {
 
       &:hover {
         color: #e1e1e1;
+      }
+    }
+  }
+
+  ul {
+    list-style: none;
+    color: white;
+
+    li {
+      font-size: 16px;
+    }
+
+    a {
+      margin-left: -15px;
+      color: white;
+
+      &:hover {
+        color: #DDDDDD;
       }
     }
   }

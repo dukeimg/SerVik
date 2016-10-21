@@ -12,6 +12,13 @@
             = link_to t('menu.download'), download_path
         %ul.nav.navbar-nav.navbar-right
           %li
+            = link_to 'https://itunes.apple.com/app/id1154066482', :class => 'navbar-appstore' do
+              = image_tag 'app-store.png',
+                :title => t('download.app_store'),
+                :alt => t('download.app_store'),
+                :class => 'navbar-appstore-img',
+                :height => 50
+          %li
             = link_to 'EN', {:locale => :en}
           %li
             = link_to 'RU', {:locale => :ru}

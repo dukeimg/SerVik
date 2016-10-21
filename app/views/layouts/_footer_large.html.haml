@@ -1,0 +1,35 @@
+%footer
+  .container
+    .row
+      .col-sm-4
+        %h2 CRYPTO
+        %hr
+        %ul
+          %li= link_to t('play.instant_game'), play_path
+          %li= link_to t('menu.about'), about_path
+          %li= link_to t('download.title'), download_path
+      .col-sm-4
+        %h2 Black Build
+        %hr
+        %ul
+          %li= link_to t('blackbuild.home'), 'http://www.blackbuild.ru/'
+          %li= link_to t('blackbuild.about'), about_path
+          %li= link_to t('blackbuild.contact'), 'mailto:sergejkvyatkovskij@gmail.com'
+      .col-sm-4
+        %h2 Games And Apps
+        %hr
+        %ul
+          %li Docs
+          %li The Haze
+          %li Shake
+          %li Hype Radio
+    .row.hidden-xs
+      .col-sm-6
+        .footer-menu
+          %span= "© #{Date.today.year} BlackBuild"
+      .col-md-6.text-right
+        %p.players
+          #{t('players_online')}:
+          %span#players-online
+    .row.text-center.visible-xs
+      %p.players= "© #{Date.today.year} BlackBuild"

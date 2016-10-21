@@ -1,0 +1,13 @@
+%footer
+  .container-fluid
+    .row.hidden-xs
+      .col-sm-6
+        .footer-menu
+          %span= "© #{Date.today.year} BlackBuild"
+          = link_to t('menu.about'), about_path
+      .col-md-6.text-right
+        %p.players
+          #{t('players_online')}:
+          %span#players-online
+    .row.text-center.visible-xs
+      %p.players= "© #{Date.today.year} BlackBuild"

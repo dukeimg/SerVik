@@ -46,18 +46,5 @@
   %noscript <div><img src="https://mc.yandex.ru/watch/40097755" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
   %body
     = yield
-    %footer
-      .container-fluid
-        .row.hidden-xs
-          .col-sm-6
-            .footer-menu
-              %span= "© #{Date.today.year} BlackBuild"
-              = link_to t('menu.about'), about_path
-          .col-md-6.text-right
-            %p.players
-              #{t('players_online')}:
-              %span#players-online
-        .row.text-center.visible-xs
-          %p.players= "© #{Date.today.year} BlackBuild"
     :javascript
       $("#players-online").html(localStorage.getItem('players_online'));
