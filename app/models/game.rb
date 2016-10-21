@@ -68,7 +68,7 @@ class Game
           REDIS.set("#{uuid}_highest", highest)
         end
         response = "#{response_arr[0]}:#{response_arr[1]}"
-        if is_last
+        if is_last == 1
           if REDIS.get("#{opponent}_had_last_turn")
             opponent_highest = REDIS.get("#{opponent}_highest")
             if opponent_highest > highest

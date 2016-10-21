@@ -36,12 +36,16 @@ ru:
     block_1:
       p_1: 'Совершенно новый взгляд на классическую игру "Быки и Коровы" с улучшенным геймплеем и мощным онлайн режимом.'
     block_2:
+      play_online: 'Играйте онлайн'
       feature: 'Посоревнуйтесь в силе своего интеллекта с реальными противниками и зарабатывайте криптексы.'
     block_3:
+      set_rules: 'Диктуйте правила'
       feature: 'Создайте игру по свои правилам и играйте с друзьями. Экспериментируйте!'
     block_4:
+      fight_with_ai: 'Сражайтесь с ИИ'
       feature: 'Играйте с ботом, чтобы улучшить свои навыки. Будьте внимательны, бот не так глуп!'
     block_5:
+      pimp_your_brain: 'Прокачайте мозг'
       feature: 'Играйте больше и совершенствуйте свой интеллект!'
   lorem: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras venenatis ut nibh id efficitur. Vivamus tortor
    mauris, congue ut tortor nec, dapibus vestibulum lorem. Integer euismod lectus nunc, eu aliquam metus aliquam nec.

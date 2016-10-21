@@ -17,10 +17,14 @@ $text--bright: rgb(110, 110, 110);
 }
 
 section {
-  margin-bottom: 50px;
+  .jumbotron {
+    margin-top: 200px;
+    background: none;
+    color: white;
+  }
 
   p {
-    font-size: 30px;
+    font-size: 32px;
   }
 
   img {
@@ -28,24 +32,40 @@ section {
     margin: 0 auto;
   }
 
-  .vcenter {
+  h2, p {
+    display: block;
+  }
+
+  h2 {
+    font-size: 48px;
+    font-weight: 100;
+  }
+
+  .vmiddle {
     display: flex;
-    align-items: center;
-    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    height: 600px;
   }
 }
 
 section.zero {
-  min-height: 600px;
-  padding-top: 60px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 
-  h1 {
-    font-size: 60px;
-    font-weight: bold;
-  }
-
-  .container {
-    padding: 0 40px;
+  &:before {
+    filter: brightness(.75);
+    z-index: -1;
+    height: calc(100% - 60px);
+    width: 100%;
+    content: '';
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background: url("mock-up-1.jpg") center / cover;
   }
 
   .zero-col {
@@ -58,25 +78,51 @@ section.zero {
     justify-content: center;
     align-items: center;
   }
+
+  span {
+    position: absolute;
+    color: white;
+    font-size: 48px;
+    left: calc(50vw - 24px);
+    top: 90vh;
+    z-index: 5;
+    font-weight: 100;
+    bottom: 50px;
+  }
+
+  .row {
+    margin-top: 110px;
+  }
+
 }
 
 section.one{
-  background: linear-gradient(to bottom, #4CB8C4, #FFD194);
+  background: #f8f8f8;
+  padding: 50px 0;
 
-  p {
-    margin: 100px 0 175px;
-    font-size: 30px;
-    color: white;
+  img {
+    float: left;
+  }
+
+  .vmiddle {
+    padding: 45px;
   }
 }
 
 section.two{
-  background: white;
+  padding: 50px 0;
 
-  p {
-    font-size: 30px;
-    color: $text;
+  img {
+    float: right;
   }
+
+  .vmiddle {
+    padding: 45px;
+  }
+}
+
+section.last {
+  padding: 100px 0;
 }
 
 

@@ -2,57 +2,50 @@
 - content_for :og_image, image_url('mockup.png')
 = render('layouts/header_reversed')
 %section.zero
-  .container
-    .row
-      .col-sm-6
-        = image_tag 'mockup.png', :class => 'img-responsive'
-      .col-sm-6.zero-col.text-center
-        %h1= t('download.heading')
-        %p
-          %strike= t('download.subtext.one')
-          %span= t('download.subtext.two')
-        .row.text-center
-          = link_to 'https://itunes.apple.com/app/id1154066482' do
-            = image_tag 'app-store.png',
+  .jumbotron
+    .container.text-center
+      %h1 CRYPTO
+      %p= t('download.block_1.p_1')
+      .row.text-center
+        = link_to 'https://itunes.apple.com/app/id1154066482' do
+          = image_tag 'app-store.png',
             :title => t('download.app_store'),
             :alt => t('download.app_store'),
             :width => 250
+  %span.glyphicon.glyphicon-chevron-down{'aria-hidden' => true}
 %section.one
   .container
-    .arrow-wrapper
-      .arrow-down
     .row
-      .text-center
-        %p= t('download.block_1.p_1')
+      .col-sm-4.col-sm-offset-1.hidden-xs
+        = image_tag 'mockup_2.png', :class => 'img-responsive'
+      .col-sm-6.vmiddle.col-xs-11.col-xs-offset-1
+        %h2= t('download.block_2.play_online')
+        %p= t('download.block_2.feature')
 %section.two
   .container
     .row
-      .col-sm-6.text-right
-        = image_tag 'mockup_2.png', :class => 'img-responsive'
-      .col-sm-6.text-center.vcenter
-        %p= t('download.block_2.feature')
-%section.three
-  .container
-    .row
-      .col-sm-6.text-center.vcenter
+      .col-sm-6.col-sm-offset-1.vmiddle.col-xs-11.col-xs-offset-1
+        %h2= t('download.block_3.set_rules')
         %p= t('download.block_3.feature')
-      .col-sm-6
+      .col-sm-4.col-sm-offset-1.hidden-xs
         = image_tag 'mockup_3.png', :class => 'img-responsive'
-%section.four
+%section.one
   .container
     .row
-      .col-sm-6
+      .col-sm-4.col-sm-offset-1.hidden-xs
         = image_tag 'mockup_2.png', :class => 'img-responsive'
-      .col-sm-6.text-center.vcenter
+      .col-sm-6.vmiddle.col-xs-11.col-xs-offset-1
+        %h2= t('download.block_4.fight_with_ai')
         %p= t('download.block_4.feature')
-%section.five
+%section.two
   .container
     .row
-      .col-sm-6.text-center.vcenter
+      .col-sm-6.col-sm-offset-1.vmiddle.col-xs-11.col-xs-offset-1
+        %h2= t('download.block_5.pimp_your_brain')
         %p= t('download.block_5.feature')
-      .col-sm-6
+      .col-sm-4.hidden-xs
         = image_tag 'mockup_5.png', :class => 'img-responsive'
-%section
+%section.last
   .container
     .row.text-center
       = link_to 'https://itunes.apple.com/app/id1154066482' do
