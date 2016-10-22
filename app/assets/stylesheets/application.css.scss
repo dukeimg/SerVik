@@ -16,6 +16,12 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "Swiper/dist/css/swiper.min";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+body {
+  background-color: #eee;
+}
 
 .content {
   background: linear-gradient(to bottom, #4CB8C4, #FFD194);
@@ -66,6 +72,10 @@ a {
 footer {
   background: rgb(75, 75, 75);
   color: white;
+
+  .footer-large-menu {
+    padding: 20px 0;
+  }
 
   .players, .footer-menu {
     margin: 20px;

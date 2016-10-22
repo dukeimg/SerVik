@@ -4,13 +4,16 @@
       .navbar-header
         = link_to root_path, :class => 'navbar-brand' do
           %span.mdl-layout__title CRYPTO
-      .navbar-collapse.collapse
+        %button.navbar-toggle.collapsed{:type => 'button', 'data-toggle': 'collapse', 'data-target': '#mobile-menu', 'aria-expanded': 'false'}
+          .sr-only Menu
+          %span= icon('bars')
+      #mobile-menu.navbar-collapse.collapse
         %ul.nav.navbar-nav
           %li
             = link_to t('menu.about'), about_path
           %li
             = link_to t('menu.download'), download_path
-        %ul.nav.navbar-nav.navbar-right
+        %ul.nav.navbar-nav.navbar-right.hidden-xs
           %li
             = link_to 'https://itunes.apple.com/app/id1154066482', :class => 'navbar-appstore' do
               = image_tag 'app-store.png',

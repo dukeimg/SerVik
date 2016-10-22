@@ -69,6 +69,11 @@ en:
     block_5:
       pimp_your_brain: 'Pimp brains'
       feature: 'Play more to enhance your intelligence.'
+  about:
+     title: 'Made by BlackBuild'
+     tagline: 'We are the Russian team that makes moblie applications.'
+     project:
+      heading: 'About the project'
   lorem: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras venenatis ut nibh id efficitur. Vivamus tortor
    mauris, congue ut tortor nec, dapibus vestibulum lorem. Integer euismod lectus nunc, eu aliquam metus aliquam nec.
    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla aliquet orci nisi, eget auctor elit laoreet in.

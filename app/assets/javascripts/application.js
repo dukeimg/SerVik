@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap-sprockets
 //= require turbolinks
 //= require Swiper/dist/js/swiper.jquery.min.js
 //= require jquery.mask.min.js

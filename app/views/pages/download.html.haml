@@ -1,7 +1,7 @@
 - content_for :title, t('download.title')
 - content_for :og_image, image_url('mock-up-1.jpg')
 = render('layouts/header_reversed')
-%section.zero
+%section.zero.download
   .jumbotron
     .container.text-center
       %h1 CRYPTO
@@ -12,40 +12,40 @@
             :title => t('download.app_store'),
             :alt => t('download.app_store'),
             :width => 250
-  %span.glyphicon.glyphicon-chevron-down{'aria-hidden' => true}
-%section.one
+  %span.glyphicon.hidden-xs.glyphicon-chevron-down{'aria-hidden' => true}
+%section.one.download
   .container
     .row
       .col-sm-4.col-sm-offset-1.hidden-xs
         = image_tag 'mockup_2.png', :class => 'img-responsive'
-      .col-sm-6.vmiddle.col-xs-11.col-xs-offset-1
+      .col-sm-6.vmiddle.col-xs-12
         %h2= t('download.block_2.play_online')
         %p= t('download.block_2.feature')
-%section.two
+%section.two.download
   .container
     .row
-      .col-sm-6.col-sm-offset-1.vmiddle.col-xs-11.col-xs-offset-1
+      .col-sm-6.col-sm-offset-1.vmiddle.col-xs-12
         %h2= t('download.block_3.set_rules')
         %p= t('download.block_3.feature')
       .col-sm-4.col-sm-offset-1.hidden-xs
         = image_tag 'mockup_3.png', :class => 'img-responsive'
-%section.one
+%section.one.download
   .container
     .row
       .col-sm-4.col-sm-offset-1.hidden-xs
         = image_tag 'mockup_2.png', :class => 'img-responsive'
-      .col-sm-6.vmiddle.col-xs-11.col-xs-offset-1
+      .col-sm-6.vmiddle.col-xs-12
         %h2= t('download.block_4.fight_with_ai')
         %p= t('download.block_4.feature')
-%section.two
+%section.two.download
   .container
     .row
-      .col-sm-6.col-sm-offset-1.vmiddle.col-xs-11.col-xs-offset-1
+      .col-sm-6.col-sm-offset-1.vmiddle.col-xs-12
         %h2= t('download.block_5.pimp_your_brain')
         %p= t('download.block_5.feature')
       .col-sm-4.hidden-xs
         = image_tag 'mockup_5.png', :class => 'img-responsive'
-%section.last
+%section.last.download
   .container
     .row.text-center
       = link_to 'https://itunes.apple.com/app/id1154066482' do
