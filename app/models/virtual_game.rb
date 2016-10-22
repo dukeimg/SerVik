@@ -1,4 +1,4 @@
-class VirtualGame
+class VirtualGame < Game
   def self.init(uuid)
     ActionCable.server.broadcast "player_#{uuid}", {action: "waiting_for_code"}
   end
