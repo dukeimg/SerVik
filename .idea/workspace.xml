@@ -59,8 +59,8 @@
       <file leaf-file-name="virtual_game.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/models/virtual_game.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="20" selection-start-line="0" selection-start-column="20" selection-end-line="0" selection-end-column="20" />
+            <state relative-caret-position="490">
+              <caret line="41" column="42" selection-start-line="41" selection-start-column="42" selection-end-line="41" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -846,14 +846,7 @@
       <workItem from="1477078940770" duration="1298000" />
       <workItem from="1477084024125" duration="9243000" />
       <workItem from="1477124361280" duration="16189000" />
-      <workItem from="1477155484232" duration="6208000" />
-    </task>
-    <task id="LOCAL-00163" summary="GameHelpers.send_room_data">
-      <created>1475918492224</created>
-      <option name="number" value="00163" />
-      <option name="presentableId" value="LOCAL-00163" />
-      <option name="project" value="LOCAL" />
-      <updated>1475918492224</updated>
+      <workItem from="1477155484232" duration="6550000" />
     </task>
     <task id="LOCAL-00164" summary="GameHelpers.send_room_data">
       <created>1475918599918</created>
@@ -1191,7 +1184,14 @@
       <option name="project" value="LOCAL" />
       <updated>1477161529652</updated>
     </task>
-    <option name="localTasksCounter" value="212" />
+    <task id="LOCAL-00212" summary="Добавил насследование в VitrualGame от Game">
+      <created>1477161735250</created>
+      <option name="number" value="00212" />
+      <option name="presentableId" value="LOCAL-00212" />
+      <option name="project" value="LOCAL" />
+      <updated>1477161735250</updated>
+    </task>
+    <option name="localTasksCounter" value="213" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1227,7 +1227,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="317708000" />
+    <option name="totallyTimeSpent" value="318050000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1855" height="1056" extended-state="6" />
@@ -1284,7 +1284,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Добавил request origins" />
     <MESSAGE value="Добавил таймеры и 🥁 синглтон!!!" />
     <MESSAGE value="Ещё больше синглтонов!" />
     <MESSAGE value="Страница downloads" />
@@ -1309,7 +1308,8 @@
     <MESSAGE value="Тест нового бота" />
     <MESSAGE value="Бот: исправил баг и потерянной переменной" />
     <MESSAGE value="Добавил вывод текущего множества решений" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавил вывод текущего множества решений" />
+    <MESSAGE value="Добавил насследование в VitrualGame от Game" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавил насследование в VitrualGame от Game" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1654,8 +1654,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/virtual_game.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="20" selection-start-line="0" selection-start-column="20" selection-end-line="0" selection-end-column="20" />
+        <state relative-caret-position="490">
+          <caret line="41" column="42" selection-start-line="41" selection-start-column="42" selection-end-line="41" selection-end-column="42" />
           <folding />
         </state>
       </provider>

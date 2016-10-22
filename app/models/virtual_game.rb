@@ -34,6 +34,7 @@ class VirtualGame < Game
       s = REDIS.get("codes_for:#{uuid}")
       answer = REDIS.get("code_for:#{uuid}")
       if s
+        s = JSON.parse s
         # Второй и более ходы
         # В этом случае мы работаем с тем множеством возможных решений, что получили из предыдущего хода
         ai_guess = s.shuffle.pop
