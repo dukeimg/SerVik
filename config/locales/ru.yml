@@ -50,6 +50,13 @@ ru:
   about:
      title: 'Сделано в «Чёрной сборке»'
      tagline: 'Мы — отечественная студия, занимающаяся разработкой игр и приложений для мобильных платформ.'
+     project:
+       heading: 'О проекте'
+     team:
+       heading: 'Наша команда'
+       viktor: 'Виктор Данилов'
+       sergei: 'Сергей Квятковский'
+     write_us: 'Напишите нам'
   lorem: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras venenatis ut nibh id efficitur. Vivamus tortor
    mauris, congue ut tortor nec, dapibus vestibulum lorem. Integer euismod lectus nunc, eu aliquam metus aliquam nec.
    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla aliquet orci nisi, eget auctor elit laoreet in.

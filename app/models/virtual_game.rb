@@ -28,19 +28,49 @@ class VirtualGame
     if guess == answer
       end_game(uuid, nil, 'code_is_guessed')
     else
-      response = self.crypt(guess, answer)
       ActionCable.server.broadcast "player_#{uuid}", {action: 'turn', msg: response, is_your_turn:0, code: guess}
-      sleep(1)
-      ai_guess = Random.rand(0..9999)
+      s = REDIS.get("codes_for:#{uuid}")
       answer = REDIS.get("code_for:#{uuid}")
-      if ai_guess == answer.to_i
-        end_game(nil, uuid, 'code_is_guessed')
+      if s
+        # Второй и более ходы
+        # В этом случае мы работаем с тем множеством возможных решений, что получили из предыдущего хода
+        ai_guess = s.shuffle.pop
+        if ai_guess == answer
+          end_game(nil, uuid, 'code_is_guessed')
+        else
+          #
+          ai_guess = ai_guess.to_s
+          t = 4 - ai_guess.size
+          code = '0' * t << ai_guess
+          response_arr = crypt(ai_guess, answer)
+          response = "#{response_arr[0]}:#{response_arr[1]}"
+          ActionCable.server.broadcast "player_#{uuid}", {action: 'turn', code: code, is_your_turn:1, msg: response}
+          s.reject! {|x| crypt(x, answer) != response_arr}
+          REDIS.set("codes_for:#{uuid}", s)
+        end
       else
-        ai_guess = ai_guess.to_s
-        t = 4 - ai_guess.size
-        code = '0' * t << ai_guess
-        response = self.crypt(ai_guess, answer)
-        ActionCable.server.broadcast "player_#{uuid}", {action: 'turn', code: code, is_your_turn:1, msg: response}
+        # Случай перевого хода. Здесь создаётся множество возможных решений.
+        s = Array(0..9999)
+        s.each_with_index do |i, x|
+          x = x.to_s
+          t = 4 - x.size
+          s[i] = '0' * t << x
+        end
+        # Далее совершается случайный ход
+        ai_guess = Random.rand(0..9999)
+        if ai_guess == answer.to_i
+          end_game(nil, uuid, 'code_is_guessed')
+        else
+          # На основе полученных данных сокращаем множество
+          ai_guess = ai_guess.to_s
+          t = 4 - ai_guess.size
+          code = '0' * t << ai_guess
+          response_arr = crypt(ai_guess, answer)
+          response = "#{response_arr[0]}:#{response_arr[1]}"
+          ActionCable.server.broadcast "player_#{uuid}", {action: 'turn', code: code, is_your_turn:1, msg: response}
+          s.reject! {|x| crypt(x, answer) != response_arr}
+          REDIS.set("codes_for:#{uuid}", s)
+        end
       end
     end
   end
@@ -56,19 +86,6 @@ class VirtualGame
   end
 
   private
-
-  def self.crypt(guess, answer)
-    guess_arr = guess.split('')
-    answer_arr = answer.split('')
-    a1, a2 = [guess_arr, answer_arr].map(&:dup) # to keep originals intact
-    a = loop.inject([]) do |memo|
-      break memo if a1.empty?
-      memo << (a2.delete_at(a2.index a1.pop) rescue nil)
-    end.compact.size
-
-    b = (guess_arr.zip(answer_arr).map { |x, y| x == y }).inject(Hash.new(0)) { |total, e| total[e] += 1 ;total}[true]
-    "#{a}:#{b}"
-  end
 
   def self.clear_redis(uuid)
     REDIS.del("code_for:#{uuid}")

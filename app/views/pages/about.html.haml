@@ -1,4 +1,5 @@
 - content_for :title, t('menu.about')
+- content_for :og_image, image_url('about.jpg')
 = render('layouts/header_reversed')
 .about
   %section
@@ -24,12 +25,12 @@
           Бахрейн. Рационально-критическая парадигма преобразует интеллигибельный гомеостаз.
       .row
         .col-sm-12
-          %h2.section-heading.text-center Команда проекта
+          %h2.section-heading.text-center= t('about.team.heading')
       .row
         .col-sm-6
           .team-member
             = image_tag 'team/sergei.jpg', height: 225, class: 'img-responsive img-circle'
-            %h4 Сергей Квятковский
+            %h4= t('about.team.sergei')
             %p iOS Developer
             %ul.list-inline.social-buttons
               %li
@@ -53,7 +54,7 @@
         .col-sm-6
           .team-member
             = image_tag 'team/viktor.jpg', height: 225, class: 'img-responsive img-circle'
-            %h4 Виктор Данилов
+            %h4= t('about.team.viktor')
             %p Ruby on Rails Architect
             %ul.list-inline.social-buttons
               %li
@@ -68,5 +69,5 @@
         .col-sm-12.text-center.contact
           %button.btn.btn-default
             %span= icon('envelope-o')
-            %span Напишите нам
+            %span= t('about.write_us')
 = render('layouts/footer_large')
