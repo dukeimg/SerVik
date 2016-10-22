@@ -28,6 +28,8 @@ class VirtualGame
     if guess == answer
       end_game(uuid, nil, 'code_is_guessed')
     else
+      response_arr = crypt(guess, answer)
+      response = "#{response_arr[0]}:#{response_arr[1]}"
       ActionCable.server.broadcast "player_#{uuid}", {action: 'turn', msg: response, is_your_turn:0, code: guess}
       s = REDIS.get("codes_for:#{uuid}")
       answer = REDIS.get("code_for:#{uuid}")

@@ -122,7 +122,6 @@ class Game
         break memo if a1.empty?
         memo << (a2.delete_at(a2.index a1.pop) rescue nil)
       end.compact.size # удаляем все nil и определяем длину
-
       b = (guess_arr.zip(answer_arr).map { |x, y| x == y }).inject(Hash.new(0)) { |total, e| total[e] += 1 ;total}[true]
       [a, b]
     end
