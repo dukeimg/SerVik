@@ -34,17 +34,13 @@ class VirtualGame < Game
       s = REDIS.get("codes_for:#{uuid}")
       answer = REDIS.get("code_for:#{uuid}")
       if s
-        puts s
         s = JSON.parse s
-        puts s
         # Второй и более ходы
         # В этом случае мы работаем с тем множеством возможных решений, что получили из предыдущего хода
         ai_guess = s.shuffle.pop
         if ai_guess == answer
           end_game(nil, uuid, 'code_is_guessed')
         else
-          #
-          ai_guess = ai_guess.to_s
           t = 4 - ai_guess.size
           code = '0' * t << ai_guess
           response_arr = crypt(ai_guess, answer)
@@ -52,7 +48,7 @@ class VirtualGame < Game
           ActionCable.server.broadcast "player_#{uuid}", {action: 'turn', code: code, is_your_turn:1, msg: response}
           s.reject! {|x| crypt(x, answer) != response_arr}
           REDIS.set("codes_for:#{uuid}", s)
-          puts "Множество решений: #{s}"
+          puts "Множество решений: #{s.size}"
         end
       else
         # Случай перевого хода. Здесь создаётся множество возможных решений.
