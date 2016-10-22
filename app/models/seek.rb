@@ -40,7 +40,7 @@ class Seek
         opponent = eval(opponent)
         opponent.delete('title_game')
         # active_filters = opponent.select {|key, value| value if opponent[key] != 0}
-        active_filters = [opponent['turn_limit'], opponent['time_limit'], opponent['turn_time_limit'], opponent['mode']]
+        active_filters = opponent
         REDIS.hdel('seeks', opponent_uuid)
         CustomGame.new(uuid, opponent_uuid, active_filters)
       else
