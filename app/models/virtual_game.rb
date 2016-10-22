@@ -34,7 +34,9 @@ class VirtualGame < Game
       s = REDIS.get("codes_for:#{uuid}")
       answer = REDIS.get("code_for:#{uuid}")
       if s
+        puts s
         s = JSON.parse s
+        puts s
         # Второй и более ходы
         # В этом случае мы работаем с тем множеством возможных решений, что получили из предыдущего хода
         ai_guess = s.shuffle.pop
@@ -74,7 +76,6 @@ class VirtualGame < Game
           ActionCable.server.broadcast "player_#{uuid}", {action: 'turn', code: code, is_your_turn:1, msg: response}
           s.reject! {|x| crypt(x, answer) != response_arr}
           REDIS.set("codes_for:#{uuid}", s)
-          puts "Множество решений: #{s}"
         end
       end
     end
