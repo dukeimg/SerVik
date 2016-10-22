@@ -49,6 +49,7 @@ class VirtualGame
           ActionCable.server.broadcast "player_#{uuid}", {action: 'turn', code: code, is_your_turn:1, msg: response}
           s.reject! {|x| crypt(x, answer) != response_arr}
           REDIS.set("codes_for:#{uuid}", s)
+          puts "Множество решений: #{s}"
         end
       else
         # Случай перевого хода. Здесь создаётся множество возможных решений.
@@ -72,6 +73,7 @@ class VirtualGame
           ActionCable.server.broadcast "player_#{uuid}", {action: 'turn', code: code, is_your_turn:1, msg: response}
           s.reject! {|x| crypt(x, answer) != response_arr}
           REDIS.set("codes_for:#{uuid}", s)
+          puts "Множество решений: #{s}"
         end
       end
     end
