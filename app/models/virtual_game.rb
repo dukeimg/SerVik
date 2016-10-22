@@ -93,6 +93,7 @@ class VirtualGame < Game
 
   def self.clear_redis(uuid)
     REDIS.del("code_for:#{uuid}")
+    REDIS.del("codes_for:#{uuid}")
     REDIS.del("virtual_opponent_code_for:#{uuid}")
   end
 end
