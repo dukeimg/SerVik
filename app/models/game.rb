@@ -111,6 +111,7 @@ class Game
       REDIS.del("#{pl_2}_had_last_turn")
       REDIS.del("#{pl_1}_highest")
       REDIS.del("#{pl_2}_highest")
+      REDIS.del("codes_for:#{pl_1}")
     end
 
     # Алгоритм анализа полученного от игрока кода

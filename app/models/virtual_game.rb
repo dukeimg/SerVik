@@ -32,47 +32,49 @@ class VirtualGame < Game
       response = "#{response_arr[0]}:#{response_arr[1]}"
       ActionCable.server.broadcast "player_#{uuid}", {action: 'turn', msg: response, is_your_turn:0, code: guess}
       sleep(1)
-      s = REDIS.get("codes_for:#{uuid}")
-      answer = REDIS.get("code_for:#{uuid}")
-      if s
-        s = JSON.parse s
-        # Второй и более ходы
-        # В этом случае мы работаем с тем множеством возможных решений, что получили из предыдущего хода
-        ai_guess = s.shuffle.pop
-        if ai_guess == answer
-          end_game(nil, uuid, 'code_is_guessed')
+      Thread.new do
+        s = REDIS.get("codes_for:#{uuid}")
+        answer = REDIS.get("code_for:#{uuid}")
+        if s
+          s = JSON.parse s
+          # Второй и более ходы
+          # В этом случае мы работаем с тем множеством возможных решений, что получили из предыдущего хода
+          ai_guess = s.shuffle.pop
+          if ai_guess == answer
+            end_game(nil, uuid, 'code_is_guessed')
+          else
+            t = 4 - ai_guess.size
+            code = '0' * t << ai_guess
+            response_arr = crypt(ai_guess, answer)
+            response = "#{response_arr[0]}:#{response_arr[1]}"
+            ActionCable.server.broadcast "player_#{uuid}", {action: 'turn', code: code, is_your_turn:1, msg: response}
+            s.reject! {|x| crypt(x, ai_guess) == response_arr}
+            REDIS.set("codes_for:#{uuid}", s)
+            puts "Множество решений: #{s.size}"
+          end
         else
-          t = 4 - ai_guess.size
-          code = '0' * t << ai_guess
-          response_arr = crypt(ai_guess, answer)
-          response = "#{response_arr[0]}:#{response_arr[1]}"
-          ActionCable.server.broadcast "player_#{uuid}", {action: 'turn', code: code, is_your_turn:1, msg: response}
-          s.reject! {|x| crypt(x, ai_guess) == response_arr}
-          REDIS.set("codes_for:#{uuid}", s)
-          puts "Множество решений: #{s.size}"
-        end
-      else
-        # Случай перевого хода. Здесь создаётся множество возможных решений.
-        s = Array(0..9999)
-        s.each_with_index do |i, x|
-          x = x.to_s
-          t = 4 - x.size
-          s[i] = '0' * t << x
-        end
-        # Далее совершается случайный ход
-        ai_guess = Random.rand(0..9999)
-        if ai_guess == answer.to_i
-          end_game(nil, uuid, 'code_is_guessed')
-        else
-          # На основе полученных данных сокращаем множество
-          ai_guess = ai_guess.to_s
-          t = 4 - ai_guess.size
-          code = '0' * t << ai_guess
-          response_arr = crypt(ai_guess, answer)
-          response = "#{response_arr[0]}:#{response_arr[1]}"
-          ActionCable.server.broadcast "player_#{uuid}", {action: 'turn', code: code, is_your_turn:1, msg: response}
-          s.reject! {|x| crypt(x, ai_guess) == response_arr}
-          REDIS.set("codes_for:#{uuid}", s)
+          # Случай перевого хода. Здесь создаётся множество возможных решений.
+          s = Array(0..9999)
+          s.each_with_index do |i, x|
+            x = x.to_s
+            t = 4 - x.size
+            s[i] = '0' * t << x
+          end
+          # Далее совершается случайный ход
+          ai_guess = Random.rand(0..9999)
+          if ai_guess == answer.to_i
+            end_game(nil, uuid, 'code_is_guessed')
+          else
+            # На основе полученных данных сокращаем множество
+            ai_guess = ai_guess.to_s
+            t = 4 - ai_guess.size
+            code = '0' * t << ai_guess
+            response_arr = crypt(ai_guess, answer)
+            response = "#{response_arr[0]}:#{response_arr[1]}"
+            ActionCable.server.broadcast "player_#{uuid}", {action: 'turn', code: code, is_your_turn:1, msg: response}
+            s.reject! {|x| crypt(x, ai_guess) == response_arr}
+            REDIS.set("codes_for:#{uuid}", s)
+          end
         end
       end
     end
