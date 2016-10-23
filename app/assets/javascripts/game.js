@@ -309,8 +309,8 @@ function makeTurn() {
         elem.setCursorPosition(0);
         $('.send').addClass('disabled');
         yourTurn = false;
-        var message = "<div class='row'><div class='message-block my text-right'><div class='message'>" + code + "</div><div class='me'>" + me +
-            "</div></div></div>";
+        var message = "<div class='message-block my text-right'><div class='message'>" + code + "</div><div class='me'>" + me +
+            "</div></div>";
         var container= $('.messages-container');
         container.append(message).animate({scrollTop: $(container).get(0).scrollHeight}, 300);
     }
@@ -322,12 +322,12 @@ function handleTurn(data) {
     var container= $('.messages-container');
     if (yourTurn == true) {
         $('.send').removeClass('disabled');
-        var message = "<div class='row'><div class='message-block his text-left'><div class='him'>" + rival + "</div><div class='message'>"
-            + data.code + " | " + data.msg + "</div></div></div>";
+        var message = "<div class='message-block his text-left'><div class='him'>" + rival + "</div><div class='message'>"
+            + data.code + " | " + data.msg + "</div></div>";
         container.append(message);
     } else {
         $('.send').addClass('disabled');
-        $('.my:last-child .message').html(data.code + " | " + data.msg)
+        $('.my').last().find('.message').html(data.code + " | " + data.msg)
     }
     container.animate({scrollTop: $(container).get(0).scrollHeight}, 300);
     $('.turn').hide();
