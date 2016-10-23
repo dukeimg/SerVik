@@ -51,7 +51,6 @@ class VirtualGame < Game
             s.reject! {|x| crypt(x, ai_guess) != response_arr}
             REDIS.set("codes_for:#{uuid}", s)
             puts "Множество решений: #{s.size}"
-            puts s.to_s
           end
         else
           # Случай перевого хода. Здесь создаётся множество возможных решений.
@@ -76,7 +75,6 @@ class VirtualGame < Game
             s.reject! {|x| crypt(x, ai_guess) != response_arr}
             REDIS.set("codes_for:#{uuid}", s)
             puts "Множество решений: #{s.size}"
-            puts s.to_s
           end
         end
       end

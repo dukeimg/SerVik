@@ -59,8 +59,8 @@
       <file leaf-file-name="virtual_game.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/models/virtual_game.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="296">
-              <caret line="90" column="28" selection-start-line="90" selection-start-column="28" selection-end-line="90" selection-end-column="28" />
+            <state relative-caret-position="90">
+              <caret line="52" column="47" selection-start-line="52" selection-start-column="47" selection-end-line="52" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -873,14 +873,7 @@
       <workItem from="1477084024125" duration="9243000" />
       <workItem from="1477124361280" duration="16189000" />
       <workItem from="1477155484232" duration="10744000" />
-      <workItem from="1477254172423" duration="3618000" />
-    </task>
-    <task id="LOCAL-00179" summary="Ещё больше синглтонов!">
-      <created>1476557541830</created>
-      <option name="number" value="00179" />
-      <option name="presentableId" value="LOCAL-00179" />
-      <option name="project" value="LOCAL" />
-      <updated>1476557541830</updated>
+      <workItem from="1477254172423" duration="3642000" />
     </task>
     <task id="LOCAL-00180" summary="Ещё больше синглтонов!">
       <created>1476557650931</created>
@@ -1218,7 +1211,14 @@
       <option name="project" value="LOCAL" />
       <updated>1477257393617</updated>
     </task>
-    <option name="localTasksCounter" value="228" />
+    <task id="LOCAL-00228" summary="Исправил проблему очистки">
+      <created>1477257807675</created>
+      <option name="number" value="00228" />
+      <option name="presentableId" value="LOCAL-00228" />
+      <option name="project" value="LOCAL" />
+      <updated>1477257807675</updated>
+    </task>
+    <option name="localTasksCounter" value="229" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1254,7 +1254,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="325862000" />
+    <option name="totallyTimeSpent" value="325886000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1855" height="1056" extended-state="6" />
@@ -1311,7 +1311,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Обновил баннеры" />
     <MESSAGE value="Обновил сетевой код" />
     <MESSAGE value="Рефакторинг" />
     <MESSAGE value="Исправлена ошибка &quot;ArgumentError - comparison of Fixnum with nil failed&quot;" />
@@ -1336,7 +1335,8 @@
     <MESSAGE value="Добавил боту мультипоточность" />
     <MESSAGE value="Играю дальше с настройками" />
     <MESSAGE value="Чуть больше дебагерской фигни" />
-    <option name="LAST_COMMIT_MESSAGE" value="Чуть больше дебагерской фигни" />
+    <MESSAGE value="Исправил проблему очистки" />
+    <option name="LAST_COMMIT_MESSAGE" value="Исправил проблему очистки" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1672,8 +1672,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/virtual_game.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="90" column="28" selection-start-line="90" selection-start-column="28" selection-end-line="90" selection-end-column="28" />
+        <state relative-caret-position="90">
+          <caret line="52" column="47" selection-start-line="52" selection-start-column="47" selection-end-line="52" selection-end-column="47" />
           <folding />
         </state>
       </provider>
