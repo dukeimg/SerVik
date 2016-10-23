@@ -31,6 +31,7 @@ class VirtualGame < Game
       response_arr = crypt(guess, answer)
       response = "#{response_arr[0]}:#{response_arr[1]}"
       ActionCable.server.broadcast "player_#{uuid}", {action: 'turn', msg: response, is_your_turn:0, code: guess}
+      sleep(1)
       s = REDIS.get("codes_for:#{uuid}")
       answer = REDIS.get("code_for:#{uuid}")
       if s
@@ -46,7 +47,7 @@ class VirtualGame < Game
           response_arr = crypt(ai_guess, answer)
           response = "#{response_arr[0]}:#{response_arr[1]}"
           ActionCable.server.broadcast "player_#{uuid}", {action: 'turn', code: code, is_your_turn:1, msg: response}
-          s.reject! {|x| crypt(x, ai_guess) == response_arr}
+          s.reject! {|x| crypt(x, ai_guess)[0] == response_arr[0]}
           REDIS.set("codes_for:#{uuid}", s)
           puts "Множество решений: #{s.size}"
         end
@@ -70,7 +71,7 @@ class VirtualGame < Game
           response_arr = crypt(ai_guess, answer)
           response = "#{response_arr[0]}:#{response_arr[1]}"
           ActionCable.server.broadcast "player_#{uuid}", {action: 'turn', code: code, is_your_turn:1, msg: response}
-          s.reject! {|x| crypt(x, ai_guess) == response_arr}
+          s.reject! {|x| crypt(x, ai_guess)[0] == response_arr[0]}
           REDIS.set("codes_for:#{uuid}", s)
         end
       end

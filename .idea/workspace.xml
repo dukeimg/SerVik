@@ -10,7 +10,6 @@
   <component name="ChangeListManager">
     <list default="true" id="34787232-a8da-4fc4-b117-f4225586c072" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/game.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/game.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/virtual_game.rb" afterPath="$PROJECT_DIR$/app/models/virtual_game.rb" />
     </list>
     <ignored path="SerVik.iws" />
@@ -60,8 +59,8 @@
       <file leaf-file-name="virtual_game.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/models/virtual_game.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="39">
-              <caret line="48" column="42" selection-start-line="48" selection-start-column="42" selection-end-line="48" selection-end-column="42" />
+            <state relative-caret-position="108">
+              <caret line="33" column="14" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -864,14 +863,7 @@
       <workItem from="1477084024125" duration="9243000" />
       <workItem from="1477124361280" duration="16189000" />
       <workItem from="1477155484232" duration="10744000" />
-      <workItem from="1477254172423" duration="978000" />
-    </task>
-    <task id="LOCAL-00172" summary="Ускорил анимацию кнопки &quot;Сдаться&quot;">
-      <created>1476021100276</created>
-      <option name="number" value="00172" />
-      <option name="presentableId" value="LOCAL-00172" />
-      <option name="project" value="LOCAL" />
-      <updated>1476021100276</updated>
+      <workItem from="1477254172423" duration="1229000" />
     </task>
     <task id="LOCAL-00173" summary="Включил защиту">
       <created>1476035541486</created>
@@ -1209,7 +1201,14 @@
       <option name="project" value="LOCAL" />
       <updated>1477166027093</updated>
     </task>
-    <option name="localTasksCounter" value="221" />
+    <task id="LOCAL-00221" summary="Найден баг, найденный Юлей">
+      <created>1477255171942</created>
+      <option name="number" value="00221" />
+      <option name="presentableId" value="LOCAL-00221" />
+      <option name="project" value="LOCAL" />
+      <updated>1477255171943</updated>
+    </task>
+    <option name="localTasksCounter" value="222" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1245,13 +1244,13 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="323222000" />
+    <option name="totallyTimeSpent" value="323473000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1855" height="1056" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23604201" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23604201" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3445122" sideWeight="0.50193477" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32946378" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1302,7 +1301,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Дебажим булочку с маком" />
     <MESSAGE value="Едим булочку с маком" />
     <MESSAGE value="Исправил баги" />
     <MESSAGE value="Убрал console.log из скрипта" />
@@ -1327,7 +1325,8 @@
     <MESSAGE value="Исправил nil в end_game" />
     <MESSAGE value="Исправил ошибку с неочищенным множеством" />
     <MESSAGE value="Отображаются фильтры даже с нулями" />
-    <option name="LAST_COMMIT_MESSAGE" value="Отображаются фильтры даже с нулями" />
+    <MESSAGE value="Найден баг, найденный Юлей" />
+    <option name="LAST_COMMIT_MESSAGE" value="Найден баг, найденный Юлей" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1663,8 +1662,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/virtual_game.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="39">
-          <caret line="48" column="42" selection-start-line="48" selection-start-column="42" selection-end-line="48" selection-end-column="42" />
+        <state relative-caret-position="108">
+          <caret line="33" column="14" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="14" />
           <folding />
         </state>
       </provider>
