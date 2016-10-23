@@ -88,11 +88,12 @@ class VirtualGame < Game
     if loser
       ai_code = REDIS.get("virtual_opponent_code_for:#{loser}") || nil
       ActionCable.server.broadcast "player_#{loser}", {action: "end_game", win:0, opponent_code: ai_code, reason: reason}
+      self.clear_redis(loser)
     else
       ai_code = REDIS.get("virtual_opponent_code_for:#{winner}") || nil
       ActionCable.server.broadcast "player_#{winner}", {action: "end_game", win:1,  opponent_code: ai_code, reason: reason}
+      self.clear_redis(winner)
     end
-    self.clear_redis(winner)
   end
 
   private
