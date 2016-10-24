@@ -9,20 +9,20 @@
           %li= link_to t('menu.about'), about_path
           %li= link_to t('download.title'), download_path
       .col-sm-4
-        %h2 Black Build
+        %h2= t('black_build')
         %hr
         %ul
           %li= link_to t('blackbuild.home'), 'http://www.blackbuild.ru/'
           %li= link_to t('blackbuild.about'), about_path
           %li= link_to t('blackbuild.contact'), 'mailto:sergejkvyatkovskij@gmail.com'
       .col-sm-4
-        %h2 Games And Apps
+        %h2= t('games_and_apps')
         %hr
         %ul
-          %li Docs
-          %li The Haze
-          %li Shake
-          %li Hype Radio
+          %li= link_to 'Docs', 'https://itunes.apple.com/ru/app/docsvk/id1071728466', target: '_blank'
+          %li= link_to 'The Haze', 'https://itunes.apple.com/us/app/the-haze/id1065153229', target: '_blank'
+          %li= link_to 'Shake', 'https://itunes.apple.com/ru/app/shake/id918025075', target: '_blank'
+          %li= link_to 'Hype Radio', 'https://itunes.apple.com/ru/app/nyperadio/id979313155', target: '_blank'
     .row.hidden-xs
       .col-sm-6
         .footer-menu

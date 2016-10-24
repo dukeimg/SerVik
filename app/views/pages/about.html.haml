@@ -14,15 +14,14 @@
           %h2.section-heading.text-center= t('about.project.heading')
       .row
         .col-sm-4.col-sm-offset-2
-          %p Вектор определяет косвенный большой круг небесной сферы. Герменевтика жизненно просветляет перигей.
-          Перцепция аннигилирует песчаный параллакс.
-          %p Априори, скалярное поле случайно. Филологическое суждение реально
-          возгоняет языковой лёсс. Бессознательное последовательно определяет винил.
+          %p= t('about.project.col_1_1')
+          %p= t('about.project.col_1_2')
         .col-sm-4
-          %p Фирменное наименование изящно отравляет сублимированный звукоряд. Восточно-Африканское плоскогорье
-          вращательно синхронизует распространенный дедуктивный метод только в отсутствие тепло- и массообмена с
-          окружающей средой. Акцепт радиоактивен. Краевая часть артезианского бассейна, так или иначе, облучает
-          Бахрейн. Рационально-критическая парадигма преобразует интеллигибельный гомеостаз.
+          %p= t('about.project.col_2_1',
+            :ror => link_to('Ruby on Rails 5', 'http://rubyonrails.org/', :target => '_blank'),
+            :action_cable => link_to('Action Cable', 'http://rubyonrails.org/', :target => '_blank'),
+            :socket_rocket => link_to('Socket Rocket', 'https://github.com/facebook/SocketRocket', :target => '_blank')).html_safe
+          %p= t('about.project.col_2_2')
       .row
         .col-sm-12
           %h2.section-heading.text-center= t('about.team.heading')
@@ -34,23 +33,13 @@
             %p iOS Developer
             %ul.list-inline.social-buttons
               %li
-                %a= icon('twitter')
+                = link_to icon('linkedin'), 'https://www.linkedin.com/in/%D1%81%D0%B5%D1%80%D0%B3%D0%B5%D0%B9-%D0%BA%D0%B2%D1%8F%D1%82%D0%BA%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9-a5a124ba?trk=nav_responsive_tab_profile_pic', target: '_blank'
               %li
-                %a= icon('instagram')
+                = link_to icon('vk'), 'https://vk.com/kviatkovskiisergei', target: '_blank'
               %li
-                %a= icon('google-plus')
+                = link_to icon('facebook'), 'https://www.facebook.com/profile.php?id=100009148665015', target: '_blank'
               %li
-                %a= icon('vimeo')
-              %li
-                %a= icon('facebook')
-              %li
-                %a= icon('vk')
-              %li
-                %a= icon('youtube')
-              %li
-                %a= icon('envelope')
-              %li
-                %a= icon('linkedin')
+                = link_to icon('envelope'), 'mailto:sergeikviatkovskii@gmail.com'
         .col-sm-6
           .team-member
             = image_tag 'team/viktor.jpg', height: 225, class: 'img-responsive img-circle'
@@ -58,16 +47,19 @@
             %p Ruby on Rails Architect
             %ul.list-inline.social-buttons
               %li
-                %a= icon('vk')
+                = link_to icon('vk'), 'https://vk.com/dukeimg', target: '_blank'
               %li
-                %a= icon('linkedin')
+                = link_to icon('linkedin'), 'https://www.linkedin.com/in/dukeimg', target: '_blank'
               %li
-                %a= icon('envelope')
+                = link_to icon('github'), 'https://github.com/dukeimg', target: '_blank'
+              %li
+                = link_to icon('envelope'), 'mailto:viktor.danilov451@gmail.com'
   %section
     .container
       .row
         .col-sm-12.text-center.contact
-          %button.btn.btn-default
-            %span= icon('envelope-o')
-            %span= t('about.write_us')
+          = link_to 'mailto:sergeikviatkovskii@gmail.com' do
+            %button.btn.btn-default
+              %span= icon('envelope-o')
+              %span= t('about.write_us')
 = render('layouts/footer_large')

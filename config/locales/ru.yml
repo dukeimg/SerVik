@@ -52,16 +52,20 @@ ru:
      tagline: 'Мы — отечественная студия, занимающаяся разработкой игр и приложений для мобильных платформ.'
      project:
        heading: 'О проекте'
+       col_1_1: 'Задумываясь как эксперимент с технологией WebSockets, наш проект перерос в полноценную игру.'
+       col_1_2: 'Спустя несколько недель трудов, мы рады представить вам CRYPTO — cовершенно новый взгляд на
+       классическую игру "Быки и Коровы" с улучшенным геймплеем и мощным онлайн режимом.'
+       col_2_1: '«Под капотом» сервера CRYPTO находится %{ror}, который также является и веб-клиентом, а работу
+       WebSockets обеспечивает %{action_cable}. Клиентская часть iOS основана на %{socket_rocket}.'
+       col_2_2: 'Наше приложение изначально было спроектировано как кроссплатформенное. Вы Android или Windows
+       разработчик? Напишите одному из членов нашей команды (их ссылки расположены ниже), и мы обсудим сотрудничество.'
      team:
        heading: 'Наша команда'
        viktor: 'Виктор Данилов'
        sergei: 'Сергей Квятковский'
      write_us: 'Напишите нам'
-  lorem: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras venenatis ut nibh id efficitur. Vivamus tortor
-   mauris, congue ut tortor nec, dapibus vestibulum lorem. Integer euismod lectus nunc, eu aliquam metus aliquam nec.
-   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla aliquet orci nisi, eget auctor elit laoreet in.
-   Mauris a ullamcorper orci. Sed fermentum a nibh vel malesuada. Donec semper, ipsum eu ultricies aliquam, magna
-   turpis aliquet nunc, sit amet cursus lectus nunc non nisl. Nulla et maximus orci. Aliquam tincidunt eleifend
-   sollicitudin. Maecenas eu mi sed erat posuere condimentum eu consectetur ante. Vivamus nec pretium dolor. Aenean
-   imperdiet, sapien at accumsan porttitor, dui purus commodo risus, et rhoncus urna justo finibus magna. Ut id risus
-   mi. Ut vitae volutpat nisl, eu lacinia tortor.'
+  games_and_apps: 'Игры и приложения'
+  blackbuild:
+    home: 'Главная'
+    about: 'О нас'
+    contact: 'Связаться'

@@ -47,7 +47,9 @@ var Messages = {
         lose: {
             title: 'Поражение!',
             code_is_guessed: 'Ваш оппонент оказался быстрее вас. Его код: '
-        }
+        },
+        tooltip: 'Ответ&nbsp;содержит&nbsp;загаданное&nbsp;вами&nbsp;число,&nbsp;а&nbsp;также&nbsp;два&nbsp;числа&nbsp;в&nbsp;скобках.&nbsp;Первое&nbsp;число&nbsp;указывает&nbsp;на&nbsp;' +
+        'количество&nbsp;угаданых&nbsp;вами&nbsp;цифр,&nbsp;в&nbsp;то&nbsp;время&nbsp;как&nbsp;второе&nbsp;означает&nbsp;сколько&nbsp;из&nbsp;них&nbsp;находятся&nbsp;на&nbsp;верных&nbsp;местах.'
     },
     en: {
         win: {
@@ -59,7 +61,11 @@ var Messages = {
         lose: {
             title: 'Lost!',
             code_is_guessed: 'Your opponent was faster this time. His code: '
-        }
+        },
+        tooltip: 'The&nbsp;answer&nbsp;contains&nbsp;the&nbsp;code&nbsp;that&nbsp;you&nbsp;have&nbsp;just&nbsp;sent&nbsp;and&nbsp;' +
+        'two&nbsp;numbers&nbsp;in&nbsp;parentheses.&nbsp;The&nbsp;first&nbsp;number&nbsp;in&nbsp;parentheses&nbsp;shows&nbsp;how' +
+        '&nbsp;many&nbsp;digits&nbsp;of&nbsp;your&nbsp;guess&nbsp;match&nbsp;the&nbsp;opponent’s,&nbsp;the&nbsp;second&nbsp;one' +
+        '&nbsp;shows&nbsp;how&nbsp;many&nbsp;digits&nbsp;are&nbsp;on&nbsp;the&nbsp;right&nbsp;positions.'
     }
 };
 
@@ -309,12 +315,18 @@ function makeTurn() {
         elem.setCursorPosition(0);
         $('.send').addClass('disabled');
         yourTurn = false;
-        var message = "<div class='message-block my text-right'><div class='message'>" + code + "</div><div class='me'>" + me +
+        var message = "<div class='message-block my text-right'><div class='message' data-toggle='tooltip' data-placement='top' title=" +
+            Messages[lang].tooltip + ">(" + code + ")</div><div class='me'>" + me +
             "</div></div>";
         var container= $('.messages-container');
         container.append(message).animate({scrollTop: $(container).get(0).scrollHeight}, 300);
     }
     $('.turn').hide();
+    $('[data-toggle="tooltip"]').tooltip({
+        'selector': '',
+        'placement': 'top',
+        'container':'body'
+    });
 }
 
 function handleTurn(data) {
@@ -322,15 +334,17 @@ function handleTurn(data) {
     var container= $('.messages-container');
     if (yourTurn == true) {
         $('.send').removeClass('disabled');
-        var message = "<div class='message-block his text-left'><div class='him'>" + rival + "</div><div class='message'>"
-            + data.code + " | " + data.msg + "</div></div>";
+        var message = "<div class='message-block his text-left'><div class='him'>" + rival + "</div><div class='message'" +
+            " data-toggle='tooltip' data-placement='top' title=" + Messages[lang].tooltip + ">" + data.code + " | (" 
+            + data.msg + ")</div></div>";
         container.append(message);
     } else {
         $('.send').addClass('disabled');
-        $('.my').last().find('.message').html(data.code + " | " + data.msg)
+        $('.my').last().find('.message').html(data.code + " | (" + data.msg + ")")
     }
     container.animate({scrollTop: $(container).get(0).scrollHeight}, 300);
     $('.turn').hide();
+    $('[data-toggle="tooltip"]').tooltip();
 }
 
 
