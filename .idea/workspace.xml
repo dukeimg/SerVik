@@ -59,8 +59,8 @@
       <file leaf-file-name="game.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/models/game.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="86" column="14" selection-start-line="86" selection-start-column="14" selection-end-line="86" selection-end-column="14" />
+            <state relative-caret-position="342">
+              <caret line="81" column="13" selection-start-line="81" selection-start-column="13" selection-end-line="81" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -783,14 +783,7 @@
       <workItem from="1477304688856" duration="906000" />
       <workItem from="1477323285769" duration="12898000" />
       <workItem from="1477405773603" duration="4338000" />
-      <workItem from="1477412210559" duration="1604000" />
-    </task>
-    <task id="LOCAL-00189" summary="Исправил баги">
-      <created>1476818484388</created>
-      <option name="number" value="00189" />
-      <option name="presentableId" value="LOCAL-00189" />
-      <option name="project" value="LOCAL" />
-      <updated>1476818484390</updated>
+      <workItem from="1477412210559" duration="2028000" />
     </task>
     <task id="LOCAL-00190" summary="Убрал console.log из скрипта">
       <created>1476818539984</created>
@@ -1128,7 +1121,14 @@
       <option name="project" value="LOCAL" />
       <updated>1477412382618</updated>
     </task>
-    <option name="localTasksCounter" value="238" />
+    <task id="LOCAL-00238" summary="Begin / rescue внутри последнего хода">
+      <created>1477413934294</created>
+      <option name="number" value="00238" />
+      <option name="presentableId" value="LOCAL-00238" />
+      <option name="project" value="LOCAL" />
+      <updated>1477413934294</updated>
+    </task>
+    <option name="localTasksCounter" value="239" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1164,7 +1164,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="345632000" />
+    <option name="totallyTimeSpent" value="346056000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1665" y="24" width="1855" height="1056" extended-state="6" />
@@ -1221,7 +1221,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Увеличил padding на 10px" />
     <MESSAGE value="Поверстал" />
     <MESSAGE value="Тест нового бота" />
     <MESSAGE value="Бот: исправил баг и потерянной переменной" />
@@ -1246,7 +1245,8 @@
     <MESSAGE value="Жесть" />
     <MESSAGE value="Довёрстка" />
     <MESSAGE value="turns_left" />
-    <option name="LAST_COMMIT_MESSAGE" value="turns_left" />
+    <MESSAGE value="Begin / rescue внутри последнего хода" />
+    <option name="LAST_COMMIT_MESSAGE" value="Begin / rescue внутри последнего хода" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1557,8 +1557,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/game.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="86" column="14" selection-start-line="86" selection-start-column="14" selection-end-line="86" selection-end-column="14" />
+        <state relative-caret-position="342">
+          <caret line="81" column="13" selection-start-line="81" selection-start-column="13" selection-end-line="81" selection-end-column="13" />
           <folding />
         </state>
       </provider>

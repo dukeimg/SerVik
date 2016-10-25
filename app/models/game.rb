@@ -79,10 +79,10 @@ class Game
               else
                 end_game(uuid, opponent, 'turn_limit_reached')
               end
-            rescue opponent_highest.nil?
-                opponent_highest = 0
-                highest = current
-                retry
+            rescue
+              opponent_highest = 0
+              highest = current
+              retry
             end
           else
             REDIS.set("#{uuid}_had_last_turn", true)
