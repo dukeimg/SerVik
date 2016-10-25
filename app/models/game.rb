@@ -54,7 +54,7 @@ class Game
       opponent = opponent_for(uuid)
       guess = data['msg']
       time_left = data['time_left']
-      is_last = data['is_last']
+      turns_left = data['turns_left']
       answer = get_code(opponent)
 
       if guess == answer
@@ -68,7 +68,7 @@ class Game
           REDIS.set("#{uuid}_highest", highest)
         end
         response = "#{response_arr[0]}:#{response_arr[1]}"
-        if is_last == 1
+        if turns_left == '0'
           if REDIS.get("#{opponent}_had_last_turn")
             opponent_highest = REDIS.get("#{opponent}_highest")
             if opponent_highest > highest
