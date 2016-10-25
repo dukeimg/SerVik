@@ -71,12 +71,18 @@ class Game
         if turns_left == '0'
           if REDIS.get("#{opponent}_had_last_turn")
             opponent_highest = REDIS.get("#{opponent}_highest")
-            if opponent_highest > highest
-              end_game(opponent, uuid, 'turn_limit_reached')
-            elsif opponent_highest == highest
-              end_game(opponent, uuid, 'draw', true)
-            else
-              end_game(uuid, opponent, 'turn_limit_reached')
+            begin
+              if opponent_highest > highest
+                end_game(opponent, uuid, 'turn_limit_reached')
+              elsif opponent_highest == highest
+                end_game(opponent, uuid, 'draw', true)
+              else
+                end_game(uuid, opponent, 'turn_limit_reached')
+              end
+            rescue opponent_highest.nil?
+                opponent_highest = 0
+                highest = current
+                retry
             end
           else
             REDIS.set("#{uuid}_had_last_turn", true)
