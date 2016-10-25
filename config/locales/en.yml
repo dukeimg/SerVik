@@ -74,13 +74,14 @@ en:
     tagline: 'We are the Russian team that makes moblie applications.'
     project:
       heading: 'About the project'
-      col_1_1: 'Meant as an experiment with WebSockets, our project has grew into the complete game.'
-      col_1_2: 'After few weeks of working and coffee drinking, we are glad to introduce you CRYPTO — a brand new
-      perspective on the classic game "Bulls & Cows" with enhanced gameplay and powerful online mode.'
+      col_1_1: 'Meant as an experiment with WebSockets, our project has grown into a complete game.'
+      col_1_2: 'After few weeks of working, and coffee drinking, we are glad to introduce you to CRYPTO — a brand new
+      perspective on the classic game "Bulls & Cows" with enhanced gameplay and powerful online modes.'
       col_2_1: '«Under the hood» of our CRYPTO server we have %{ror}, which also performs the function of a web-client.
       WebSockets are powered by %{action_cable}. And client side on iOS devices is based on %{socket_rocket}.'
       col_2_2: 'Our application is meant to be cross-platform. So if you are an Android or Windows developer, please
-      contact one of the member of our crew to discuss terms of cooperation. You can find their contacts below.'
+      contact one of the members of our crew in order to discuss the terms of cooperation. You can find their contacts
+      below.'
     team:
       heading: 'Our team'
       viktor: 'Viktor Danilov'
