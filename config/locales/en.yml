@@ -71,7 +71,7 @@ en:
       feature: 'Play more to enhance your intelligence.'
   about:
     title: 'Made by BlackBuild'
-    tagline: 'We are the Russian team that makes moblie applications.'
+    tagline: 'We are a Russian team that makes moblie applications.'
     project:
       heading: 'About the project'
       col_1_1: 'Meant as an experiment with WebSockets, our project has grown into a complete game.'
