@@ -14,6 +14,14 @@ $text--bright: rgb(110, 110, 110);
   .vmiddle {
     height: 600px;
   }
+
+  .about-project {
+    column-count: 2;
+  }
+
+  .team-member {
+    margin-top: 0 !important;
+  }
 }
 
 .download-icons {
@@ -185,6 +193,7 @@ section.last {
 
   .team-member {
     text-align: center;
+    margin-top: 25px;
 
     img {
       height: 225px;
@@ -262,6 +271,6 @@ section.last {
 
   .about-project {
     text-align: justify;
-    column-count: 2;
+    column-count: 1;
   }
 }

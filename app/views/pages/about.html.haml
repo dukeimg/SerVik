@@ -10,7 +10,7 @@
   %section
     .container
       .row
-        .col-sm-12
+        .col-xs-12
           %h2.section-heading.text-center= t('about.project.heading')
       .row
         .col-sm-8.col-sm-offset-2.about-project
@@ -28,7 +28,7 @@
           %h2.section-heading.text-center= t('about.team.heading')
       .row
         .col-sm-6
-          .team-member
+          .team-member{:style => 'margin-top: 0'}
             = image_tag 'team/sergei.jpg', height: 225, class: 'img-responsive img-circle'
             %h4= t('about.team.sergei')
             %p iOS Developer
