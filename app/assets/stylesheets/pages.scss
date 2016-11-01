@@ -16,7 +16,7 @@ $text--bright: rgb(110, 110, 110);
   }
 
   .about-project {
-    column-count: 2;
+    column-count: 2 !important;
   }
 
   .team-member {
