@@ -59,29 +59,29 @@ en:
       p_1: 'A new breath into the classic mind-breaking game «Cows & Bulls» with enhanced gameplay and advanced online mode.'
     block_2:
       play_online: 'Play online'
-      feature: 'Compete with real people in your mind power. Gain points.'
+      feature: 'Compete with other people using your mind power. Gain points.'
     block_3:
       set_rules: 'Set rules'
       feature: 'Play by your own rules with friends. Experement!'
     block_4:
       fight_with_ai: 'Fight AI'
-      feature: "Fight against bots to sharpen your skills. Beware, they're smart!"
+      feature: "Fight against bots to sharpen your skills. Beware, they're sneaky!"
     block_5:
       pimp_your_brain: 'Pimp brains'
-      feature: 'Play more to enhance your intelligence.'
+      feature: 'Play more to quicken response time and enhance your intelligence.'
   about:
     title: 'Made by BlackBuild'
     tagline: 'We are a Russian team that makes moblie applications.'
     project:
       heading: 'About the project'
-      col_1_1: 'Meant as an experiment with WebSockets, our project has grown into a complete game.'
-      col_1_2: 'After few weeks of working, and coffee drinking, we are glad to introduce you to CRYPTO — a brand new
+      col_1_1: 'Originally meant as an experiment with WebSockets, our project has grown into a complete game.'
+      col_1_2: 'After few weeks of intense working and lots of coffee drinking, we are glad to introduce you to CRYPTO — a brand new
       perspective on the classic game "Bulls & Cows" with enhanced gameplay and powerful online modes.'
       col_2_1: '«Under the hood» of our CRYPTO server we have %{ror}, which also performs the function of a web-client.
-      WebSockets are powered by %{action_cable}. And client side on iOS devices is based on %{socket_rocket}.'
-      col_2_2: 'Our application is meant to be cross-platform. So if you are an Android or Windows developer, please
-      contact one of the members of our crew in order to discuss the terms of cooperation. You can find their contacts
-      below.'
+      WebSockets are powered by %{action_cable} and client side on iOS devices is based on %{socket_rocket}.'
+      col_2_2: 'Our application is meant to be cross-platform. If you are an Android or Windows developer, please
+      contact one of the members of our team members to further to discuss the terms of cooperation. You can find their
+      contact information below.'
     team:
       heading: 'Our team'
       viktor: 'Viktor Danilov'
@@ -93,4 +93,4 @@ en:
     home: 'Home'
     about: 'About'
     contact: 'Contact'
-  special-thanks: 'Special thanks to Tessa G. for helping us with translation.'
+  special-thanks: 'We want to give a thanks to Tessa G. and Sabrina B. for helping us with translation.'
