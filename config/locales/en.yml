@@ -75,7 +75,7 @@ en:
     project:
       heading: 'About the project'
       col_1_1: 'Originally meant as an experiment with WebSockets, our project has grown into a complete game.'
-      col_1_2: 'After few weeks of intense working and lots of coffee drinking, we are glad to introduce you to CRYPTO — a brand new
+      col_1_2: 'After a few weeks of intense working and lots of coffee drinking, we are glad to introduce you to CRYPTO — a brand new
       perspective on the classic game "Bulls & Cows" with enhanced gameplay and powerful online modes.'
       col_2_1: '«Under the hood» of our CRYPTO server we have %{ror}, which also performs the function of a web-client.
       WebSockets are powered by %{action_cable} and client side on iOS devices is based on %{socket_rocket}.'
